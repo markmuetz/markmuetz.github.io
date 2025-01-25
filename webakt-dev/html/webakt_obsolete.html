@@ -1,0 +1,804 @@
+<html>
+<head>
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+
+<!--link rel="stylesheet" type="text/css" href="../css/paper1.css" /-->
+<link type="text/css" rel="stylesheet" href="../css/w3.css">
+<link type="text/css" rel="stylesheet" href="../css/webakt.css" title="default">
+<!--link type="text/css" rel="alternative1_stylesheet" href="../css/webakt_1.css" title="alternative1"-->
+<link type="text/css" rel="stylesheet" href="../css/joint.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="../css/jstree/style.css" />
+<link rel="stylesheet" href="../css/json-viewer.css" />
+
+<script src="../js/webakt.js"></script>
+
+<style>
+.panel{display:none;}
+div.content {left:0px; top:20px;}
+#welcome {display:block;}
+.dialog_id {display:none;}
+.control_id {display:none;}
+</style>
+<!--script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script-->
+<script src="../libraries/jquery-3.5.0.js"></script>
+<script src="../libraries/jquery-ui.js"></script>
+
+<!-- Scripts for  JointJS diagramming -->
+<!--script src="../js/jointjs/jquery.js"></script-->
+<!--script src="../libraries/cola.min.js"></script-->
+<script src="http://marvl.infotech.monash.edu/webcola/cola.js"></script>
+<script src="../libraries/d3v4.js"></script>   <!-- Needed for cola.js -->
+<script src="../libraries/jointjs/lodash.js"></script>
+<script src="../libraries/jointjs/backbone.js"></script>
+<script src="../libraries/jointjs/joint.js"></script>
+<script src="../libraries/sorttable.js"></script>
+<script src="../libraries/jstree.min.js"></script>
+<!--script src="../libraries/springy_akt.js"></script-->
+<script src="../libraries/springy.js"></script>
+<script src="../libraries/toUnicodeVariant.js"></script><!--script src="../js/springyui.js"></script-->  
+
+
+<!-- webAKT main codebase -->
+<script src="../js/akt5.js"></script>
+<script src="../js/akttools.js"></script>
+<!--script src="../js/graph.js"></script-->
+<script src="../js/dialog_handlers.js"></script>
+<!--script src="../js/dialog_openers.js"></script-->
+<script src="../js/hierarchies.js"></script>
+<script src="../js/json-viewer.js"></script>
+<script src="../js/macros.js"></script>
+<!--script src="../js/menu_manager.js"></script-->
+<!--script src="../js/menu_handlers.js"></script-->
+<!--script src="../js/menus.js"></script-->
+<script src="../js/process_statement.js"></script>
+<script src="../js/webakt1.js"></script>
+
+
+<!-- webAKT API: classes -->
+<script src="../js/classes/Kb.js"></script>
+<script src="../js/classes/Diagram.js"></script>
+<script src="../js/classes/FormalTerm.js"></script>
+<script src="../js/classes/Hierarchy.js"></script>
+<script src="../js/classes/ObjectHierarchy.js"></script>
+<script src="../js/classes/Image.js"></script>
+<script src="../js/classes/Source.js"></script>
+<script src="../js/classes/Statement.js"></script>
+<script src="../js/classes/Topic.js"></script>
+<script src="../js/classes/TopicHierarchy.js"></script>
+<script src="../js/classes/Panel.js"></script>
+
+
+<!-- Widgets -->
+<script src="../widgets/dialog_Generic.js"></script>
+
+<script src="../widgets/dialog_BooleanSearch.js"></script>
+<script src="../widgets/dialog_FormalTerms.js"></script>
+<script src="../widgets/dialog_FormalTermDetails.js"></script>
+<script src="../widgets/dialog_Hierarchies.js"></script>
+<script src="../widgets/dialog_Hierarchy.js"></script>
+<script src="../widgets/dialog_HierarchyTree.js"></script>
+<script src="../widgets/dialog_Images.js"></script>
+<script src="../widgets/dialog_Macros.js"></script>
+<script src="../widgets/dialog_Memos.js"></script>
+<!--script src="../widgets/dialog_Metadata.js"></script-->
+<script src="../widgets/dialog_SourceDetails.js"></script>
+<!--script src="../widgets/dialog_Sources.js"></script-->
+<script src="../widgets/dialog_StatementDetails.js"></script>
+<script src="../widgets/dialog_Statements.js"></script>  <!-- Was: dialog_ViewAllStatements -->
+<!--script src="../widgets/dialog_Synonyms.js"></script-->
+<script src="../widgets/dialog_TopicDetails.js"></script>
+<!--script src="../widgets/dialog_TopicHierarchies.js"></script-->
+<!--script src="../widgets/dialog_TopicHierarchy.js"></script-->
+<script src="../widgets/dialog_Topics.js"></script>
+
+
+// Original Tools
+<script src="../widgets/boolean_search.js"></script>
+<!--script src="../tools/formal_terms.js"></script -->
+<!--script src="../widgets/diagram.js"></script-->
+<!--script src="../widgets/diagram_only.js"></script-->
+<script src="../widgets/glossary.js"></script>
+<script src="../widgets/display_hierarchy.js"></script>
+<script src="../widgets/hierarchic_objects_usage.js"></script>
+<script src="../widgets/knowledge_base_report.js"></script>
+<script src="../widgets/species_report.js"></script>
+<!--script src="../tools/springy.js"></script-->
+<!--script src="../widgets/object_summary.js"></script-->
+<script src="../widgets/sources_table.js"></script>
+<script src="../widgets/statements_summary.js"></script>
+<script src="../widgets/topic_summary.js"></script>
+<script src="../widgets/user_text.js"></script>
+
+
+// Widgettes
+<!-- compact widget code for the dialog_Generic widget -->
+<script src="../widgets/code/boolean_search.js"></script>
+<script src="../widgets/code/diagram.js"></script>
+<script src="../widgets/code/formal_term_details.js"></script>
+<!--script src="../widgets/code/formal_term_new.js"></script-->
+<script src="../widgets/code/formal_terms.js"></script>
+<script src="../widgets/code/hierarchy_tree.js"></script>
+<script src="../widgets/code/image_details.js"></script>
+<script src="../widgets/code/images.js"></script>
+<script src="../widgets/code/json_viewer.js"></script>
+<!--script src="../widgets/code/metadata.js"></script-->
+<script src="../widgets/code/sources.js"></script>
+<script src="../widgets/code/source_details.js"></script>
+<script src="../widgets/code/statements.js"></script>
+<script src="../widgets/code/statement_details.js"></script>
+<script src="../widgets/code/synonyms.js"></script>
+<script src="../widgets/code/topics.js"></script>
+<script src="../widgets/code/topic_details.js"></script>
+<script src="../widgets/code/tools.js"></script>
+
+<!-- API -->
+
+
+<!--script src="../js/jointjs/dijkstra_to_systo.js"></script-->
+
+<script src="../kbs/atwima.js"></script>
+<script src="../kbs/ego.js"></script>
+
+<script src="../kbs/bulk_import.js"></script>
+
+<script src="../images/urls_for_flickr_images.js"></script>
+
+<script src="../diagrams/acheampong.js"></script>
+
+<script>
+//console.log(cola);
+</script>
+</head>
+
+<body style="overflow-x:scroll;">
+<!--script src="../libraries/cola.min.js"></script-->
+<!--script src="http://marvl.infotech.monash.edu/webcola/cola.js"></script-->
+<!--script src="../libraries/d3v4.js"></script-->   <!-- Needed for cola.js -->
+<div id="menus" style="position:fixed; z-index:10000; height:30px; top:0px; left:0px; width:100%"></div>
+<div id="workspace" style="position:absolute;top:10px;overflow-x:scroll; width:5000px; height:5000px;background:#e0e0e0;">
+
+<!-- Start of container elements for kb command widgets 
+     All widgets made by converting original dialogs associated with commands in the KB menu
+     are prefixed with "dialog" to distinguish them from Tool wodgets (though that distinction is
+     pretty arbitrary).    -->
+    <div id="dialog_BooleanSearch" class="panel dialog" style="display:none;position:absolute;left:75px;top:70px;width:570px;height:570px;"></div>
+    <div id="dialog_Macros" class="panel dialog" style="display:none;position:absolute;top:50px;width:670px;height:325px;"></div>
+    <div id="dialog_TopicDetails" class="panel dialog" style="display:none;position:absolute;top:50px;width:480px;height:530px;"></div>
+    <div id="dialog_Topics" class="panel dialog" style="display:none;position:absolute;top:50px;width:480px;height:530px;"></div>
+<!-- End of container elements for kb command widgets -->
+
+
+<div id="addtopic" class="clunky panel dialog" style="left:48px;top:83px;width:290px;height:340px;">
+
+<div class="title-bar">
+    <div class="dialog_id">55: addtopic</div>Append Topic - [atwima]<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content">
+<div id="addtopic1000" class="label" style="left:20px;top:2px;width:120px;height:20px;">Kb Name: atwima</div>
+
+<fieldset id="addtopic1101" style="left:32px;top:95px;width:145px;height:185px;">
+<legend>Topics</legend>
+</fieldset>
+
+<button id="addtopic100" style="left:200px;top:130px;width:60px;height:20px;"><span class="control_id">100:</span>Append</button>
+
+<button id="addtopic101" style="left:200px;top:160px;width:60px;height:20px;"><span class="control_id">101:</span>Close</button>
+
+<button id="addtopic102" style="left:200px;top:190px;width:60px;height:20px;"><span class="control_id">102:</span>Details</button>
+
+<div id="addtopic1004" class="label" style="left:20px;top:20px;width:90px;height:20px;">Hierarchy name :</div>
+
+<textarea id="addtopic801" style="left:110px;top:25px;width:150px;height:20px;"></textarea>
+
+<div id="addtopic1003" class="label" style="left:20px;top:45px;width:90px;height:20px;">Append to  :</div>
+
+<textarea id="addtopic800" style="left:110px;top:50px;width:150px;height:20px;"></textarea>
+
+<div id="addtopic1002" class="label" style="left:20px;top:70px;width:60px;height:20px;">Topic :</div>
+
+<textarea id="addtopic802" style="left:110px;top:75px;width:150px;height:20px;"></textarea>
+
+<select id="addtopic401" size=8.88888888888889 style="left:40px;top:115px;width:130px; background:white">[]</select>
+
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+<div id="boolean_search" class="panel dialog" style="left:75px;top:75px;width:570px;">
+
+<div class="title-bar">
+    <div class="dialog_id">1: boolean_search</div>booleanSearchDialog<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content">
+    <fieldset style="float:left;">
+        <legend>Display knowledge base terms of the type:</legend>
+        <select id="boolean_search500" style="width:250px;height:20px;"></select>
+    </fieldset>
+
+    <fieldset style="float:left;">
+        <legend>Create a topic from Boolean search string</legend>
+        <button id="boolean_search109" style="width:80px;height:30px;">Create topic</button>
+    </fieldset>
+
+    <fieldset style="float:left; width:200px;">
+        <legend>Knowledge base terms of the specified type: </legend>
+        <select id="boolean_search400" size=20 style="width:180px; background:white"></select>
+    </fieldset>
+
+    <div style="float:left;text-align:center;">
+        <button id="boolean_search102" style="width:70px;height:35px;">Details</button>
+        <fieldset style="text-align:center;">
+            <legend>Boolean options</legend>
+            <button id="boolean_search106" style="width:60px;height:20px;">Select</button><br/>
+            <button id="boolean_search107" style="width:35px;height:20px;">AND</button>
+            <button id="boolean_search108" style="width:35px;height:20px;">OR</button><br/>
+            <button id="boolean_search120" style="width:35px;height:20px;">NOT</button><br/>
+            <button id="boolean_search115" style="width:60px;height:20px;">( ... )</button><br/>
+            <button id="boolean_search116" style="width:60px;height:20px;">Clear</button>
+        </fieldset>
+        <button id="boolean_search110" style="width:70px;height:35px;">Search</button>
+    </div>
+
+    <fieldset style="float:left; width:200px;">
+        <legend>Search options</legend>
+
+        <input id="boolean_search200" class="radio" type="radio">
+        <label for="boolean_search200">object</label><br/>
+
+        <input id="boolean_search201" class="radio" type="radio">
+        <label for="boolean_search201">subobjects</label><br/>
+
+        <input id="boolean_search202" class="radio" type="radio">
+        <label for="boolean_search202">superobjects</label><br/>
+
+        <input id="boolean_search203" class="radio" type="radio">
+        <label for="boolean_search203">fuzzy</label><br/><br/>
+
+
+        <input id="boolean_search121" class="checkbox" type="checkbox">
+        <label for="boolean_search121">Search the statement's formal terms</label><br/>
+
+        <input id="boolean_search118" class="checkbox" type="checkbox">
+        <label for="boolean_search118">Search the statement's Conditions</label><br/>
+
+        <input id="boolean_search117" class="checkbox" type="checkbox">
+        <label for="boolean_search117">Search the statement's Sources</label><br/>
+
+        <input id="boolean_search122" class="checkbox" type="checkbox">
+        <label for="boolean_search122">Search the knowledge categories</label><br/><br/><br/>
+
+
+        <input id="boolean_search119" class="checkbox" type="checkbox">
+        <label for="boolean_search119">Allow 'user value' matches within any of a statement's sources.</label><br/>
+
+        <input id="boolean_search807" class="checkbox" type="text" style="width:25px;"> <!-- NOTE: This was a textarea! -->
+        <label for="boolean_search807">Search statements with a minimum of 'N' sources.</label><br/>
+    </fieldset>
+
+    <fieldset style="float:left;width:95%;">
+        <legend>Boolean Search String :  "or" binds more strongly than "and"    Use parentheses ( )</legend>
+        <textarea id="boolean_search800" style="width:100%;height:45px;" title="Try entering: &#10&nbsp;&nbsp;trees&#10or &#10&nbsp;&nbsp;trees and (water or moisture)"></textarea>
+    </fieldset>
+
+</div>     <!-- End of content div -->
+<div style="clear:both;"></div>
+</div>     <!-- End of dialog window div -->
+
+
+
+
+
+
+<!-- For AKT5's Task Language tool/macro: list(select,List,Response) -->
+
+<div id="list_select" class="clunky panel dialog" style="left:300px;top:100px;width:200px;height:400px;">
+<div class="title-bar">
+    <div class="dialog_id">0: list_select</div>Select from a list<input type="button" value="X" class="dialog_close_button"/></div>
+<div class="content">
+<div id="list_select100" class="label" style="left:15px;top:5px;width:220px;height:20px;">Select one entry</div>
+
+<select id="list_select110" style="left:10px;top:25px;width:250px;height:20px;275px;">[]</select>
+<button id="list_select120" style="left:100px;top:100px;width:25px;height:40px;"><span class="control_id">120:</span>OK</button>
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+<div id="load_diagram_local_storage" class="dialog always_on_top" style="display:none; position:absolute; border:solid 1px black; background:#d4d0c8;left:20px;top:40px;width:300px;height:185px;z-index:100000">
+
+<div class="title-bar">
+    <div class="dialog_id">load_diagram_local_storage</div>load_diagram_local_storage<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content" style="border:none;background:#d4d0c8; padding:10px;height:162px;">
+    <input type="text" style="float:right;" id="load_diagram_local_storage_title">
+    <label for="load_diagram_local_storage_title" style="margin-right:5px;float:right;">Diagram title</label>
+    <br/>
+    <input type="button" id="load_diagram_local_storage_ok" style="float:right;" value="OK">
+    <input type="button" id="load_diagram_local_storage_cancel" style="float:right;" value="Cancel">
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+<div id="make_subdiagram" class="dialog always_on_top" style="display:none; position:absolute; border:solid 1px black; background:#d4d0c8;left:20px;top:40px;width:300px;height:185px;z-index:100000">
+
+<div class="title-bar">
+    <div class="dialog_id">make_subdiagram</div>make_subdiagram<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content" style="border:none;background:#d4d0c8; padding:10px;height:162px;">
+    <input type="text" style="float:right;" id="make_subdiagram_title">
+    <label for="make_subdiagram_title" style="margin-right:5px;float:right;">Search expression</label>
+    <br/>
+    <input type="button" id="make_subdiagram_ok" style="float:right;" value="OK">
+    <input type="button" id="make_subdiagram_cancel" style="float:right;" value="Cancel">
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+
+<div id="macros_montage" class="clunky panel dialog" style="left:60px;top:70px;width:660px;height:365px;">
+
+    <div class="title-bar">
+        <div class="dialog_id">15: macros_montage</div>Macros montage<input type="button" value="X" class="dialog_close_button"/></div>
+
+    <div class="content">
+
+    <fieldset id="macros_montage1300" style="left:515px;top:10px;width:115px;height:240px;">
+    <legend>Tool Options</legend>
+    </fieldset>
+
+    <button id="macros_montage100" style="left:535px;top:30px;width:75px;height:30px;"><span class="control_id">100:</span>Description</button>
+
+    <button id="macros_montage101" style="left:535px;top:75px;width:75px;height:30px;"><span class="control_id">101:</span>Details</button>
+
+    <button id="macros_montage102" style="left:535px;top:120px;width:75px;height:30px;"><span class="control_id">102:</span>Run</button>
+
+    <button id="macros_montage103" style="left:535px;top:165px;width:75px;height:30px;"><span class="control_id">103:</span>New</button>
+
+    <button id="macros_montage105" style="left:535px;top:265px;width:75px;height:30px;"><span class="control_id">105:</span>Save tool file</button>
+
+    <button id="macros_montage104" style="left:535px;top:210px;width:75px;height:30px;"><span class="control_id">104:</span>Delete</button>
+
+    <button id="macros_montage106" style="left:535px;top:290px;width:75px;height:30px;"><span class="control_id">104:</span>Print</button>
+
+    <textarea id="macros_montage800" style="left:10px;top:30px;width:240px;height:265px;"></textarea>
+
+    <fieldset id="macros_montage1100" style="left:5px;top:10px;width:250px;height:285px;">
+    <legend>Group_header</legend>
+    </fieldset>
+
+    <fieldset id="macros_montage1200" style="left:260px;top:10px;width:250px;height:285px;">
+    <legend>Heading</legend>
+    </fieldset>
+
+    <select id="macros_montage400" size=15 style="left:270px;top:30px;width:230px; background:white">[]</select>
+
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+
+<div id="newformalterm" class="clunky panel dialog" style="left:470px;top:70px;width:395px;height:340px;">
+
+<div class="title-bar">
+    <div class="dialog_id">3: formaltermdetails</div>New Formal Term ..<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content">
+<div id="newformalterm1000" class="label" style="left:20px;top:10px;width:375px;height:20px;">Kb Name: atwima </div>
+
+<div id="newformalterm1002" class="label" style="left:20px;top:35px;width:80px;height:20px;">Formal Term :</div>
+
+<textarea id="newformalterms801" style="left:105px;top:40px;width:175px;height:20px;"></textarea>
+
+<div id="newformalterm1003" class="label" style="left:200px;top:95px;width:70px;height:20px;">Definition: </div>
+
+<textarea id="newformalterm800" style="left:200px;top:115px;width:175px;height:125px;"></textarea>
+
+<div id="newformalterm1001" class="label" style="left:20px;top:60px;width:60px;height:20px;">Type:</div>
+
+<select id="newformalterm500" style="left:105px;top:60px;width:175px;height:20px;100px;">[]</select>
+
+<fieldset id="newformalterm1004" style="left:10px;top:95px;width:180px;height:185px;">
+<legend>Original formal terms: </legend>
+</fieldset>
+
+<select id="newformalterm400" size=9.444444444444445 style="left:20px;top:115px;width:160px; background:white">[]</select>
+
+<button id="newformalterm100" style="left:305px;top:45px;width:65px;height:30px;"><span class="control_id">100:</span>Save</button>
+
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+<div id="open_kb" class="panel dialog" style=" display:none; left:10px;top:10px;width:550px;">
+
+    <div class="title-bar">
+        <div class="dialog_id">191: open_kb</div>Open KB<input type="button" value="X" class="dialog_close_button"/>
+    </div>
+
+    <div class="content" style="border:none; background:yellow;padding:20px;">
+        <input type="file" id="file_open" name="file_input1" multiple style="height: 50px; width: 100px;">
+    </div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+<div id="save_diagram_local_storage" class="dialog always_on_top" style="display:none; position:absolute; border:solid 1px black; background:#d4d0c8;left:20px;top:40px;width:300px;height:185px;z-index:100000">
+
+<div class="title-bar">
+    <div class="dialog_id">save_diagram_local_storage</div>save_diagram_local_storage<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content" style="border:none;background:#d4d0c8; padding:10px;height:162px;">
+    <input type="text" style="float:right;" id="save_diagram_local_storage_title">
+    <label for="save_diagram_local_storage_title" style="margin-right:5px;float:right;">Diagram title</label>
+    <br/>
+    <input type="button" id="save_diagram_local_storage_ok" style="float:right;" value="OK">
+    <input type="button" id="save_diagram_local_storage_cancel" style="float:right;" value="Cancel">
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+
+<div id="save_kb" class="panel dialog" style=" display:none; left:10px;top:10px;width:300px; height:130px; background:yellow;">
+
+    <div class="title-bar">
+        <div class="dialog_id">191: save_kb</div>Save KB<input type="button" value="X" class="dialog_close_button"/>
+    </div>
+
+    <div class="content" style="border:none; background:yellow;padding:20px; height:100px;">
+        <button id="create">Create file</button>
+        <!--a download="info.txt" id="downloadlink" style="display: none">Download</a-->
+        <a download="info.txt" id="downloadlink" style="display:none; border:solid 2px black; background:#e0e0e0; width:60px;margin-top:30px;">Download</a>
+        <textarea id="textbox" style="border:none; background:yellow; resize:none; disabled;"></textarea>
+    </div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+
+<div id="statementdetails" class="panel dialog" style="left:200px;top:100px;width:620px;height:430px;">
+
+<div class="title-bar">
+    <div class="dialog_id">40: statementdetails</div>New Statement - [Atwima]<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content" style="border:none;padding:10px;">
+
+    <div style="float:left;">Statement No :</div>
+    <div id="statementdetails1001" style="float:left;"></div>
+    <div style="float:left;margin-left:100px;">Knowledge Base : </div>
+    <div id="statementdetails1002" style="float:left;"></div>
+
+    <fieldset>
+        <div style="float:left;">Source  /<br/>Derivation</div>
+        <select id="statementdetails1006" style="float:left; clear:right;width:470px;height:20px;background:white;">[]</select>
+        <button id="statementdetails103" style="width:90px;height:20px;margin-left:50px;margin-top:10px;">Sources</button>
+        <button id="statementdetails108" style="width:90px;height:20px;margin-left:50px;margin-top:10px;">Derivation</button>
+        <button id="statementdetails110" style="width:150px;height:20px;margin-left:50px;margin-top:10px;">Knowledge Categories</button>
+    </fieldset>
+
+    <fieldset style="float:left;">
+        <legend>Natural Language:</legend>
+
+        <textarea id="statementdetails800" style="width:420px;height:35px;"></textarea>
+        <div style="width:30px;height:20px;background:none">IF :</div>
+        <textarea id="statementdetails801" style="width:420px;height:35px;"></textarea>
+    </fieldset>
+
+    <div style="float:left;text-align:center;padding:10px;">
+        <button id="statementdetails100" style="width:72px;height:25px;margin:5px;">Save</button><br/>
+        <button id="statementdetails105" style="width:100px;height:25px;margin:5px;">Formal Terms</button><br/>
+        <button id="statementdetails106" style="width:75px;height:25px;margin:5px;">Memo</button>
+    </div>
+
+    <fieldset style="float:left;">
+        <legend>Formal Language Statement :</legend>
+
+        <textarea id="statementdetails802" style="width:420px;height:35px;"></textarea>
+        <div style="width:30px;height:20px;">IF :</div>
+        <textarea id="statementdetails803" style="width:420px;height:35px;"></textarea>
+    </fieldset>
+
+    <div style="float:left;text-align:center;padding:10px;">
+        <button id="statementdetails104" style="width:72px;height:35px;margin:5px;">Syntax Check</button><br/>
+        <button id="statementdetails102" style="width:72px;height:25px;margin:5px;">Translate</button><br/>
+        <button id="statementdetails107" style="width:100px;height:35px;margin:5px;">Auto grammar help</button>
+    </div>
+
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+
+<div id="step_dialog" class="clunky panel dialog" style="left:333px;top:149px;width:600px;height:530px;">
+
+<div class="title-bar">
+    <div class="dialog_id">25: step_dialog</div>step_dialog<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content">
+<button id="step_dialog100" style="left:540px;top:36px;width:45px;height:27px;"><span class="control_id">100:</span>Step</button>
+
+<button id="step_dialog101" style="left:540px;top:99px;width:45px;height:27px;"><span class="control_id">101:</span>Cancel</button>
+
+<textarea id="step_dialog800" style="left:99px;top:13px;width:243px;height:18px;"></textarea>
+
+<div id="step_dialog1000" class="label" style="left:9px;top:8px;width:90px;height:18px;">BODY of tool :</div>
+
+<select id="step_dialog400" size=12.777777777777779 style="left:9px;top:27px;width:520px; background:white">BodyList</select>
+
+<div id="step_dialog1001" class="label" style="left:9px;top:253px;width:99px;height:18px;">PARAMETERS :</div>
+
+<select id="step_dialog401" size=11.666666666666666 style="left:9px;top:270px;width:575px; background:white">ParameterList</select>
+
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+<!-- Making it just like another dialog window, just now, so has same styling, close button, drag-ability etc. -->
+<div id="tool_results" class="panel dialog" style="left:400px;top:100px;width:400px;height:400px;">
+
+<div class="title-bar">
+    <div class="dialog_id">tool_results</div>Tool Results<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div id="tool_results_content" class="content">
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+<div id="topicHierarchies" class="panel dialog" style="left:60px;top:70px;width:625px;">
+
+<div class="title-bar">
+    <div class="dialog_id">52: topicHierarchies</div>Topic Hierarchies - [  atwima  ]<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content"">
+    <div id="topicHierarchies1001" style="width:100%;padding-left:20px;padding-right:20px;padding-top:10px;">This knowledge base contains information classified under different categories called topics.  These topics may be organised under different topic hierarchies.  To see the statements defined by a particular topic hierarchy, first select the topic hierarchy then click on the statements button.</div>
+
+    <div style="margin-left:20px;margin-top:20px;">
+        <div style="float:left;width:150px;height:20px;">Selected Topic Hierarchy:</div>
+        <textarea id="topicHierarchies801" style="float:left;width:330px;height:20px;"></textarea>
+        <div style="clear:both;"></div>
+    </div>
+
+    <div style="float:left;margin-left:20px;">
+        <fieldset>
+            <legend>Topic Hierarchies </legend>
+            <select id="topicHierarchies400" size=7 style="width:420px; background:white">ListBox</select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Topics in selected hierarchy</legend>
+            <select id="topicHierarchies401" size=9 style="width:420px; background:white">ListBox</select>
+        </fieldset>
+    </div>
+
+    <fieldset style="float:left;">
+    <legend>Topic Hierarchy</legend>
+        <button id="topicHierarchies103" style="width:80px;height:35px;margin:5px;">New</button><br/>
+        <button id="topicHierarchies104" style="width:80px;height:35px;margin:5px;">Delete</button><br/>
+        <button id="topicHierarchies105" style="width:80px;height:50px;margin:5px;">Save as new Kb</button><br/>
+        <button id="topicHierarchies106" style="width:80px;height:50px;margin:5px;">Show statements</button>
+    </fieldset>
+
+    <div style="clear:both;"></div>
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+<!-- =========== Topics ... ============ -->
+<div id="topicGeneral" class="clunky panel dialog" style="left:70px;top:65px;width:480px;">
+
+<div class="title-bar">
+    <div class="dialog_id">57: topicGeneral</div>Topic general<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content" style="padding:15px;border:none;">
+    <fieldset style="margin-bottom:10px;">
+        <legend>TOPICS :  </legend>
+        <select id="topicGeneral400" class="select_topics" size=12 style="width:415px; background:white"></select>
+    </fieldset>
+
+    <div style="float:left;margin-left:40px;">
+        <button id="topicGeneral100" class="button_details" style="width:85px;height:40px;">Details/Edit</button><br/>
+        <button id="topicGeneral101" class="button_new" style="width:85px;height:40px;">New</button><br/>
+        <button id="topicGeneral102" class="button_delete" style="width:85px;height:40px;">Delete</button><br/>
+        <div style="clear:both;"></div>
+    </div>
+
+    <fieldset style="float:left;text-align:center;margin-left:40px;">
+        <legend>Boolean options</legend>
+
+        <button id="topicGeneral104" class="button_select" style="width:60px;height:20px;">Select</button><br/>
+        <button id="topicGeneral105" class="button_and" style="width:35px;height:20px;">AND</button>
+        <button id="topicGeneral106" class="button_or" style="width:35px;height:20px;">OR</button><br/>
+        <button id="topicGeneral107" class="button_brackets" style="width:60px;height:20px;">( ... )</button><br/>
+        <button id="topicGeneral108" class="button_clear" style="width:60px;height:20px;">Clear</button>
+        <div style="clear:both;"></div>
+    </fieldset>
+
+    <div style="float:left;margin-left:40px;">
+        <button id="topicGeneral109" class="button_search" style="width:85px;height:40px;">Search</button><br/>
+        <button id="topicGeneral103" class="button_saveaskb" style="width:85px;height:40px;">Save as Kb</button>
+        <div style="clear:both;"></div>
+    </div>
+
+    <fieldset style="float:left; margin-top:10px;">
+        <legend>Boolean Search String</legend>
+        <div> "or" binds more strongly than "and"<br/>Use parentheses ( )  </div>
+        <textarea id="topicGeneral800" class="textarea_searchstring" style="width:415px;height:45px;"></textarea>
+    </fieldset>
+
+    <div style="clear:both;"></div>
+
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+<!-- =========== Topic details - [Name xxx] ============ -->
+<div id="topicDetail" class="panel dialog" style="left:600px;top:75px;width:320px;height:495px;">
+
+<div class="title-bar">
+    <div class="dialog_id">59: topicDetail</div>Topic details - [Name xxx]<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content" style="margin:15px;border:none;">
+
+    <div>
+        <div style="float:left;width:40px;height:20px;">Topic</div>
+        <textarea id="topicDetail801" style="float:left;width:220px;height:20px;"></textarea>
+    </div>
+
+
+    <fieldset>
+        <legend>Boolean Search String</legend>
+        <textarea id="topicDetail804" style="width:250px;height:50px;"></textarea>
+    </fieldset>
+
+    <div>
+        <fieldset style="float:left;">
+            <legend>Search Mode</legend>
+            <input id="topicDetail200" class="checkbox" type="checkbox">
+            <label for="topicDetail200">object</label><br/>
+
+            <input id="topicDetail201" class="checkbox" type="checkbox">
+            <label for="topicDetail201">subobjects</label><br/>
+
+            <input id="topicDetail202" class="checkbox" type="checkbox">
+            <label for="topicDetail202">superobjects</label><br/>
+        </fieldset>
+
+        <button id="topicDetail100" style="float:left;width:60px;height:35px;margin-left:30px;margin-top:30px;">Save</button>
+
+        <div style="clear:both;"></div>
+    </div>
+
+    <fieldset>
+        <legend>Description</legend>
+        <textarea id="topicDetail802" style="width:250px;height:130px;"></textarea>
+    </fieldset>
+
+    <button id="topicDetail102" style="width:140px;height:35px;">Show use in statements</button>
+    <button id="topicDetail103" style="width:140px;height:35px;">Show use in hierarchies</button>
+
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+
+
+<div id="topic_hierarchyxxx" class="panel dialog" style="left:700px;top:70px;width:480px;height:400px;">
+
+<div class="title-bar">
+    <div class="dialog_id">54: topic_hierarchy</div>Topic Hierarchy - [  atwima  ]<input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content">
+    <div>
+        <span>Topic hierarachy: '</span><span id="topic_hierarchy801">XXXX</span>
+    </div>
+
+    <div>
+        <span>Selected topic: '</span><span id="topic_hierarchy800">YYYY</span>
+    </div>
+
+    <fieldset style="float:left;">
+        <legend>Topics in hierarchy</legend>
+        <select id="topic_hierarchy402" size=16 style="width:130px; background:white">[]</select>
+    </fieldset>
+
+    <fieldset style="float:left;">
+        <legend>Topic Hierarchy Structure</legend>
+
+        <label for="topic_hierarchy400">Supertopics:</label><br/>
+        <select id="topic_hierarchy400" size=5 style="width:110px; background:white"></select>
+
+        <div style="margin-top:5px; margin-bottom:8px;">
+            <div>Topic: '</div><div id="topic_hierarchy802" style="border:solid 1px black;"></div>
+        </div>
+
+        <label for="topic_hierarchy401">Immed. Subtopics:</label><br/>
+        <select id="topic_hierarchy401" size=7 style="width:110px; background:white"></select>
+    </fieldset>
+
+    <div style="float:left;margin-top:20px; text-align:center;">
+        <button id="topic_hierarchy108" style="width:80px;height:25px;">Memo</button><br/>
+        <button id="topic_hierarchy105" style="width:80px;height:25px;">Topic Details</button><br/>
+
+        <fieldset>
+            <legend>Selected Topic</legend>
+
+            <button id="topic_hierarchy102" style="width:70px;height:25px;">Add a Topic</button><br/>
+            <button id="topic_hierarchy103" style="width:70px;height:25px;">Detach</button><br/>
+            <button id="topic_hierarchy104" style="width:70px;height:25px;">Move</button><br/>
+        </fieldset><br/>
+
+        <button id="topic_hierarchy107" style="width:100px;height:30px;">Topic Statements</button><br/>
+        <button id="topic_hierarchy106" style="width:100px;height:30px;">View Tree</button>
+    </div>
+
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+
+
+
+
+<div id="welcome" class="clunky panel dialog" style="left:100px;top:100px;width:376px;height:336px;">
+
+<div class="title-bar">
+    <div class="dialog_id">10: welcome</div>AKT <input type="button" value="X" class="dialog_close_button"/></div>
+
+<div class="content">
+<div id="welcome10" class="label" style="left:50px;top:30px;width:250px;height:100px;">Agroecological Knowledge Toolkit For Windows (AKT5) Version 5.56</div>
+
+<div id="welcome20" class="label" style="left:30px;top:80px;width:300px;height:25px;">(c) School of the Environment and</div>
+
+<div id="welcome30" class="label" style="left:65px;top:95px;width:200px;height:25px;">Natural Resources</div>
+
+<div id="welcome40" class="label" style="left:65px;top:110px;width:200px;height:25px;">Bangor University</div>
+
+<div id="welcome50" class="label" style="left:70px;top:125px;width:200px;height:25px;">Gwynedd, LL57 2UW</div>
+
+<button id="welcome60" style="left:60px;top:210px;width:90px;height:25px;"><span class="control_id">60:</span>OK</button>
+
+<button id="welcome70" style="left:190px;top:210px;width:90px;height:25px;"><span class="control_id">70:</span>Cancel</button>
+
+</div>     <!-- End of content div -->
+</div>     <!-- End of dialog window div -->
+
+
+</div>    <!-- End of workspace div -->
+
+<div>
+    <div id="paper" class="paper"></div>
+</div><!--end example-->
+
+
+
+
+</body>
+</html>

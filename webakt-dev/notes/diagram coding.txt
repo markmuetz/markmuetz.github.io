@@ -1,0 +1,125 @@
+WORKING WITH ARCS
+
+The diagramming in webAKT is based on the JointJS library.    This is free, and has the functionality I need for webAKT (and indeed Systo).   It is also well-maintained, since it is the basis for the company's commercial offering, JointJS+.   However, the library is complex, and the documentation is abysmal, the library is complex, being actually physically difficult to navigate on the screen and poorly structured, and makes too many assumptions about the user's level of knowledge of programming paradigms (esp. model-view-controller) and two technologies that JointJS itself is based on (backbone and SVG).    
+
+So, getting it to do what I want has been difficult, with a lot of trial-and-error, looking at demos, etc.
+
+These notes document one particularly challenging bit, namely the drawing of an arc between 2 nodes (in fact, not too diffcult), and maintaining the arc as it itself is dragged (to change how curved it is between 2 nodes) and as a node at one end is dragged.
+
+
+
+DRAWING THE ARC - WHEN LOADING THE DIAGRAMM FROM FILE
+
+Diagram.js
+    Diagram.render = function(library) {
+
+        var widget = AKT.state.current_widget;
+
+        if (!library || library === 'jointjs') {
+            var jgraph = AKT.state.current_graph;  // TODO: Fix this hack.
+
+            jgraph.clear();
+
+            var jointObject = this.convertSystoToJoint(this._subgraph);
+            var jnodes = jointObject.nodes;
+            var jlinks = jointObject.links;
+
+            _.each(jgraph.getElements(), function(element) {
+                element.removeAttr('body/magnet').removeAttr('text/pointer-events');
+            });
+
+            for (var i=0; i<jlinks.length; i++) {
+                var jlink = new joint.shapes.standard.Link(jlinks[i]);
+                var jsource = jgraph.getCell(jlink.attributes.source.id);
+                var jtarget = jgraph.getCell(jlink.attributes.target.id);
+                if (jsource && jtarget) {   // TODO: temporary hack.  Need to see why some targets are undefined.
+                    jlink.set('vertices', [this.calculateCurveVertexPosition(jsource, jtarget, 0.5, 27)]);
+                    jlink.addTo(jgraph);
+                }
+            }
+        }
+    }
+
+    
+Diagram.js
+    Diagram.calculateCurveVertexPosition = function (source, target, along, offset) {
+        var sx = source.attributes.position.x + 22;
+        var sy = source.attributes.position.y + 17;
+        var tx = target.attributes.position.x + 22;
+        var ty = target.attributes.position.y + 17;
+        var mx = (sx+tx)*along;
+        var my = (sy+ty)*along;
+        var hyp = Math.sqrt((tx-sx)**2 + (ty-sy)**2);
+        return {x:mx-(ty-sy)*offset/hyp, y:my+(tx-sx)*offset/hyp};
+    }
+
+
+
+
+DRAWING THE ARC - WHEN THE USER DRAWS IT BETWEEN 2 NODES
+
+diagram.js
+    // Click an Add Link button
+    $('.button_add_link').on('click', function(event,item) {
+        var category = event.currentTarget.dataset.category;  // 'node' or 'link'
+        var type = event.currentTarget.dataset.type;   // 'causes1way', 'causes2way' or 'link'
+        console.log('===',category,type);
+        process_node_or_link_button(this, category, type);
+    });
+
+
+diagram.js
+    function process_node_or_link_button(button, group, type) {
+        if (AKT.state.mytype === type) {
+            $('.diagram_button_left').css({border:'solid 1px #808080', background:'#f0f0f0'});
+            AKT.state.mytype = 'pointer';
+            if (group === 'link') {
+                _.each(jgraph.getElements(), function(el) {
+                    el.removeAttr('body/magnet').removeAttr('text/pointer-events');
+                });
+            }
+        } else {
+            $('.diagram_button_left').css({border:'solid 1px #808080', background:'#f0f0f0'});
+            $(button).css({border:'solid 1px #808080', background:'#88ff88'});
+            AKT.state.mytype = type;
+            console.log('====',group,type);
+            if (group === 'link') {
+                _.each(jgraph.getElements(), function(el) {
+                    el.attr('body/magnet', true).attr('text/pointer-events', 'none');
+                });
+            }
+        }
+    }
+
+Then, dragging the arc triggers this event handler (?even though there is no target yet...).  This is the same event handler that is triggered when you drag a node (in which case there is a target node.
+
+diagram.js
+    jgraph.on('change:source change:target', function (link, collection, opt) {
+        //console.log(link);
+        var aktId = link.id;
+        var sourceId = link.get('source').id;
+        var source = jgraph.getCell(sourceId);
+        mytype = AKT.state.mytype;
+
+        var targetId = link.get('target').id;
+        var target = jgraph.getCell(targetId);
+
+        if (opt.ui && sourceId && targetId) {
+            link.remove();
+            createLink(aktId, sourceId, targetId, mytype);
+        }
+        saveDiagramToLocalStorage(jgraph, 'current');
+    });
+
+
+
+DRAGGING THE ARC TO CHANGE ITS CURVATURE
+
+
+DRAGGING A NODE AT ONE END OF THE ARC
+
+
+SELECTING AN ARC
+
+
+"OPENING UP" AN ARC, TO DISPLAY A DIALOG BOX

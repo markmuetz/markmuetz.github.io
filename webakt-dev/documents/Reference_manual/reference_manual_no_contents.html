@@ -1,0 +1,763 @@
+
+<!-- saved from url=(0088)file:///home/robert/Projects/webakt/dev/documents/Reference_manual/reference_manual.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body {
+    font-family: arial, helvetica, sans-serif;
+    font-size:12px;
+}
+section.level2 {
+    break-before:page;
+}
+h1 {
+    font-size:20px;
+    font-weight:bold;
+}
+h2 {
+    font-size:18px;
+    font-weight:bold;
+}
+h3 {
+    font-size:16px;
+    font-weight:bold;
+    color:#a00000;
+}
+h4 {
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* unvisited link */
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: purple;
+}
+
+/* selected link */
+a:active {
+  color: yellow;
+}
+</style>
+</head>
+
+<body>
+<h1>webAKT Reference Manual - Menus and Panels</h1>
+
+
+
+<section id="overview" class="level1">
+    <h2>Overview</h2>
+    <p>This reference manual is organised into three main sections:
+    </p><ul>
+    <li>Concepts: Underlying concepts</li>
+    <li>Menus: the menus at the top of the screen, and their commands</li>
+    <li>Panels: the panels that appear in the webAKT workspace, which display aspects of the knowledge base and allow the user to interact with it.</li>
+    </ul>
+    <p></p>
+</section>
+
+
+
+<section id="concepts" class="level1">
+    <h2>Concepts</h2>
+
+    <section id="concept_boolean_search" class="level2">
+    <h3>Boolean search</h3>
+    </section>
+
+    <section id="concept_collection" class="level2">
+    <h3>Collection</h3>
+    <p>An AKT knowledge base consists of a number of components - the metadata, statements, sources, formal terms, etc.    All these components, with the exception of the metadata, have a number of similar items.    I'll call these collections of items.</p>
+
+    <p>When the user interacts with the knowledge base - to view it, or to add or modify it - much of this interaction involves working one or other of the collections.   In webAKT, these are primarily accessed via the KB menu: e.g. the Statements command or the sources command.</p>
+
+    <p>When you do this, webAKT opens up a window which show you a scrollable list of all the items in the collection.  This list is actually a table, with the columns being the ID for each item and possibly other properties.  For example, for statements, it might show the formal and English versions of each statement.</p>
+
+    <hr>
+    <p>Alternative...</p>
+    <p>An AKT knowledge base (AKT5 or webAKT) consists largely of collections of similar items - sentences, sources, formal terms, etc.</p>
+
+    <p>In AKT5, each of these is implemented separately: the window for displaying the collection of statements is separate from the window for displaying sources.</p>
+
+    <p>In webAKT, there is a single window type (a panel in webAKT speak) for displaying a collection, based on the premise that the operations the user wants to be able to do is the same for each collection: display its items, filter this display, create a new item, and display a selected item.   This means that the user has a similar experience in viewing any collection; it reduces the amount of code that needs to be maintained; and it simplifies the task of adding a new collection (e.g. "location") should the need arise.</p>
+    </section>
+
+    <section id="concept_diagram" class="level2">
+    <h3>Diagram</h3>
+    </section>
+
+    <section id="concept_filter" class="level2">
+    <h3>Filter</h3>
+    <p>When you go shopping on the web, it is very common to be able to filter some product according to some criteria (size, colour, price...).   It would be great if we could do the same thing for items in a collection.</p><p>
+
+    </p><p>In AKT5, the standard window for displaying a collection does not enable you to do this.  [Check]   Instead, one would need a User Tool, which may or may not have been developed, and would probably be limited in scope.</p><p>
+
+    </p><p>In webAKT, a filter mechanism has been implemented which closely matches the ones you see in a web store.   For each collection, there are a number of categories (corresponding to colour, size, price...), with each category having a number of options.   The user can choose one or more options from each category (or not use a category), and can choose one r more categories.   Options with a category are OR'd together, and categories are AND'd together (just like in a web store).</p><p>
+
+    </p><p>The same filter mechanism is available for all collections (it is implemented once, not for each collection), though the actual set of categories and options differs for each collection (the filters are different for statements than they are for sources).</p><p>
+    </p></section>
+
+    <section id="concept_formal_term" class="level2">
+    <h3>Formal term</h3>
+    <p>Statements are made up of two types of words.   The first are keywords which are part of the AKT language, such as “att_value”, “if” and “causes1way”.   The others are “formal terms”: words provided by the original source (perhaps moderated by the investigator) relating to specific aspects of their knowledge, such as the names of plants (such as “maize”, the names for attributes (such as “height”), and the values that attributes can take (such as “high”).  In general, these are nouns, except for the values of attributes, which can be adjectives.</p>
+
+    <p>For the knowledge base to be useful, It is important that formal terms are consistent, and as  unambiguous as possible.  However, different users may have a different understanding or concept of the same term.  For example ‘alley cropping’ may suggest to some a system where the tree component is made up of a single or multiple row of trees, whilst others envisage a system of dense hedgerows.  For this reason it is useful to be able to define exactly what is meant by the term in the context of a specific knowledge base.  This is the role of the “Definition” field for a formal term.</p>
+
+    <p>Conversely, there may be several words used for the same underlying concept, such as the local, English and scientific names for a plant, and even different local and English names.   In order to cater for these, AKT5 (and hence webAKT) supports the notion of <b>synonyms</b>.   Please see the separate note in the webAKT Reference Manual (Concepts) on Synonym.</p>
+    </section>
+
+    <section id="concept_hierarchy" class="level2">
+    <h3>Hierarchy</h3>
+    </section>
+
+    <section id="concept_image" class="level2">
+    <h3>Image</h3>
+    <p>Images were very difficult to work with in AKT5. They had to be bitmaps (who uses a bitmap these days?), and naming was tricky.</p>
+     
+    <p>In webAKT, images can be readily added simply by providing its URL.   This can either link to an image anywhere on the web, or to a file on one’s own PC.</p>
+
+    <p> Making an image and adding it to a knowledge base can be done very easily.  You can take a photo in the field, upload it to e.g. Instagram, and reference it in the KB, all in a matter of minutes.</p>
+
+    <p>Moreover, images take up no space in the KB file – all that is stored in the file is its URL.</p>
+
+    <p>Conversely, each item can be associated with multiple images, if the knowledge-base originator decides that would be useful.   These multiple images could either be displayed using a carousel-type display 9as currently happens in the formal_term_details panel), or could all be displayed 9in, say, a custom tool).</p>
+
+    <p>Like memos in webAKT, the image <b>ID</b> (<u>not</u> the image itself) is simply a property of the item it is associated with.  This means that the same image can be associated with more than one item.  However, unlike memos, but like statements, sources etc, images are managed as a collection, and have their own entry in the KB menu.   However, unlike all the other collections, images have their own panel for displaying them, since the tabuated listbox style used for oter collections is not appropriate for displaying thumbnails of the images in the collection.</p>
+
+     <p>Currently, only formal terms can have an image associated with them, but it would be easy to allow any type of item (e.g. a statement or a source) to have one or more, images associated with it.</p>
+    </section>
+
+    <section id="concept_listbox" class="level2">
+    <h3>Listbox</h3>
+    <p>The central element of the window (=panel) for displaying a collection is a scrollable list of all the items in the collection.</p>  
+
+    <p>In AKT5, this uses a built-in "control" (a user-interface component) which can only have a single term in it - basically the identifier for each item.</p>
+
+    <p>In webAKT, this has been replaced by a "listbox": a table, with one row for each item.   The columns in the table display the various properties for each item - e.g. for a statement, this could be its ID, its type (att_value or causal), and its formal and English versions.   Which columns are displayed is under both program and user control, so for example the table could be a simple list of IDs (as in AKT5) if that is what is wanted in a particular context.</p>
+
+    This radically improves the user's ability to work with collections.   Not only can they use the list to select an item, but they can view whatever properties they want for the whole collection (or a subset of it - see filters below).<p></p>
+    </section>
+
+    <section id="concept_memo" class="level2">
+    <h3>Memo</h3>
+    <p>A memo is a note attached to a particular item - a statement or a source, for example - explaining something about it.   For example, a source might have a memo giving additional information about the source, or a statement might have a memo explaining why the investigator chose a particular formal representation of the original statement.</p>
+
+    <p>Memos are handled in a quite different way in webAKT compared with AKT5.   In webAkT, a memo is simply a property of the particular item it is attached to, whereas in AKT5 a memo was a distinct type of item (forming a collection, in webAKT's terminology).</p>
+
+    <p>The reason for this change is two-fold.   First, in database-design terms, a memo really does seem to be like a property of an item, so why not simply add an extra field to the item to hold the memo (like any other property it has)?    Second, it is hard to see why any database user should want to see the "collection of memos", unlike a collection of sources or statements, since memos (at least, most memos...) only have meaning in relation to the particular item they are associated with.</p>
+
+     <p>There is another difference between webAKT and AKT5 which is worth noting in passing.    In AKT5, a special memo is used to capture model metadata.   This is done by giving this one memo (and no others) various fields (for project purpose, location etc), which are then used to populate the window giving background information (aka metadata) about the knowledge base.   This difference is not noticeable by the user, but does in my opinion hide the importance of recognising knowledge base metadata as an important concept in its own right.</p>
+    </section>
+
+    <section id="concept_metadata" class="level2">
+    <h3>Metadata</h3>
+    <p>The metadata for a knowledge base contains information <u>about</u> the knowledge base, such as its purpose, and the name of the investigators involved in the project.</p>
+
+    <p>In AKT5, the metadata information was simply held as a memo, albeit one which had various subfields for the different types of metadata.   In webAKT, the metadata is another top-level component, like statements and sources, the main difference being that, unlike the others, it is not a collection (containing various items), but a single item with various properties (fields).</p>
+
+    <p>The following are the fields that constitute the metadata for a knowledge base:
+    </p><ul>
+    <li>Title of this knowledge base: – Here the full title of the knowledge base should appear, for example, the full title of the ‘treefodd’ knowledge base is ‘Tree Fodder and Indigenous Knowledge in Nepal’.</li>
+    <li>What the knowledge base is about: – Here the area of local knowledge covered by the elicitation process should be described. 
+    </li><li>This knowledge base was developed by:– Here the name of the knowledge base developer(s) is(are) recorded.</li>
+    <li>Acknowledgements: here all acknowledgements are listed – to those, other than the developers, who assisted in the design and creation of the knowledge base and to any funding bodies that supported the project.</li>
+    <li>Purpose - If the knowledge base was built as part of a particular project, or designed to supplement work in a certain field, this can be recorded here.</li>
+    <li>Methods – Here information about the methods used for selecting the interviewees and collecting the knowledge may be described. 
+    </li><li>Location – Here information about the exact location of the communities visited can be recorded.</li>
+    <li>Timing of Knowledge Collection – The time of year, and the season that the knowledge collection was undertaken, may influence the knowledge elicitation process and should therefore be noted.</li>
+    <li>General Comments – Here any other pertinent pieces of information may be recorded.</li>
+    </ul>
+    </section>
+
+    <section id="concept_object_hierarchy" class="level2">
+    <h3>Object hierarchy</h3>
+    </section>
+
+    <section id="concept_panel" class="level2">
+    <h3>Panel</h3>
+    <p>The main part of the webAKT window is occupied by the <b>workspace</b>.   This is initially a large blank area, underneath the menus and toolbar at the top of the window.   Just about everything you do in webAKT involves displaying <b>panels</b> in the workspace. Think of each panel as a small window (in fact, they were called "windows" or "dialogue windows" in AKT5).</p>
+
+    <p>Each panel can be used to:
+    </p><ul>
+    <li>display information about the knowledge base that the user is interested in, and/or</li>
+    <li>allow the user to enter information or make some choice - a dialogue window.</li>
+    </ul>
+    The same panel can server both purposes.  For example, the <b>statement_collection</b> panel can <u>display</u> a set of statements, optionally filtered by the user; or can allow users to <u>select</u> an individual statement that they would like more detailed information on.  Similarly, the <b>statement_details</b> panel can be used to <u>display</u> everything that is known about a particular statement; to enable the user to <u>add to or modify</u> this information; or to <u>select</u> one of the sources for this statement to get more information on that source.<p></p>
+
+    <p>There are 3 main types of panel:
+    </p><ul>
+    <li>The <b>collection</b> type of panel presents all the items in a particular AKT collection.   For example, the <b>statement_collection</b> panel shows all the statement items in the knowledge base - the statement collection.  This always has the name xxx_collection, e.g. statement_collection.</li>
+    <li>The <b>details</b> type of panel gives more details about a particular item in a collection.   For example, the <b>statement_details</b> panel shows all the properties of a particular statement.  This always has the name xxx_details, e.g. statement_details.</li>
+    <li>Separately, there can be panels associated with various <b>tools</b> available in your version of webAKT.   These tools can be built in, provided by other people, or written by yourself.   Each too undertaks some form of analysis of the knowledge base which is not catered for by the standard xxx_collection and xxx_details panels.   For example, the <b>species_report</b> tool (a built-in tool) provides comprehensive information on a chosen species, including list of actual and derived statements that the species is associated with.  There is no standard way of naming these panels.</li>
+    </ul>
+    <p></p>
+
+    <p>It is quite common for users to create multiple panels of a particular type during a single webAKT session.   For example, you could open up several statement_details panels, one for each of several statements selected from the statement_collection panel.  In order for you to track these individually, the name of each panel is actually made up of its type (e.g. statement_collection) followed by a number,which indicaes the order in which it was created.   For example, <b>statement_collection_3</b> panel is the 3rd instance of the statement_collection panel created durng this particular webAKT session.</p>
+
+    <p>Please note an important distinction between AKT5 and webAKT.  In AKT5, there could only be one instance of a panel type open at any one time.    If you performed somee operation that displayed the same type of information, it would re-use the existing panel of thattype.   In webAKT, the default is that a new panel instance will be created each time you want to display a ceertain type of panel (e.g. statement_details).   This is useful for showing e.g. the detains of several statements on the screen at the same time, for side-by-side comparison etc.   But it does mean the the screen can rapdily become cluttered with panels, so you will probably want to close panels (using the <b>X</b>) from time to time.</p>
+
+    <p>All panels are created by the same code, and have a number of features in common.   These include:
+    </p><ul>
+    <li>A title bar, giving its name and the knowledge base (in brackets) that the information in the panel came from.</li>
+    <li>A Delete button (<b>X</b>).   This permanently deletes the panel, and removes its name from the list of panels at the top of the workspace.   Note that its sequence number (e.g. statement_collection_<b>3</b>) will not be re-used during this session.</li>
+    <li>A Minimise button (<b>_</b>).   This hides the panel so it is not visible in the wokspace, butthe panel still exists: you can open it up again by clicking on its name in the list of panels at the top of the workspace.</li>
+    <li>A Settings button (cogwheel).   This will allow you to set various setting that are specific to this panel, though currently this is not operational for any of the panel types.</li>
+    <li>Resizability.   All panels can be resized by dragging the bottom right corner, th eright-hand side, or the bottom.   Currently, this is not particularly useful, but eventually it will allow the contents to re-size as well.</li>
+    <li>Draggability.   Panels can be dragged around the workspace by dragging the title bar.</li>
+    <li>A panel which is partly hidden behind other panels can be brought to the front (or raised to the top depending on how you want to think about it), by clicking anywhere in the visible part of the panel.</li>
+    </ul>
+    <p></p>
+    </section>
+
+    <section id="concept_source" class="level2">
+    <h3>Source</h3>
+    <p>Statements need to be attributed to one or more sources.   This is essential for strengthening the credibility of individual statements.   It also allows the statement to be checked with the original source later on if, for example, it turns out to be inconsistent with a statement made by another source.    Further, it enables the investigator to exolore the relationship between individual sources and the statements they make.</p>
+
+    <p>webAKT, like AKT5, allows for two types of source:
+    </p><ul>
+    <li>An individual(typically, a local farmer) who provides the statement in the course of an interview; or</li>
+    <li>A published source, such as a journal paper.</li>
+    </ul>
+    The properties of a source are different for these two cases:<br>
+    For a person, it includes: the source's name, sex, age and ethnic origin; the interviewer's name; and the date and location of the interview.<br>
+    For a published source, it includes the publication's author(s), title, journal, volume etc
+    <p></p>
+
+    <p>AKT5 obliged the knowledge acquisition person to associate a statement with a source, and would not allow the statement to be added to the current knowledge base until this was done.   webAKT removes this obligation (though this decision could be reversed if required), but does allow the user to identify all statements that have not as yet had a source attached to them.</p>
+    </section>
+
+    <section id="concept_statement" class="level2">
+    <h3>Statement</h3>
+    </section>
+
+    <section id="concept_synonym" class="level2">
+    <h3>Synonym</h3>
+    In a knowledge base, there may be several words used for the same underlying concept, such as the local, English and scientific names for a plant, and even different local names.   In order to cater for these, AKT5 (and hence webAKT) supports the notion of <b>synonyms</b>.   
+
+    <p><b>From the AKT Manual:</b></p>
+    <div style="margin-left:40px;">
+    <i><p>The ‘synonyms’ option allows you to specify a synonym for a formal term.  An example of this might be the local name for a plant beside the common English name and the scientific Latin name.  For example, the tree with the common English name ‘shea butter tree’ has the scientific name Vitellaria paradoxa, and is also commonly known in English by its French name ‘karité’ whilst in the Hausa language in Nigeria it is known as ‘ka’danya’, in the Bambouk language in Senegal it is known as ‘toulou’. Thus a knowledge base developed on the shea butter tree in West Africa would need to record all the common synonyms for the tree.</p>
+     
+    <p>The synonym could also be for a value such as ‘decrease’ for ‘decline’ or a process such as ‘furrowing’ for ‘ploughing’.</p>
+     
+    <p>The reason it is important to have the synonyms option is that it permits you to draw on all available statements using the formal term or any of its synonyms and prevents accidental exclusion in a topic knowledge base because different terms have been used for the same object/process/value etc.</p></i>
+    </div>
+
+    <p>However, there are two major issues with synonyms in AKT5.   The first is that synonyms are “second-class citizens”: they are not listed in the glossary of formal terms, and they are not apparent when you look at a statement.   The second is that synonyms do not have a type (e.g. “english_name”, “scientific_name”).   (They can be given a numeric order in the list of synonyms for a formal term, and that can be used as a sort of typing mechanism, but that is an obscure way of achieving this goal.)</p>
+
+    <p>Both of these limitations are being addressed in webAKT.  This is still work in progress, but it will allow you to (for example) ask for a list of statements using the scientific name where possible; or mouse-over the terms in a statement to see the synonyms for each term; or see all synonyms listed when you ask for a list of formal terms.</p>
+    </section>
+
+    <section id="concept_topic" class="level2">
+    <h3>Topic</h3>
+    </section>
+
+    <section id="concept_topic_hierarchy" class="level2">
+    <h3>Topic hierarchy</h3>
+    </section>
+
+</section>  <!--End of Concepts section -->
+
+<!--- ======================================================================= ---->
+
+<section id="ref_menus" class="level1">
+    <h2>Menus</h2>
+
+    <section id="ref_file_menu" class="level2">
+    <h3>File menu</h3>
+    </section>
+
+    <section id="ref_kb_menu" class="level2">
+    <h3>KB menu</h3>
+    </section>
+
+    <section id="ref_diagram_menu" class="level2">
+    <h3>Diagram menu</h3>
+    </section>
+
+    <section id="ref_tools_menu" class="level2">
+    <h3>Tools menu</h3>
+    </section>
+</section>    <!-- End of Menus section -->
+
+
+
+
+
+<section id="ref_panels" class="level1">
+    <h2>Panels</h2>
+
+
+    <section id="ref_formal_term_collection" class="level2">
+        <h3>formal_term_collection</h3>
+        <p>Formal Terms, under the main KB menu brings up a glossary for all the formal terms in the knowledge base.  Selecting a formal term type (object, process, action, attribute, value, link and comparison) from the ‘Type’ box will bring up the glossary for that type (Figure 7.52).  Unlike object hierarchies, this glossary is flat - simply an alphabetical list of terms.  Foral terms are added to the glossary automatically during the process of entering a statement, or by the user explicitly creating a new formal term.</p>
+
+        <p>The Formal Terms panel has three parts to it.   
+
+        </p><ul>
+        <li>The listbox
+        The main part is a listbox, listing all the formal terms, or a subset of them.   This list is actually a table, with the additional column indicating the type of the formal term (e.g. object, attribute…).   In future versions of webAKT, the columns will be customisable, allowing other properties, intrinsic or calculated, of the formal terms to be added to the table, such as the number of statements each one occurs in.  Also, this list will be sortable by any of the columns.</li>
+
+        <li>The filter
+        At the top of the panel, a simple listbox enables you to select which type of formal term you want to be displayed. </li>  
+
+        <li>The buttons
+        There are 4 buttons for working with an individual formal term:
+
+        View: To view the details of a selected formal term.   First, select it from the listbox, then click this button.
+
+        New: Create a new formal term.   Only use this if you want to ad terms instead or or before they are picked up from statements.
+
+        Edit: To view and potentially edit the details of a formal term, e.g. add a description or specify a synonym.
+
+        Delete: For deleting a formal term from the glossary of formal terms.    
+        Deleting a formal term</li>
+        </ul>
+        <p></p>
+         
+        <p></p>These added terms may also be deleted by highlighting them in the ‘Formal Terms’ list and selecting Delete.  However, it is not possible to delete a formal term that still appears in a formal statement.  In order to remove a formal term which appears in a formal statement, the term must either be replaced, using the edit function in the Statements menu (see above, 7.4.4) or by deleting the statement altogether, using the Delete function in the Statements menu (see above 7.4.5). <p></p>
+
+        <p>The first 3 buttons call up the same panel, the formal_term_details panel, the only difference being that it’s appearance and the operations you can perform are slightly different for each of the 3 modes.</p>
+
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_formal_term_collection_1.gif">
+        </div>
+    </section>
+
+
+
+
+    <section id="ref_formal_term_details" class="level2">
+        <h3>formal_term_details</h3>
+
+        <p>The formal_term_details panel can open in one of 3 modes (New, View or Edit), depending on the action the user took which led to it being opened.   Typically, the user would have been visiting the formal_term_collection panel, and clicked one of the 3 buttons New, View or Edit.  There are small but significant differences in appearancedepending on the mode, as explained below.</p>
+          
+         
+        <h4>Mode: New. Creating a new formal term</h4>
+
+        <p>In New mode, the user can edit all the fields, and there is an Update button, but all the fields are initially empty.</p>
+
+        <p>You will probably not find yourself using this mode for formal terms.    The reason is that, normally, formal terms are created automatically, when you enter a statement, as described in the documentation for the statement_details panel.   webAKT does this by analysing the grammatical structure of the statement to determine the grammatical type of each term (e.g. object, attribute, process…), and adds it to the formal terms glossary.  You can subsequently edit this (see the text on the Edit mode).</p>
+
+        <p>However, the New mode for this panel allows you to add new formal terms, unattached to statements, to the formal term glossary.   This is particularly useful for objects and object hierarchies, since you might want to build up a glossary of common terms before, or in parallel with, entering statements.</p>
+
+        <p>First, check the list of formal terms to see whether this term, or a suitable equivalent, already exists in the formal term glossary.   You do this by openig u the formal_term_collection panel (KB &gt; Formak terms).   If it doesn’t, click on the New button.   This opens up a formal_term_details panel, and you can then provide a name, description, etc, and specify its type.</p><p>
+
+        </p><p>Once you are satisfied with the entry, do not forget to click the Update button to add the new formal term to the knowledge base.</p>
+         
+
+        <h4>Mode: View.   Viewing a formal term</h4>
+        The View mode allows you to see details of a formal term without being able to change them - there is no Update button, and you cannot edit any of the fields.   This could be useful if you want to make sure that you do not inadvertingly make some change.  This mode could alos be useful if you want to allow the user to explore a knowledge base without being able to make any changes - e.g. in a teaching context - in whoch case a global setting forView mode could be set.<p></p>
+
+        <p>The panel displays the formal term type, its definition and any synonyms there may be.</p>
+
+        <p>If you click on the Statements button, the statement_collection panel appears, showing all the statements in which the formal term appears.</p>  
+
+        <p>If you click on the Hierarchies button, and the formal term refers to an object and it's in a hierarchy, then a hierarchy_details panel appears for the relevant hierarchy, showing the formal term's position in the hierarchy.</p>
+
+         
+         
+         
+        Figure 7.56  ‘New Formal Term’ dialog box 
+         
+        The new ‘Formal Term’ is typed into the top box.  The ‘Glossary of all formal terms’ exists to enable you to check that the term, or something similar, is not already in the knowledge base.  You select the formal term type from the drop-down menu in the ‘Type’ box.  The ‘Definition’ box enables you to add a precise definition of the term as it is to be understood in the context of the present knowledge base.   
+         
+        When finished, press Save.  A message will then appear, ‘Do you wish to add the formal term to the Kb?’ (as it does whenever you introduce a new formal term when you create a new statement).  Press Yes, whereupon a message appears to confirm that the new term has been saved. 
+         
+        If you attempt to add a term which already exists in the knowledge base, a message appears ‘A term with the same name already exists in the kb’. 
+         
+        By pressing Save in the ‘New Formal Term’ box, you will only save the new term in the currently-loaded knowledge base, though this, like all other operations that change the knowledge base, is backed up (in what is called Local Storage) whenever you make a change, and will be re-loaded automatically when you re-visit webAKT.  To save it permanently to file, it is necessary to select Save KB as under the main  File menu, and select the file you want.  For security reasons, JavaScript does not allow you to have a simple Save operation.
+         
+
+        Editing a formal term
+         
+        <h3>formal_term_details</h3>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_formal_term_details_new.gif">
+        </div>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_formal_term_details_view.gif">
+        </div>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_formal_term_details_edit.gif">
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_image_collection" class="level2">
+        <h3>image_collection</h3>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_image_collection_1.gif">
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_image_details" class="level2">
+        <h3>image_details</h3>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_image_details_new.gif">
+        </div>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_image_details_view.gif">
+        </div>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_image_details_edit.gif">
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_metadata" class="level2">
+        <h3>metadata</h3>
+        <h4>Viewing and editing the knowledge base metadata</h4>
+
+        <p>When creating a new knowledge base, or opening an existing one, the Metadata panel appears automatically.  It can also be accessed by selecting Metadata in the main KB menu.</p>
+         
+        <p>The Metadata panel serves as an introduction to the knowledge base.  The reason it appears as you open the knowledge base is to give users, other than the knowledge base developer, an immediate general understanding of the knowledge base, thus facilitating access to and manipulation of that knowledge.</p>
+
+        <p>The Metadata panel, like all other panels in the webAKT desktop, can be closed by clicking the X button in the top-right of the panel.</p>
+
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_metadata_2.gif">
+        </div>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_metadata_1.gif">
+        </div>
+        <p>Each section of the Metadata panel (Fig. XXX) is self explanatory: 
+        </p><ul><li>Title of this knowledge base: – Here the full title of the knowledge base should appear, for example, the full title of the ‘treefodd’ knowledge base is ‘Tree Fodder and Indigenous Knowledge in Nepal’.</li>
+        <li>What the knowledge base is about: – Here the area of local knowledge covered by the elicitation process should be described.</li>
+        <li>This knowledge base was developed by:– Here the name of the knowledge base developer(s) is(are) recorded.</li>
+         
+        <li>Acknowledgements: here all acknowledgements are listed – to those, other than the developers, who assisted in the design and creation of the knowledge base and to any funding bodies that supported the project.</li>
+        <li>Purpose - If the knowledge base was built as part of a particular project, or designed to supplement work in a certain field, this can be recorded here.</li>
+        <li>Methods – Here information about the methods used for selecting the interviewees and collecting the knowledge may be described.</li>
+        <li>Location – Here information about the exact location of the communities visited can be recorded. </li>
+        <li>Timing of Knowledge Collection – The time of year, and the season that the knowledge collection was undertaken, may influence the knowledge elicitation process and should therefore be noted.</li>
+        <li>General Comments – Here any other pertinent pieces of information may be recorded.</li>
+        </ul>
+        <p></p>
+
+        <p>When you create a new knowledge base, you should enter details in the relevant boxes, then click on the Update button.   If you are looking at a knowledge base that you have loaded from a file, or accessed over the internet, you can edit the data, which will then be saved in your local version of the knowledge base file when you click the File &gt; Save as… option.</p>
+
+    </section>
+
+
+
+
+
+    <section id="ref_object_hierarchy_collection" class="level2">
+        <h3>object_hierarchy_collection</h3>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_object_hierarchy_collection_1.gif">
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_object_hierarchy_details" class="level2">
+        <h3>object_hierarchy_details</h3>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_object_hierarchy_details_edit.gif">
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_source_collection" class="level2">
+        <h3>source_collection</h3>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_source_collection_1.gif">
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_source_details" class="level2">
+        <h3>source_details</h3>
+        <h4>Human source</h4>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_source_details_new.gif">
+        </div>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_source_details_view.gif">
+        </div>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_source_details_edit.gif">
+        </div>
+        <h4>Reference source</h4>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_source_details_new_ref.gif">
+    </div></section>
+
+
+
+
+
+    <section id="ref_statement_collection" class="level2">
+        <h3>statement_collection</h3>
+        <h4>Viewing, creating and editing statements</h4>
+
+        <p>The core of an AKT knowledge base is its collection of statements.    This section describes the user interface in webAKT for entering new statements, and for viewing and editing statements.  It does not go into the rules for formulating statements according to the AKT grammar: that is quite involved, and is covered in a separate document. </p> 
+
+        <p>Having said that, webAKT does provide a “wizard” to make it easier to formulate statements, in the form of a set of templates matching AKT’s statement grammar, with slots for particular nouns in the statement.    This accessed via the Template button in the panel used for creating a new statement.  So even if you have not acquainted yourself with AKT’s grammar, you can still get started by entering made-up statements which are syntactically correct (i.e. which conform with AKT’s grammar), to familiarise yourself with the procedure for entering statements.</p>
+
+
+        Displaying all statements
+        <p>The statements in the knowledge base are displayed in the Statements panel, which is invoked using the KB &gt; Statements command.  If you are starting a new knowledge base, this panel will be empty as in Figure XXX.  If you are adding statements to an existing knowledge base, the statements previously entered will be listed in the ‘All Statements’ listbox as in Figure XXX.</p>
+
+
+
+        <p>The information shown in this listbox is customizable.   Currently, it shows the statement ID, and the formal and quasi-English versions of each statement.   This will be extended with options to allow the user to choose which properties of each statement should be displayed.</p>
+
+        Filtering the statements
+        <p>webAKT provides a simple yet powerful method for filtering the statements (i.e. selecting a subset of them according to user-defined criteria).    This makes use of a mixture of checkboxes and listboxes.</p>
+
+        <p>The five checkboxes relate to the type of statement, and statements are included if the corresponding checkbox is ticked.   The types are:
+        </p><ul>
+        <li>att_value, causal or comparison statements; and</li>
+        <li>non-conditional or conditional statements.</li>
+        </ul>
+        <p></p>
+
+        <p>The three listboxes relate to particular properties of the statement, and statements are restricted  to those that satisfy the specified criteria, i.e. that you selec from the listbox menu.   The three criteria are:
+        </p><ul>
+        <li>statements that contain a specified formal term;</li>
+        <li>statements that were provded by a specified source; and/or</li>
+        <li>statements that are relevant to a specified topic.</li>
+        </ul>
+        If one or more of these filters is left unchecked, then that criterion does not apply.
+        <p></p>
+
+        <p>Note that the filtering is applied immediately, as soon as you check or uncheck a checkbox, or change the specified restriction value.
+
+        Working with individual statements
+        </p><p>The Statements panel provides 4 buttons for working with individual statements:
+        </p><ul>
+        <li>New: Opens up a new panel for entering a new statement.</li>
+        <li>View: Opens up a new panel for viewing (read-only) the details of a selected statement.   The statement must first be selected from the listbox.</li>
+        <li>Edit: Opens up a new panel for editing the details of a selected statement.   The statement must first be selected from the listbox.</li>
+        <li>Delete: Deletes a selected statement.  The statement must first be selected from the listbox.</li>
+        <li>Select all: Selects all statements in the statement listbox.</li>
+        <li>Deselect all: Deselects all statements in the statement listbox.</li>
+        <li>Invert: Inverts the selection status of each statement in the statement listbox.</li>
+        </ul>
+        <p></p>
+
+        <p>The first 3 open up the same panel type – a ”statement_details” panel.   The exact contents of this panel depends on which mode (new, view or edit) you choose.   See the Reference Manual page <span style="color:black;background:yellow;">[[provide link]]</span> for the statement_details panel for more information on these three modes.</p>
+
+        <p>Note that the selection buttons only apply to the statements in the listbox, i.e. <u>after</u> filters have been applied - not to all the statements in the knowledge base.   So doing "Select all" after applying one or more filters is a powerful way of selecting all statements that satisfy some set of filters.  If you then clear the filters, then those statements will remain selected in the list of all statements.</p>
+
+        <p>The following sections detail how to work with each option.</p>
+
+
+
+
+
+	         	 
+
+
+         
+         
+         
+        Figure 7. 15 ‘Statements’ dialog box 
+         
+        will appear (Figure X), requesting information on the ‘Information Source’. 
+         
+
+
+
+        <p>The following will be handled in the KB &gt; Sources section.  Just make a brief reference to it here.</p>
+
+
+         
+        Figure 7.7  Information  dialog box 
+
+
+        Deleting a statement
+         
+        <p>In order to delete a statement, enter Statements via the main KB menu and highlight the statement you wish to delete.  The statement will appear in the ‘Selected Statement’ box.  Then press Delete.  A message will appear, giving the natural language translation of the statement to confirm whether you really want to delete that statement (Figure 7.24). </p>  
+         
+	         	 
+          
+        Figure 7.24  Message requesting you to confirm whether Figure 7.25  Message you wish to delete the highlighted statement confirming that the statement 
+	         	has been deleted 
+         
+        <p>If Yes is selected, another message appears (Figure 7.25) confirming that the statement has been deleted.</p>
+         
+        <p>If you wish the statement to be permanently deleted from the knowledge base, you must save the knowledge base after deleting the statement. </p>
+         
+         WARNING 
+        <p>Any formal terms associated with the statement will be deleted unless they are also used in other statements.</p>
+
+
+        <div class="screenshot">
+        </div>
+        <img src="./reference_manual_no_contents_files/zoom75_statement_collection_1.gif">
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_statement_collection_2.gif">
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_statement_details" class="level2">
+        <h3>statement_details</h3>
+
+
+        Creating a new statement
+         
+        <p>In order to enter a new statement select New in the Statements panel</p>
+
+        <p>Figure 7.11 is an example of a newly entered statement.</p>
+         
+
+         
+        Figure 7.11  The ‘New Statement’ dialog box 
+         
+
+        <p>All unitary statements have to be entered using the formal language (AKT Manual, Chapter 4.2), in the ‘Formal Language Statement’ box.   As you type the statement, the syntax of the statement is checked character-by-character.   If it is incomplete or incorrect, then a red bar appears at the right of the edit box.   If the statement entered so far is syntactically correct (according to the AT grammar), then the bar changes to green.</p>
+
+        <p>Note the statement may be syntactically correct even if you have not finished it, e.g. if you are going to add a conditional clause (starting with “if”) after the main part of the statement.</p>
+
+        <p>The formal statement must conform to the grammar described in the AKT Manual, chapter 4.2.  If you receive any error messages then either the structure of the statement does not conform to the formal grammar, or one of the reserved terms (e.g. att_value) is misspelt. </p>
+
+        Translating the statement into English
+        <p>Once the formal language statement has been correctly entered, select Translate from the ‘New Statement’ dialog box for a natural language translation of the formalized statement.  The natural language statement generated (Figure 7.14) will be stylised and will not always read smoothly or be grammatically correct.   It should, however, make sense and express the meaning of the unitary statement unambiguously. </p>
+         
+
+         
+        Figure 7.14  Translation of the formal statement into natural language 
+         
+        Adding the statement to the current knowledge base
+        <p>When you are satisfied with the statement, press Update.   Please note that this only updates the current knowledge base in the webAKT application.   The programme automatically adds it to the updated  ‘Statements’ panel (Figure X) from which  all existing statements can be accessed.   To save it in the knowledge base permanently you must select Save as under the File menu. </p>
+
+
+        Linking words in the statement to the glossary of formal terms
+        <p>If your statement includes any formal terms new to the knowledge base, webAKT will automatically determine the type (grammatical role) of the formal term from its position in the statement, and will automatically create a new formal term with this name and type.   [Note: AKT5 asked you to confirm that you want the new formal term(s) to be created – I will add this in at a later date.]</p>
+
+
+        Associating a statement with one or more sources 
+        <p>In webAKT, you may, but do not have to, associate a statement with a source when you create the statement.   This is a marked departure from AKT5, where you had to do this with one source before you could add the statement to the knowledge base.   (If you wanted to include more than one source, you had to do that as a separate operation.)</p>
+
+        <p>The reason for this decision is to avoid interrupting the flow of adding statements by forcing the knowledge base creator to divert and create a new source.   Sources can always be added afterwards, and indeed webAT easily allows you to find all statements that do not have a source specified.</p>
+
+        <p>If you do not like this approach, then you can always add information about your sources first: then associating them with a statement is easy.   (Alternatively, you can complain, and webAKT can be changed to emulate the AKT5 behaviour.)</p>
+
+        <p>To add associate a statement with a source that already exists, click on the Add source button.  If the Sources panel is not already open, then it will appear.   Then click on the relevant entry in the Sources panel listbox, and it will be added in the Source listbox for this particular statement.  You can then click on additional sources if they have also expressed this statement.</p>
+
+        <p>To detach a source from a statement, click on the Detach source button, then click on the relevant source in the Sources listbox for this particular statement (not in the listbox in the main Sources panel).</p>
+         
+
+        Viewing a statement
+
+        <p>See first tutorial.</p>
+
+        Editing an existing statement
+         
+
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_statement_details_new.gif">
+        <div class="screenshot">
+        </div>
+        <img src="./reference_manual_no_contents_files/zoom75_statement_details_view.gif">
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_statement_details_edit.gif">
+        </div>
+    </div></section>
+
+
+
+
+
+    <section id="ref_summary" class="level2">
+        <h3>summary</h3>
+        <h3>Summarising the contents of the knowledge base</h3>
+
+        <p>This command, new to webAKT, in the KB menu provides a quantitative summary of the various components of the knowledge base – for example, the number of statements and sources.  The headings are the same as in the KB menu itself, and each heading provides a link to the same Panel accessed through the KB menu.</p>
+
+        <p>Like many other panels, this panel is “live”, meaning that it updates automatically whenever the knowledge base is changed, for example by adding a statement.</p>   
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_summary_1.gif">
+        </div>
+    </section>
+
+
+
+
+    <section id="ref_topic_collection" class="level2">
+        <h3>topic_collection</h3>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_topic_collection_1.gif">
+        </div>
+    </section>
+
+
+
+
+    <section id="ref_topic_details" class="level2">
+        <h3>topic_details</h3>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_topic_details_new.gif">
+        </div>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_topic_details_view.gif">
+        </div>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_topic_details_edit.gif">
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_topic_hierarchy_collection" class="level2">
+        <h3>topic_hierarchy_collection</h3>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_topic_hierarchy_collection_1.gif">
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_topic_hierarchy_details" class="level2">
+        <h3>topic_hierarchy_details</h3>
+        <div class="screenshot">
+        <img src="./reference_manual_no_contents_files/zoom75_topic_hierarchy_details_edit.gif">
+    </div></section>
+
+
+</section>
+
+</div>
+
+
+
+</body></html>

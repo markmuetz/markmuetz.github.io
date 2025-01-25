@@ -1,0 +1,117 @@
+// AKT Formal Grammar, in PEG.JS format.
+// Derived from the AKT "Definite Clause Grammar" given in Table 4.1 of the AKT5 manual.
+// This involved very little work.   I copied the text as-is, and pasted it into
+// the online PEG.JS parser-generator, at https://pegjs.org/online.
+// I then did the following changes until it worked!
+// Changed from having one line for each sub-rule to multiple lines,
+//     for each non-terminal, separated by / (i.e. "or").
+// Added in a regular expression for text atoms: [a-zA-Z_ ]
+// Added in a regular expression for numbers: [a-zA-Z_ ]
+// Added in Statement1 (to avoid confusion between 'sentence' and 'statement'), and
+//     added in FormalConditions1 (to avoid peg.js complaining about infinite loop).
+// Corrected a mistake in Table 4.1 (Process_bit instead of ProcessBit).
+// Changed ordering of sub-rules for 'object' (otherwise it failed on original first one,
+// even though second one was valid).
+
+// Best hint: If a rule with multiple parts doesn't work when you think it should,
+// put more complicated part before simpler part.   See the Object rule for an example.
+
+// Test statement that parses OK: 
+// att_value(part(nyanya,leaf),presence,in_soil)
+// att_value(part(nyanya,seed),presence,in_soil) causes1way att_value(nyanya,appearance,first) if action(clearing,nfofoa_kwae)
+
+// NOTE!!!
+// You have to change the default first line:
+// module.exports = /*
+// to:
+// window.statementParser = /*
+
+// NOTE!!!
+// The original .js parser file for each version is numbered, and saved in 
+// webakt/devjs/parsers
+// as 
+// statement_parserX.js
+// where X is the version number.  This is edited, as in note above, and copied to
+// statement_parser.js
+// in the same directory, as the current version, and so the code used by wekabkt. 
+
+// 4/3/2023 Modified to allow atoms (usually,formal terms) to contain digits.
+// Oddly, the expression for this is
+// Atom = chars:[a-zA-Z_0-9]* {return chars.join("")}
+// which is incorrect, since it allows the first character to be a digit of an underscore.  But
+// adding an initial [a-zA-Z]  gives the error "chars.join() is not a function".
+// I don't know what to do about it, so just gone with it, it's no big deal to have the slightly more
+// permissive rule.
+
+// 10/4/2023 Made a range of changes, to fix up errors in the grammar and to enable it to 
+// handle a wider range of cases.   Main outstanding area seems to be various situations
+// in which not() can appear, e.g. for causal statements, and actions and processes.
+// Currently just 16 statements from Atwima do not parse.
+//
+// IMPORTANT NOT: As a temporary measure, I manually edited the test KB file (atwima_anon_formal.js)
+// to get it to parse.   The changes are:
+// - to remove spaces in values which have them, e.g. 1 week, replacing them with underscores.  NOTE
+//   that this also requires changing the entries in the formal_terms section.
+// - to replace the peculiar artefactual way that ranges are represented, putting them into the form that
+//   is in the original AKT grammar - range(A,B) - and indeed which the parser has been programmed
+//   to handle.   
+// **TODO** Ensure that the Atwima and Ego KB files are fixed permanently, and saved correctly.
+
+
+Statement = statementHead:StatementHead " if " conditions:Conditions { return ["if",statementHead,conditions] }
+    / StatementHead
+StatementHead = cause:CauseX _ causeType:("causes1way" / "causes2way") _ effect:EffectX  { return [causeType,cause,effect] }
+    / AttributeStatementX
+    / "link" "(" "influence" __ Thing __ Thing ")"
+    / "link" "(" Link __ Object __ Object ")" 
+    / "link" "(" Link __ ProcessBit __ ProcessBit ")" 
+    / "link" "(" Link __ ProcessBit __ Object ")" 
+    / "comparison" "(" attribute:Attribute __ object1:Object __ comparison:Comparison __ object2:Object ")" { return ['comparison',attribute,object1,comparison,object2]}
+Conditions = condition1:Condition " and " condition2:Condition {return ["and",condition1,condition2]}
+    / condition1:Condition " or " condition2:Condition {return ["or",condition1,condition2]}
+    / Condition
+Condition = ActionBit
+	/ StatementHead
+    / ProcessBit
+AttributeStatementX = "not" "(" attribute_statement:AttributeStatement ")" { return ["not",attribute_statement]}
+	/ AttributeStatement
+AttributeStatement = "att_value(" object:Object "," attribute:Attribute "," value:Value ")" {return ['att_value',object,attribute,value]}
+	// "att_value(part(" object1:Object "," object2:Object ")," attribute:Attribute value:Value ")" {return ['att_value',['part',object1,object2],attribute,value] }
+	/ "att_value(" process:ProcessBit __ attribute:Attribute __ value:Value ")" {return ['att_value',process,attribute,value]}
+    / "att_value(" action:ActionBit __ attribute:Attribute __ value:Value ")"  {return ['att_value',action,attribute,value]}
+CauseX = "not" "("  cause:Cause ")"   { return ["not",cause]}
+	/ Cause
+Cause = AttributeStatement
+    / ProcessBit
+    / ActionBit
+    / Object
+ActionBit = "action(" action:Action __ object1:Object __ object2:Object ")" { return ['action',action,object1,object2]}
+    /  "action(" action:Action __ object1:Object ")" { return ['action',action,object1] }
+EffectX = "not" "("  effect:Effect ")"   { return ["not",effect]}
+	/ Cause
+Effect = AttributeStatement
+    / ProcessBit
+    / ActionBit
+ProcessBit = "process" "(" object1:Object __ process:Process __ object2:Object ")" {return ['process',object1,process,object2]}
+    / "process" "("object:Object __ process:Process ")" { return ['process',object,process]}
+    / "process" "(" process:Process ")" {return ['process',process]}
+Thing = Object
+    /  ProcessBit
+Attribute = attribute:Atom  {return attribute}
+Process = Atom
+Link = Atom
+Object = "part(" object1:Atom "," object2:Atom ")" { return ["part",object1,object2]; }
+    / Atom
+    //object1:Object "," object2:Object ")," {return ['part',object1,object2] }
+Action = Atom
+Comparison = ("greater_than" / "less_than"/ "same_as" / "different_from")
+Value = ("increase" / "decrease" / "change" / "no_change")
+    / "range" "(" Value __ Value ")"  
+    / Atom
+    / Number // TODO Where Number is either a floating point number or an integer
+Atom = chars:[a-zA-Z_0-9<>%.]* {return chars.join("")}
+Number = [0-9]*
+
+_  = [ \t\n\r]*  // Zero or more whitespace characters
+__ = "," _ {return null}      // A comma followed by zero or more whitespace characters// Simple Arithmetics Grammar
+

@@ -1,0 +1,51 @@
+Parsing, representing and translating AKT statements in webAKT
+Robert Muetzelfeldt
+April 2023
+
+These notes describe three inter-related topics:
+
+1. How we check that statements entered by the user (or provided in a knowledge-base file) are correct.   
+Currently, 'correct' only applies to their syntax - i.e. that they conform to AKT's grammar.  The process for doing this is called parsing.  In the future, the checks on the statements will be extended to their semantics - i.e. that the ame of an of an object appears where we expect an object.
+
+2. How statements are represented internally in webAKT.    
+In AKT5, there is no distinction between the formal text form of a statement (i.e. as entered by the a researcher in AKT's formal notation) and the internal representation of that statement - they are both Prolog.   It would be highly inefficient to do this in JavaScript, since JavaScript does not natively use Prolog's symbolic representation, so we would need to manipulate the statement held as a text string every time we wanted to process it.  Instead, we used a notation called JSON, which allows all the terms (words) in a statement to be represented individually in a data structure which is essentially a nested array.   This greatly facilitates any processing of statements.
+
+3. How we convert between the various representations of a statement.
+We need to be able to convert to and from AKT's formal (Prolog) syntax and the internal (JSON) notation.   We also need to be able to convert statements into other forms - e.g. the stylised English used to present statements to non-AKT-trained users, and to and from a diagrammatic form for causal statements.   In webAKT, the JSON format is the core one, with all conversions being done into or out of this one.
+
+EXAMPLE
+
+Here is a simple attribute-value from the Atwima KB, in AKT's formal (Prolog) syntax:
+att_value(part(asase_kokoo,abuo),presence,erratic)
+which we can read as
+"the presence of the abuo part of asase_kokoo is erratic"
+where:
+- assase_kokoo and abuo are objects,
+- presence is an atribute, and
+- erratic is a value.
+
+The corresponding JSON form for this statement is:
+["att_value",["part","asase_kokoo","abuo"],"presence","erratic"}
+To get this, we have done 2 simple operations:
+- enclosed every word in double-quotes, the make it into a JSON (and JavaScript) string; and
+- changed every Prolog clause, with a predicate and n arguments, into an array, enclosed in [...], with n+1 elements.  
+So:
+- part(asase_kokoo,abuo) becomes ["part","asase_kokoo","abuo"], and
+- att_value(X,presence,erratic) becomes ["att_value",X,"presence","erratic"], where X is the 'part' array.
+Don't worry, the user of webAKT does not have to read or write this format - it is purely for internal use.  But I mention it here to convey the very close mapping between the two formats.
+
+
+PARSING
+A mentioned at the start, we need to ensure that statements entered by the user (in AKT's formal Prolog syntax) conform to AKT's grammar.   This grammar is specified precisely in Chapter 4 of the AKT5 Manual, in Table 4.1, and is included below for completeness.   
+
+In order for a grammar to be of any use, it needs to be accessed by a parser, which is capable of checking whether a particular statement (or set of statements, actually conforms to the grammar.   There are numerous parsing strategies, each of which will have various parsers implemented.   I have used a parsing strategy call PEG (Parsing Expression Grammar), and a software tool called PEG.js, which is a avaScript implementation of the PEG strategy.   It is somewhat more restrictive than a parser written in Prolog (for example, it does not support bcktracking), but is still a powerful and widely-used tool.   It also has the major benefit that, as well as being used for parsing, it can generate an alternative representation of the statements - in or case, JSON.   More on that later.
+
+[Aside: Technically, PEG.js is a "parser generator", in that it generates code which is actually used to do the parsing, but we'll skip over that for now.]
+
+
+USING PEG.JS
+
+The aim of these notes is to enable anyone else to update the grammar and re-generate the JavaScript file which actually does the parsing.  This file needs to replace the current version of it which ships with webAKT.   
+
+
+

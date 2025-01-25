@@ -1,0 +1,42 @@
+<html>
+<head>
+<!-- webAKT API: classes -->
+<script src="../js/classes/Kb.js"></script>
+<script src="../js/classes/FormalTerm.js"></script>
+<script src="../js/classes/ObjectHierarchy.js"></script>
+<script src="../js/classes/Source.js"></script>
+<script src="../js/classes/Statement.js"></script>
+<script src="../js/classes/Topic.js"></script>
+<script src="../js/classes/TopicHierarchy.js"></script>
+<script>
+    let kb1 = new Kb({author:'Robert Muetzelfeldt',date:'17 Oct 2021'});
+
+    let statement1 = new Statement({formal:'att_value(grass,height,low)'});
+    let statement2 = new Statement({formal:'att_value(tree,height,high)'});
+    kb1.addStatement(statement1);
+    kb1.addStatement(statement2);
+
+    let source1 = new Source({id:'fred_smith_2021',name:'Fred Smith',year:2021,month:'March'});
+    let source2 = new Source({id:'mary_jones_2021',name:'Mary Jones'});
+    kb1.addSource(source1);
+    kb1.addSource(source2);
+    statement1.addSource(source1);
+    statement2.addSource(source1);
+    statement2.addSource(source2);
+    source2.year = 2020;
+    source2.month = 'June';
+
+    console.debug('Kb       : ',kb1);
+    console.debug('Statement: ',statement1);
+    console.debug('Statement: ',statement1);
+    console.debug('Source   : ',source1);
+    console.debug('Source   : ',source2);
+</script>
+
+</head>
+
+<body>
+    <div id="workspace"></div>
+</body>
+</html>
+

@@ -1,0 +1,776 @@
+<html>
+<head>
+        <meta charset="utf-8">
+<!--meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'-->
+
+<!--link rel="stylesheet" type="text/css" href="../css/paper1.css" /-->
+
+<link type="text/css" rel="stylesheet" href="css/w3.css">
+<link type="text/css" rel="stylesheet" href="css/webakt.css" title="default">
+
+<!--link type="text/css" rel="alternative1_stylesheet" href="../css/webakt_1.css" title="alternative1"-->
+
+<link type="text/css" rel="stylesheet" href="css/joint.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="css/jstree/style.css" />
+<link rel="stylesheet" href="css/json-viewer.css" />
+<link rel="stylesheet" href="css/treetable.css" />
+<link rel="stylesheet" href="css/treetable.theme.default.css" />
+
+<script src="js/webakt.js"></script>
+
+<style>
+.panel{display:none;}
+div.content {left:0px; top:20px;}
+#welcome {display:block;}
+.dialog_id {display:none;}
+.control_id {display:none;}
+
+table.sortable thead {
+    background-color:red;
+    color:blue;
+    font-weight: bold;
+    cursor: default;
+}
+</style>
+<!--script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script-->
+<script src="libraries/jquery-3.5.0.js"></script>
+<script src="libraries/jquery-ui.js"></script>
+
+<!-- Scripts for  JointJS diagramming -->
+<script src="libraries/d3v4.js"></script>   <!-- Needed for cola.js -->
+<script src="libraries/jointjs/lodash.js"></script>
+<script src="libraries/jointjs/backbone.js"></script>
+<script src="libraries/jointjs/joint.js"></script>
+<script src="libraries/sorttable.js"></script>
+<script src="libraries/jstree.min.js"></script>
+<script src="libraries/springy.js"></script>
+<script src="libraries/svg-pan-zoom.min.js"></script>
+<script src="libraries/toUnicodeVariant.js"></script><!--script src="js/springyui.js"></script-->  
+<script src="libraries/treetable.js"></script>
+
+
+<!-- webAKT main codebase -->
+<script src="js/akt5.js"></script>
+<script src="js/akttools.js"></script>
+<script src="js/dialog_handlers.js"></script>
+<script src="js/dialog_openers.js"></script>
+<script src="js/hierarchies.js"></script>
+<script src="js/event_record.js"></script>
+<script src="js/json-viewer.js"></script>
+<script src="js/macros.js"></script>
+<script src="js/menu_manager.js"></script>
+<script src="js/menu_handlers.js"></script>
+<script src="js/menus.js"></script>
+<script src="js/process_statement.js"></script>
+<script src="js/webakt1.js"></script>
+<script src="js/collection_specs.js"></script>
+<script src="js/FileSystemAccessAPI.js"></script>
+
+<!-- The webAKT statement parser -->
+<script src="js/parsers/parser.js"></script>
+
+
+<!-- webAKT API: classes -->
+<script src="js/classes/Action.js"></script>
+<script src="js/classes/ActionList.js"></script>
+<script src="js/classes/Kb.js"></script>
+<script src="js/classes/Diagram.js"></script>
+<script src="js/classes/FormalTerm.js"></script>
+<script src="js/classes/Hierarchy.js"></script>
+<script src="js/classes/Image.js"></script>
+<script src="js/classes/Listbox.js"></script>
+<script src="js/classes/Source.js"></script>
+<script src="js/classes/Statement.js"></script>
+<script src="js/classes/Termx.js"></script>
+<script src="js/classes/Topic.js"></script>
+<script src="js/classes/Panel.js"></script>
+
+
+<!-- Widgets -->
+<script src="widgets/dialog_Generic.js"></script>    <!-- Generic widget for the specific
+    "widgettes" held in widgets/code.  -->
+
+
+<!-- Original Tools -->
+<script src="tools/species_report.js"></script>
+
+<!--
+<script src="widgets/boolean_search.js"></script>
+<script src="widgets/glossary.js"></script>
+<script src="widgets/display_hierarchy.js"></script>
+<script src="widgets/hierarchic_objects_usage.js"></script>
+<script src="widgets/knowledge_base_report.js"></script>
+<script src="widgets/species_report.js"></script>
+<script src="widgets/sources_table.js"></script>
+<script src="widgets/statements_summaryXXX.js"></script>
+<script src="widgets/topic_summary.js"></script>
+<script src="widgets/user_text.js"></script>
+-->
+<!-- 
+https://en.wikipedia.org/wiki/File_URI_scheme
+For Windows, seems to be 
+    <script src="file://localhost/c:/akt/tool1.js"></script>
+but check. 
+-->
+
+<script src="file://localhost/home/robert/akt/tool1.js"></script>
+
+
+<!-- Widgettes - compact widget code for the dialog_Generic widget -->
+
+<!-- Widgettes for collections and their instances -->
+<script src="widgets/widgettes/collection.js"></script>
+<script src="widgets/widgettes/formal_term_details.js"></script>
+<script src="widgets/widgettes/hierarchy_details.js"></script>
+<script src="widgets/widgettes/images.js"></script>
+<script src="widgets/widgettes/image_details.js"></script>
+<script src="widgets/widgettes/source_details.js"></script>
+<script src="widgets/widgettes/statement_details.js"></script>
+<script src="widgets/widgettes/topic_details.js"></script>
+<script src="widgets/widgettes/diagrams.js"></script>
+<script src="widgets/widgettes/diagram_details.js"></script>
+<script src="widgets/widgettes/diagram.js"></script>  <!-- The actual diagram panel itself -->
+<script src="widgets/widgettes/node_details.js"></script> <!-- Placed here, since only used for diagrams -->
+
+<!-- Widgettes for supporting diagramming -->
+<script src="widgets/widgettes/nodes.js"></script>
+<script src="widgets/widgettes/node_details.js"></script>
+<script src="widgets/widgettes/arcs.js"></script>
+<script src="widgets/widgettes/arc_details.js"></script>
+
+<!-- Other widgettes -->
+<script src="widgets/widgettes/boolean_search.js"></script>
+<script src="widgets/widgettes/diagram.js"></script>
+<script src="widgets/widgettes/json_viewer.js"></script>
+<script src="widgets/widgettes/metadata.js"></script>
+<script src="widgets/widgettes/summary.js"></script>
+<script src="widgets/widgettes/statement_formal_terms.js"></script>
+<script src="widgets/widgettes/statement_template.js"></script>
+<script src="widgets/widgettes/synonyms.js"></script>
+<script src="widgets/widgettes/tools.js"></script>
+
+
+<script src="kbs/atwima_anon_formal.js"></script>
+<script src="kbs/ego_anon_formal.js"></script>
+
+
+<!--script src="kbs/bulk_import.js"></script-->
+
+<script src="images/urls_for_flickr_images.js"></script>
+
+<!-- TUTORIALS -->
+<script src="tutorials/tour.js"></script>
+
+
+<!-- bulk loading from spreadsheet -->
+<!--script src="kbs/atwima_statements.js"></script>
+<script src="kbs/atwima_sources.js"></script-->
+
+
+<link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
+</head>
+
+
+<body style="overflow:scroll;">
+<div style="position:fixed; top:0;z-index:10000;width:100%;padding-right:20px;">
+    <!-- The menubar -->
+    <div id="menus" style="z-index:10000; height:22px; width:100%; background:#e0e0e0;">
+    </div>
+    
+
+    <!-- The toolbar -->
+    <div style="background:#d0d0d0; height:35px; width:100%;">
+        <div id="toolbar" style="float:left;z-index:9000; padding:4px;left:10px;background:#d0d0d0; border-bottom:solid 1px #b0b0b0;">
+            <img src="images/toolbar/new.gif" title="New KB" alt="New KB" style="float:left; width:26px; height:26px;"></img>
+            <img src="images/toolbar/open.gif" title="Open KB" alt="Open KB" style="float:left; width:26px; height:26px;"></img>
+            <img src="images/toolbar/save.gif" title="Save KB" alt="Save KB" style="float:left; width:26px; height:26px;"></img>
+            <img src="images/toolbar/saveas.gif" title="Save KB as..." alt="Save KB as..." style="flot:left; width:26px; height:26px;"></img>
+            <img src="images/toolbar/search.gif" title="Search" alt="Search" style="float:left; width:26px; height:26px;"></img>
+        </div>
+
+        <div style="float:left;">
+            <div id="message" style="width:500px; height:20px; padding:3px; color:blue; background:white; margin-right:7px;
+                font-size:13px; overflow-y:auto;">
+            </div>
+        </div>
+
+        <div  style="float:right;">
+            <div style="float:right;">
+                <div style="float:left;margin-right:4px;margin-top:5px;">Recording</div>
+                <button class="inwidget_recording" style="float:left;padding:3px;" onclick="AKT.action_list.open()">Open</button>
+                <button class="inwidget_recording" style="float:left;padding:3px;" onclick="AKT.action_list.save()">Save</button>
+                <button class="inwidget_recording" style="float:left;padding:3px;" onclick="AKT.action_list.stop()">Stop</button>
+                <button class="inwidget_recording" style="float:left;padding:3px;" onclick="AKT.action_list.play()">Play</button>
+                <div style="float:left;margin-left:5px;margin-top:5px;margin-right:2px;">Time step:</div>
+                <input class="inwidget_recording" id="recording_timestep" style="float:left;width:40px;padding:3px;margin-right:15px;" type="text"></input>
+                <button class="inwidget_recordingxxx" style="float:left;padding:3px;" onclick="AKT.action_list.stepThroughRecording()">Step</button>
+                <!--button style="float:left;padding:3px;margin-right:15px;" onclick="AKT.showRecording()">Show</button-->
+                <span>13 April 2024</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="panel_list" style="float:left;width:100%;height:16px;background:#f0f0f0;border-bottom:solid 1px #808080;"></div>
+</div>
+
+    <!-- The workspace, in which all panels are displayed. -->
+    <!--div id="workspace" style="position:relative;overflow-x:scroll; width:2000px; height:1000px; background:#e0e0e0;"--> <!-- Normal -->
+        <div id="workspace" style="margin-top:60px; background:white;float:left;overflow-x:scroll; overflow-y:scroll; top:60; width:2000px; height:2000px;"></div>  
+
+    <!-- Miscellaneous dialog windows, displayed as needed. -->
+    <div id="dialog1" style="z-index:50000; background:#f0f0f0;" title="Synonym dialog">
+        <p>Enter the synonym and, optionally, select its language.</p>
+        <div style="height:auto; margin:7px;">
+            <div style="float:left; width:80px;">Name: </div>
+            <input type="text" style="float:left; width:100px;"></input>
+            <div style="clear:both;"></div>
+        </div>
+
+        <div style="height:auto; margin:7px;">
+            <div style="float:left; width:80px;">Language: </div>
+            <select style="float:left; width:100px; height:20px; background:white;">
+                <option></option>
+                <option>english</option>
+                <option>french</option>
+                <option>latin</option>
+                <option>local1</option>
+                <option>local2</option>
+            </select>
+            <div style="clear:both;"></div>
+        </div>
+
+        <button style="float:right; margin:10px;">OK</button>
+    </div>
+
+    <!-- File new dialog  -->
+    <div id="div_file_new_dialog" class="dialog always_on_top" style="display:none; position:absolute; border:solid 1px black; background:#d4d0c8; width:800px; left:50px;top:30px;z-index:100000">
+
+        <div>
+            <div style="float:left">File name</div>
+            <input id="input_file_new" type="text" style="float:left" value="file_name"/>
+        </div>
+
+        <button id="button_file_new" style="float:left">OK</button>
+    </div>
+
+
+
+    <!-- Node template dialog (container element for the node_template.js widget) -->
+    <div id="div_node_template_dialog" class="dialog always_on_top" style="display:none; position:absolute; border:solid 1px black; background:#d4d0c8; width:800px; left:50px;top:30px;z-index:100000">
+    </div>
+
+
+
+    <div id="save_diagram_local_storage" class="dialog always_on_top" style="display:none; position:absolute; border:solid 1px black; background:#d4d0c8;left:20px;top:40px;width:300px;height:185px;z-index:100000">
+
+        <div class="title-bar">
+            <div class="dialog_id">save_diagram_local_storage</div>save_diagram_local_storage<input type="button" value="X" class="dialog_close_button"/>
+        </div>
+
+        <div class="content" style="border:none;background:#d4d0c8; padding:10px;height:162px;">
+            <input type="text" style="float:right;" id="save_diagram_local_storage_title">
+            <label for="save_diagram_local_storage_title" style="margin-right:5px;float:right;">Diagram title</label>
+            <br/>
+            <input type="button" id="save_diagram_local_storage_ok" style="float:right;" value="OK">
+            <input type="button" id="save_diagram_local_storage_cancel" style="float:right;" value="Cancel">
+        </div>     <!-- End of content div -->
+    </div>     <!-- End of dialog window div -->
+
+
+    <div id="save_kb" class="panel dialog" style=" display:none; left:10px;top:10px;width:300px; height:130px; background:yellow;">
+
+        <div class="title-bar">
+            <div class="dialog_id">191: save_kb</div>Save KB<input type="button" value="X" class="dialog_close_button"/>
+        </div>
+
+        <div class="content" style="border:none; background:yellow;padding:20px; height:100px;">
+            <button id="create">Create file</button>
+            <!--a download="info.txt" id="downloadlink" style="display: none">Download</a-->
+            <a download="info.txt" id="downloadlink" style="display:none; border:solid 2px black; background:#e0e0e0; width:60px;margin-top:30px;">Download</a>
+            <textarea id="textbox" style="border:none; background:yellow; resize:none; disabled;"></textarea>
+        </div>     <!-- End of content div -->
+    </div>     <!-- End of dialog window div -->
+
+    <!--iframe src="documents/Reference_manual/reference_manual_iframe.html" 
+        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe-->
+    <!--iframe id="my_iframe" src="documents/Reference_manual/test_iframe.html" 
+        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe-->
+    <!--iframe src="documents/Reference_manual/reference_manual_iframe.html"></iframe-->
+    <!--iframe id="my_iframe" src="documents/Reference_manual/test_iframe.html" onload="$('#my_iframe').contents().find('p').text()"></iframe-->
+  
+   
+    <div id="div_settings_container" class="dialog always_on_top" style="display:none; position:absolute; left:100px;top:100px;padding:10px; background:#e0ffe0; border:solid 1px black; z-index:100000;">
+        <div><h1>SETTINGS</h1></div>
+    </div>
+
+ 
+
+
+   <!-- -------------------------------- div_help ------------------------------------- -->
+
+   <div id="div_help" class="dialog always_on_top" style="display:none; position:absolute; border:solid 1px black; background:#f0f0f0; width:500px; height:500px;left:300px;top:30px;padding:10px;z-index:100000; overflow:auto;"></div>
+
+    <section id="ref_formal_term_collection" class="level2">
+        <h3>formal_term_collection</h3>
+        <p>Formal Terms, under the main KB menu brings up a glossary for all the formal terms in the knowledge base.  Selecting a formal term type (object, process, action, attribute, value, link and comparison) from the ‘Type’ box will bring up the glossary for that type (Figure 7.52).  Unlike object hierarchies, this glossary is flat - simply an alphabetical list of terms.  Foral terms are added to the glossary automatically during the process of entering a statement, or by the user explicitly creating a new formal term.</p>
+
+        <p>The Formal Terms panel has three parts to it.   
+
+        <ul>
+        <li>The listbox
+        The main part is a listbox, listing all the formal terms, or a subset of them.   This list is actually a table, with the additional column indicating the type of the formal term (e.g. object, attribute…).   In future versions of webAKT, the columns will be customisable, allowing other properties, intrinsic or calculated, of the formal terms to be added to the table, such as the number of statements each one occurs in.  Also, this list will be sortable by any of the columns.</li>
+
+        <li>The filter
+        At the top of the panel, a simple listbox enables you to select which type of formal term you want to be displayed. </li>  
+
+        <li>The buttons
+        There are 4 buttons for working with an individual formal term:
+
+        View: To view the details of a selected formal term.   First, select it from the listbox, then click this button.
+
+        New: Create a new formal term.   Only use this if you want to ad terms instead or or before they are picked up from statements.
+
+        Edit: To view and potentially edit the details of a formal term, e.g. add a description or specify a synonym.
+
+        Delete: For deleting a formal term from the glossary of formal terms.    
+        Deleting a formal term</li>
+        </ul>
+        </p>
+         
+        </p>These added terms may also be deleted by highlighting them in the ‘Formal Terms’ list and selecting Delete.  However, it is not possible to delete a formal term that still appears in a formal statement.  In order to remove a formal term which appears in a formal statement, the term must either be replaced, using the edit function in the Statements menu (see above, 7.4.4) or by deleting the statement altogether, using the Delete function in the Statements menu (see above 7.4.5). </p>
+
+        <p>The first 3 buttons call up the same panel, the formal_term_details panel, the only difference being that it’s appearance and the operations you can perform are slightly different for each of the 3 modes.</p>
+
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_formal_term_collection_1.gif"/>
+        </div>
+    </section>
+
+
+
+
+    <section id="ref_formal_term_details" class="level2">
+        <h3>formal_term_details</h3>
+
+        <p>The formal_term_details panel can open in one of 3 modes (New, View or Edit), depending on the action the user took which led to it being opened.   Typically, the user would have been visiting the formal_term_collection panel, and clicked one of the 3 buttons New, View or Edit.  There are small but significant differences in appearancedepending on the mode, as explained below.</p>
+          
+         
+        <h4>Mode: New. Creating a new formal term</h4>
+
+        <p>In New mode, the user can edit all the fields, and there is an Update button, but all the fields are initially empty.</p>
+
+        <p>You will probably not find yourself using this mode for formal terms.    The reason is that, normally, formal terms are created automatically, when you enter a statement, as described in the documentation for the statement_details panel.   webAKT does this by analysing the grammatical structure of the statement to determine the grammatical type of each term (e.g. object, attribute, process…), and adds it to the formal terms glossary.  You can subsequently edit this (see the text on the Edit mode).</p>
+
+        <p>However, the New mode for this panel allows you to add new formal terms, unattached to statements, to the formal term glossary.   This is particularly useful for objects and object hierarchies, since you might want to build up a glossary of common terms before, or in parallel with, entering statements.</p>
+
+        <p>First, check the list of formal terms to see whether this term, or a suitable equivalent, already exists in the formal term glossary.   You do this by openig u the formal_term_collection panel (KB > Formak terms).   If it doesn’t, click on the New button.   This opens up a formal_term_details panel, and you can then provide a name, description, etc, and specify its type.<p>
+
+        <p>Once you are satisfied with the entry, do not forget to click the Update button to add the new formal term to the knowledge base.</p>
+         
+
+        <h4>Mode: View.   Viewing a formal term</h4>
+        The View mode allows you to see details of a formal term without being able to change them - there is no Update button, and you cannot edit any of the fields.   This could be useful if you want to make sure that you do not inadvertingly make some change.  This mode could alos be useful if you want to allow the user to explore a knowledge base without being able to make any changes - e.g. in a teaching context - in whoch case a global setting forView mode could be set.</p>
+
+        <p>The panel displays the formal term type, its definition and any synonyms there may be.</p>
+
+        <p>If you click on the Statements button, the statement_collection panel appears, showing all the statements in which the formal term appears.</p>  
+
+        <p>If you click on the Hierarchies button, and the formal term refers to an object and it's in a hierarchy, then a hierarchy_details panel appears for the relevant hierarchy, showing the formal term's position in the hierarchy.</p>
+
+         
+         
+         
+        Figure 7.56  ‘New Formal Term’ dialog box 
+         
+        The new ‘Formal Term’ is typed into the top box.  The ‘Glossary of all formal terms’ exists to enable you to check that the term, or something similar, is not already in the knowledge base.  You select the formal term type from the drop-down menu in the ‘Type’ box.  The ‘Definition’ box enables you to add a precise definition of the term as it is to be understood in the context of the present knowledge base.   
+         
+        When finished, press Save.  A message will then appear, ‘Do you wish to add the formal term to the Kb?’ (as it does whenever you introduce a new formal term when you create a new statement).  Press Yes, whereupon a message appears to confirm that the new term has been saved. 
+         
+        If you attempt to add a term which already exists in the knowledge base, a message appears ‘A term with the same name already exists in the kb’. 
+         
+        By pressing Save in the ‘New Formal Term’ box, you will only save the new term in the currently-loaded knowledge base, though this, like all other operations that change the knowledge base, is backed up (in what is called Local Storage) whenever you make a change, and will be re-loaded automatically when you re-visit webAKT.  To save it permanently to file, it is necessary to select Save KB as under the main  File menu, and select the file you want.  For security reasons, JavaScript does not allow you to have a simple Save operation.
+         
+
+        Editing a formal term
+         
+        <h3>formal_term_details</h3>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_formal_term_details_new.gif"/>
+        </div>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_formal_term_details_view.gif"/>
+        </div>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_formal_term_details_edit.gif"/>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_image_collection" class="level2">
+        <h3>image_collection</h3>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_image_collection_1.gif"/>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_image_details" class="level2">
+        <h3>image_details</h3>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_image_details_new.gif"/>
+        </div>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_image_details_view.gif"/>
+        </div>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_image_details_edit.gif"/>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_metadata" class="level2">
+        <h3>metadata</h3>
+        <h4>Viewing and editing the knowledge base metadata</h4>
+
+        <p>When creating a new knowledge base, or opening an existing one, the Metadata panel appears automatically.  It can also be accessed by selecting Metadata in the main KB menu.</p>
+         
+        <p>The Metadata panel serves as an introduction to the knowledge base.  The reason it appears as you open the knowledge base is to give users, other than the knowledge base developer, an immediate general understanding of the knowledge base, thus facilitating access to and manipulation of that knowledge.</p>
+
+        <p>The Metadata panel, like all other panels in the webAKT desktop, can be closed by clicking the X button in the top-right of the panel.</p>
+
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_metadata_2.gif"/>
+        </div>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_metadata_1.gif"/>
+        </div>
+        <p>Each section of the Metadata panel (Fig. XXX) is self explanatory: 
+        <ul><li>Title of this knowledge base: – Here the full title of the knowledge base should appear, for example, the full title of the ‘treefodd’ knowledge base is ‘Tree Fodder and Indigenous Knowledge in Nepal’.</li>
+        <li>What the knowledge base is about: – Here the area of local knowledge covered by the elicitation process should be described.</li>
+        <li>This knowledge base was developed by:– Here the name of the knowledge base developer(s) is(are) recorded.</li>
+         
+        <li>Acknowledgements: here all acknowledgements are listed – to those, other than the developers, who assisted in the design and creation of the knowledge base and to any funding bodies that supported the project.</li>
+        <li>Purpose - If the knowledge base was built as part of a particular project, or designed to supplement work in a certain field, this can be recorded here.</li>
+        <li>Methods – Here information about the methods used for selecting the interviewees and collecting the knowledge may be described.</li>
+        <li>Location – Here information about the exact location of the communities visited can be recorded. </li>
+        <li>Timing of Knowledge Collection – The time of year, and the season that the knowledge collection was undertaken, may influence the knowledge elicitation process and should therefore be noted.</li>
+        <li>General Comments – Here any other pertinent pieces of information may be recorded.</li>
+        </ul>
+        </p>
+
+        <p>When you create a new knowledge base, you should enter details in the relevant boxes, then click on the Update button.   If you are looking at a knowledge base that you have loaded from a file, or accessed over the internet, you can edit the data, which will then be saved in your local version of the knowledge base file when you click the File > Save as… option.</p>
+
+    </section>
+
+
+
+
+
+    <section id="ref_object_hierarchy_collection" class="level2">
+        <h3>object_hierarchy_collection</h3>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_object_hierarchy_collection_1.gif"/>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_object_hierarchy_details" class="level2">
+        <h3>object_hierarchy_details</h3>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_object_hierarchy_details_edit.gif"/>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_source_collection" class="level2">
+        <h3>source_collection</h3>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_source_collection_1.gif"/>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_source_details" class="level2">
+        <h3>source_details</h3>
+        <h4>Human source</h4>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_source_details_new.gif"/>
+        </div>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_source_details_view.gif"/>
+        </div>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_source_details_edit.gif"/>
+        </div>
+        <h4>Reference source</h4>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_source_details_new_ref.gif"/>
+    </section>
+
+
+
+
+
+    <section id="ref_statement_collection" class="level2">
+        <h3>statement_collection</h3>
+        <h4>Viewing, creating and editing statements</h4>
+
+        <p>The core of an AKT knowledge base is its collection of statements.    This section describes the user interface in webAKT for entering new statements, and for viewing and editing statements.  It does not go into the rules for formulating statements according to the AKT grammar: that is quite involved, and is covered in a separate document. </p> 
+
+        <p>Having said that, webAKT does provide a “wizard” to make it easier to formulate statements, in the form of a set of templates matching AKT’s statement grammar, with slots for particular nouns in the statement.    This accessed via the Template button in the panel used for creating a new statement.  So even if you have not acquainted yourself with AKT’s grammar, you can still get started by entering made-up statements which are syntactically correct (i.e. which conform with AKT’s grammar), to familiarise yourself with the procedure for entering statements.</p>
+
+
+        Displaying all statements
+        <p>The statements in the knowledge base are displayed in the Statements panel, which is invoked using the KB > Statements command.  If you are starting a new knowledge base, this panel will be empty as in Figure XXX.  If you are adding statements to an existing knowledge base, the statements previously entered will be listed in the ‘All Statements’ listbox as in Figure XXX.</p>
+
+
+
+        <p>The information shown in this listbox is customizable.   Currently, it shows the statement ID, and the formal and quasi-English versions of each statement.   This will be extended with options to allow the user to choose which properties of each statement should be displayed.</p>
+
+        Filtering the statements
+        <p>webAKT provides a simple yet powerful method for filtering the statements (i.e. selecting a subset of them according to user-defined criteria).    This makes use of a mixture of checkboxes and listboxes.</p>
+
+        <p>The five checkboxes relate to the type of statement, and statements are included if the corresponding checkbox is ticked.   The types are:
+        <ul>
+        <li>att_value, causal or comparison statements; and</li>
+        <li>non-conditional or conditional statements.</li>
+        </ul>
+        </p>
+
+        <p>The three listboxes relate to particular properties of the statement, and statements are restricted  to those that satisfy the specified criteria, i.e. that you selec from the listbox menu.   The three criteria are:
+        <ul>
+        <li>statements that contain a specified formal term;</li>
+        <li>statements that were provded by a specified source; and/or</li>
+        <li>statements that are relevant to a specified topic.</li>
+        </ul>
+        If one or more of these filters is left unchecked, then that criterion does not apply.
+        </p>
+
+        <p>Note that the filtering is applied immediately, as soon as you check or uncheck a checkbox, or change the specified restriction value.
+
+        Working with individual statements
+        <p>The Statements panel provides 4 buttons for working with individual statements:
+        <ul>
+        <li>New: Opens up a new panel for entering a new statement.</li>
+        <li>View: Opens up a new panel for viewing (read-only) the details of a selected statement.   The statement must first be selected from the listbox.</li>
+        <li>Edit: Opens up a new panel for editing the details of a selected statement.   The statement must first be selected from the listbox.</li>
+        <li>Delete: Deletes a selected statement.  The statement must first be selected from the listbox.</li>
+        <li>Select all: Selects all statements in the statement listbox.</li>
+        <li>Deselect all: Deselects all statements in the statement listbox.</li>
+        <li>Invert: Inverts the selection status of each statement in the statement listbox.</li>
+        </ul>
+        </p>
+
+        <p>The first 3 open up the same panel type – a ”statement_details” panel.   The exact contents of this panel depends on which mode (new, view or edit) you choose.   See the Reference Manual page <span style="color:black;background:yellow;">[[provide link]]</span> for the statement_details panel for more information on these three modes.</p>
+
+        <p>Note that the selection buttons only apply to the statements in the listbox, i.e. <u>after</u> filters have been applied - not to all the statements in the knowledge base.   So doing "Select all" after applying one or more filters is a powerful way of selecting all statements that satisfy some set of filters.  If you then clear the filters, then those statements will remain selected in the list of all statements.</p>
+
+        <p>The following sections detail how to work with each option.</p>
+
+
+
+
+
+	         	 
+
+
+         
+         
+         
+        Figure 7. 15 ‘Statements’ dialog box 
+         
+        will appear (Figure X), requesting information on the ‘Information Source’. 
+         
+
+
+
+        <p>The following will be handled in the KB > Sources section.  Just make a brief reference to it here.</p>
+
+
+         
+        Figure 7.7  Information  dialog box 
+
+
+        Deleting a statement
+         
+        <p>In order to delete a statement, enter Statements via the main KB menu and highlight the statement you wish to delete.  The statement will appear in the ‘Selected Statement’ box.  Then press Delete.  A message will appear, giving the natural language translation of the statement to confirm whether you really want to delete that statement (Figure 7.24). </p>  
+         
+	         	 
+          
+        Figure 7.24  Message requesting you to confirm whether Figure 7.25  Message you wish to delete the highlighted statement confirming that the statement 
+	         	has been deleted 
+         
+        <p>If Yes is selected, another message appears (Figure 7.25) confirming that the statement has been deleted.</p>
+         
+        <p>If you wish the statement to be permanently deleted from the knowledge base, you must save the knowledge base after deleting the statement. </p>
+         
+         WARNING 
+        <p>Any formal terms associated with the statement will be deleted unless they are also used in other statements.</p>
+
+
+        <div class="screenshot">
+        </div>
+        <img src="../images/screenshots/panels/zoom75/zoom75_statement_collection_1.gif"/>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_statement_collection_2.gif"/>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_statement_details" id="ref_statement_details" class="level2">
+        <h3>statement_details</h3>
+
+
+        Creating a new statement
+         
+        <p>In order to enter a new statement select New in the Statements panel</p>
+
+        <p>Figure 7.11 is an example of a newly entered statement.</p>
+         
+
+         
+        Figure 7.11  The ‘New Statement’ dialog box 
+         
+
+        <p>All unitary statements have to be entered using the formal language (AKT Manual, Chapter 4.2), in the ‘Formal Language Statement’ box.   As you type the statement, the syntax of the statement is checked character-by-character.   If it is incomplete or incorrect, then a red bar appears at the right of the edit box.   If the statement entered so far is syntactically correct (according to the AT grammar), then the bar changes to green.</p>
+
+        <p>Note the statement may be syntactically correct even if you have not finished it, e.g. if you are going to add a conditional clause (starting with “if”) after the main part of the statement.</p>
+
+        <p>The formal statement must conform to the grammar described in the AKT Manual, chapter 4.2.  If you receive any error messages then either the structure of the statement does not conform to the formal grammar, or one of the reserved terms (e.g. att_value) is misspelt. </p>
+
+        Translating the statement into English
+        <p>Once the formal language statement has been correctly entered, select Translate from the ‘New Statement’ dialog box for a natural language translation of the formalized statement.  The natural language statement generated (Figure 7.14) will be stylised and will not always read smoothly or be grammatically correct.   It should, however, make sense and express the meaning of the unitary statement unambiguously. </p>
+         
+
+         
+        Figure 7.14  Translation of the formal statement into natural language 
+         
+        Adding the statement to the current knowledge base
+        <p>When you are satisfied with the statement, press Update.   Please note that this only updates the current knowledge base in the webAKT application.   The programme automatically adds it to the updated  ‘Statements’ panel (Figure X) from which  all existing statements can be accessed.   To save it in the knowledge base permanently you must select Save as under the File menu. </p>
+
+
+        Linking words in the statement to the glossary of formal terms
+        <p>If your statement includes any formal terms new to the knowledge base, webAKT will automatically determine the type (grammatical role) of the formal term from its position in the statement, and will automatically create a new formal term with this name and type.   [Note: AKT5 asked you to confirm that you want the new formal term(s) to be created – I will add this in at a later date.]</p>
+
+
+        Associating a statement with one or more sources 
+        <p>In webAKT, you may, but do not have to, associate a statement with a source when you create the statement.   This is a marked departure from AKT5, where you had to do this with one source before you could add the statement to the knowledge base.   (If you wanted to include more than one source, you had to do that as a separate operation.)</p>
+
+        <p>The reason for this decision is to avoid interrupting the flow of adding statements by forcing the knowledge base creator to divert and create a new source.   Sources can always be added afterwards, and indeed webAT easily allows you to find all statements that do not have a source specified.</p>
+
+        <p>If you do not like this approach, then you can always add information about your sources first: then associating them with a statement is easy.   (Alternatively, you can complain, and webAKT can be changed to emulate the AKT5 behaviour.)</p>
+
+        <p>To add associate a statement with a source that already exists, click on the Add source button.  If the Sources panel is not already open, then it will appear.   Then click on the relevant entry in the Sources panel listbox, and it will be added in the Source listbox for this particular statement.  You can then click on additional sources if they have also expressed this statement.</p>
+
+        <p>To detach a source from a statement, click on the Detach source button, then click on the relevant source in the Sources listbox for this particular statement (not in the listbox in the main Sources panel).</p>
+         
+
+        Viewing a statement
+
+        <p>See first tutorial.</p>
+
+        Editing an existing statement
+         
+
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_statement_details_new.gif"/>
+        <div class="screenshot">
+        </div>
+        <img src="../images/screenshots/panels/zoom75/zoom75_statement_details_view.gif"/>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_statement_details_edit.gif"/>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_summary" class="level2">
+        <h3>summary</h3>
+        <h3>Summarising the contents of the knowledge base</h3>
+
+        <p>This command, new to webAKT, in the KB menu provides a quantitative summary of the various components of the knowledge base – for example, the number of statements and sources.  The headings are the same as in the KB menu itself, and each heading provides a link to the same Panel accessed through the KB menu.</p>
+
+        <p>Like many other panels, this panel is “live”, meaning that it updates automatically whenever the knowledge base is changed, for example by adding a statement.</p>   
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_summary_1.gif"/>
+        </div>
+    </section>
+
+
+
+
+    <section id="ref_topic_collection" class="level2">
+        <h3>topic_collection</h3>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_topic_collection_1.gif"/>
+        </div>
+    </section>
+
+
+
+
+    <section id="ref_topic_details" class="level2">
+        <h3>topic_details</h3>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_topic_details_new.gif"/>
+        </div>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_topic_details_view.gif"/>
+        </div>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_topic_details_edit.gif"/>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_topic_hierarchy_collection" class="level2">
+        <h3>topic_hierarchy_collection</h3>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_topic_hierarchy_collection_1.gif"/>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="ref_topic_hierarchy_details" class="level2">
+        <h3>topic_hierarchy_details</h3>
+        <div class="screenshot">
+        <img src="../images/screenshots/panels/zoom75/zoom75_topic_hierarchy_details_edit.gif"/>
+    </section>
+
+
+
+</body>
+</html>

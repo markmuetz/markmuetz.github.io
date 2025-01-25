@@ -1,0 +1,49 @@
+<html>
+
+<head>
+<script src="test1.js"></script>
+<script>
+var counter = {kb:0,statement:0,source:0};
+
+function makeId(type) {
+	counter[type] += 1;
+	return type+counter[type];
+}
+
+	
+StatementCollection.prototype.funny = function(a) {
+	console.log(this);
+	for (var id in this.instances) {
+		var statement = this.instances[id];
+		statement.formal += a;
+	}
+}
+
+
+function go() {
+	var session = new Session();
+	var kb = new Kb();
+	session.kbs.add(kb);
+	var statement = new Statement({formal:'att_value(a,b,c)'});
+	kb.statements.add(statement);
+	statement = new Statement({formal:'att_value(d,e,f)'});
+	kb.statements.add(statement);
+	statement = new Statement({formal:'att_value(g,h,i)'});
+	kb.statements.add(statement);
+	
+	kb.statements.display();
+	
+	console.log(JSON.stringify(session,null,4));
+	console.log(session);
+	
+	kb.statements.funny('+++');
+	console.log(session);
+}
+</script>
+
+</head>
+
+<body>
+	<button onclick="go();">Go</button>
+</body>
+</html>

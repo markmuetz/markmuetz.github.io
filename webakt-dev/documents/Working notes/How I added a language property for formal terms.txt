@@ -1,0 +1,114 @@
+What I had to do to include a 'language' property for formal terms...
+20 June 2023
+
+Basically, I had to replicate what I had already done for the 'formal_term_type' property, also known as 'term_type' or simply 'type').
+
+In formal_term_details.js:
+
+In AKT.widgets.formal_term_details.setup = function (widget) {
+Add:
+        var selectElement = AKT.makeReprocessSelector(
+            widget.element, 
+            widget.widgetName,
+            '',                    // Label: here, provided for container element with class .div_type
+            ['Select language...','english','french','latin','local','blank'], 
+            '---',                 // Default value.
+            'language',           // Name of the widget option that is assigned the listbox (<select>) option.
+            'formal_term_language',    // Class name for the listbox (<select>) element.
+            'div_language');           // Class name for this widget's container element for the <select> element.
+
+        $(widget.element).find('.div_language').append(selectElement);
+        $(selectElement).css({'margin-left':'0px',padding:'3px;'});
+
+In $(widget.element).find('.button_update').on('click', function() {
+            var id = name;
+            var type = widget.options.term_type;
+         ** var language = widget.options.language;
+            var definition = $(widget.element).find('.div_definition').text();
+            var synonyms = $(widget.element).find('.div_synonyms').text().split(',');
+            var memo = $(widget.element).find('.div_memo').text();
+
+            var formalterm = new FormalTerm({
+                name:name,
+                id:id,
+                type:type,
+             ** language:language,
+                definition:definition,
+                memo:memo,
+                synonyms:synonyms
+            });
+
+
+In AKT.widgets.formal_term_details.display = function (widget) {
+
+        $(widget.element).find('.div_term').text(formalTerm._id);
+        $(widget.element).find('.div_type').text(formalTerm._type);
+     ** $(widget.element).find('.div_language').text(formalTerm._language);
+        $(widget.element).find('.div_definition').text(formalTerm._definition);
+        $(widget.element).find('.div_memo').text(formalTerm._memo);
+
+
+
+In formal_terms.js:
+In AKT.widgets.formal_terms.setup = function (widget) {
+Add:
+    if (widget.options.language) {
+        var language = widget.options.language;
+    } else {
+        language = 'all';
+    }
+    var selectElement = AKT.makeReprocessSelector(
+        widget.element, 
+        widget.widgetName,
+        'Language', 
+        ['all','english','french','latin','local'], 
+        termType,                 // Default value.
+        'language',           // Name of the widget option that is assigned the listbox (<select>) option.
+        'language');   // Class name for the listbox (<select>) element.
+    $(widgetSettings).append(selectElement);
+
+... and ...
+
+    var options = widget.options;    
+    if (options.language) {
+        var language_filter = options.language;
+    } else {
+        language_filter = 'all';
+    }
+    formalTerms = kb.findFormalTerms({term_type:term_type_filter,language_filter:language});
+
+
+In AKT.widgets.formal_terms.display = function (widget) {
+
+        if (options.language) {
+            var language_filter = options.language;
+        } else {
+            language_filter = 'all';
+        }
+        //if (options.use) {
+        //    var use_filter = options.use;
+        //} else {
+        //    var use_filter = 'all';
+        //}
+        formalTerms = kb.findFormalTerms({term_type:term_type_filter,language:language_filter});
+
+
+In FormalTerm.js:
+Add to passFilters():
+    passFilters = function(filters) {
+        
+        if (filters && filters.term_type) {
+            if (filters.term_type === 'all') {
+            } else if (this._type === filters.term_type) {
+            } else {
+                return false;
+            }
+        }
+        if (filters && filters.language) {
+            if (filters.language === 'all') {
+            } else if (this._language === filters.language) {
+            } else {
+                return false;
+            }
+        }
+

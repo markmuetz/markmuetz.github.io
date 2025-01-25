@@ -1,0 +1,1010 @@
+% Step 1: Remove all   and replace with space.
+% Step 2: Change all backticks to double-quotes (a SWI-Prolog string).
+% Step 3: In memo/4 general, (...) for the final argument changed to [...].
+% Step 4: All node and link clauses, and the one diagram clause, removed.
+% Step 5: List of sourceUserLabels/2, e.g. sourceUserLabels(atwima,['Age','Ethnic origin','','']).
+%         reduced to actuall number, i.e. removing any '' items.
+
+
+last_modified(atwima,date(29,oct,2003)).
+sentence(1,atwima,formal(att_value(part(_626602,_626604),presence,negative),[_626604 : abuo,_626602 : asase_tuntum]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),attribute).
+sentence(2,atwima,formal(att_value(part(_627150,_627152),presence,erratic),[_627152 : abuo,_627150 : asase_kokoo]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),attribute).
+sentence(3,atwima,formal(att_value(part(_627698,_627700),presence,positive),[_627700 : etwre,_627698 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),attribute).
+sentence(4,atwima,formal(not att_value(_628246,type,nwura_bone),[_628246 : nyanya]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),attribute).
+sentence(5,atwima,formal(att_value(_628784,appearance,first) if att_value(_628794,length,long),[_628784 : nyanya,_628794 : fallow]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),attribute).
+sentence(6,atwima,formal(att_value(process(_629344,death),time,first) if att_value(_629360,presence,positive) or att_value(_629370,presence,positive),[_629370 : acheampong,_629360 : ananse_treumu_huma,_629344 : nyanya]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),attribute).
+sentence(7,atwima,formal(att_value(process(part(_629928,_629930),germination),time,short),[_629928 : acheampong,_629930 : seed]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),attribute).
+sentence(8,atwima,formal(att_value(process(part(_630482,_630484),dispersal),mechanism,air),[_630482 : acheampong,_630484 : seed]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a),('Moba, A.','Gogoikrom',2000,a),('Asmoah, D.','Kyereyase',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),attribute).
+sentence(9,atwima,formal(att_value(_631052,type,nwura_bone),[_631052 : adedenyaa]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),attribute).
+sentence(10,atwima,formal(att_value(action(uprooting,_631592),ease,high),[_631592 : adedenyaa]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a),('Antwi, K','Kyereyase',2000,a)])),attribute).
+sentence(11,atwima,formal(att_value(process(_632138,reproduction),rate,high),[_632138 : aya]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),attribute).
+sentence(12,atwima,formal(att_value(action(use,_632680,_632682),effectiveness,high),[_632682 : esre,_632680 : roundup]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),attribute).
+sentence(13,atwima,formal(att_value(action(use,_633230,_633232),effectiveness,high),[_633232 : nkyenkyema,_633230 : roundup]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),attribute).
+sentence(14,atwima,formal(att_value(action(uprooting,_633780),ease,low),[_633780 : nantwri_sre]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),attribute).
+sentence(15,atwima,formal(att_value(action(clearing,_634320),ease,high),[_634320 : nsohwea]),source(atwima,source([('Konadu, Y.','Kyereyase',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),attribute).
+sentence(16,atwima,formal(att_value(action(clearing,_634868),ease,high),[_634868 : nsasun]),source(atwima,source([('Asante, K.','Gogoikrom',2000,a)])),attribute).
+sentence(17,atwima,formal(att_value(process(_635408,shading,_635412),quality,high),[_635412 : cocoa,_635408 : onyina]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b),('Asante, K.','Gogoikrom',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),attribute).
+sentence(18,atwima,formal(att_value(process(_635974,shading,_635978),quality,high),[_635974 : akata,_635978 : cocoa]),source(atwima,source([('Asante, K.','Gogoikrom',2000,a)])),attribute).
+sentence(19,atwima,formal(att_value(process(_636524,shading,_636528),quality,high),[_636528 : cocoa,_636524 : plantain]),source(atwima,source([('Asante, K.','Gogoikrom',2000,a)])),attribute).
+sentence(20,atwima,formal(att_value(process(_637074,growth),rate,high),[_637074 : nsohwea]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),attribute).
+sentence(21,atwima,formal(att_value(process(_637614,shading,_637618),quality,high),[_637618 : cocoa,_637614 : esa]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),attribute).
+sentence(22,atwima,formal(att_value(process(_638164,shading,_638168),quality,high),[_638168 : cocoa,_638164 : odoma_fufu]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),attribute).
+sentence(23,atwima,formal(att_value(process(_638714,shading,_638718),quality,high),[_638718 : cocoa,_638714 : wawa]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),attribute).
+sentence(24,atwima,formal(att_value(process(_639264,shading,_639268),quality,high),[_639268 : cocoa,_639264 : pepediawuo]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),attribute).
+sentence(25,atwima,formal(att_value(process(_639814,shading,_639818),quality,high),[_639818 : cocoa,_639814 : opam]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),attribute).
+sentence(26,atwima,formal(att_value(process(_640364,shading,_640368),quality,low),[_640368 : cocoa,_640364 : nnan_furo]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b),('Asante, K.','Gogoikrom',2000,b)])),attribute).
+sentence(27,atwima,formal(att_value(action(clearing,_640924),ease,low),[_640924 : tweta]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),attribute).
+sentence(28,atwima,formal(att_value(process(_641462,shading,_641466),quality,high),[_641466 : cocoa,_641462 : odum]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),attribute).
+sentence(29,atwima,formal(att_value(process(_642012,dispersal),rate,low),[_642012 : nsohwea]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),attribute).
+sentence(30,atwima,formal(att_value(action(clearing,_642554),ease,low),[_642554 : acheampong]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),attribute).
+sentence(31,atwima,formal(att_value(process(_643092,shading,_643096),quality,high),[_643096 : cocoa,_643092 : wama]),source(atwima,source([('Adam, Y.','Gogoikrom',2000,a)])),attribute).
+sentence(32,atwima,formal(_643640 causes1way att_value(_643646,fertility,asa),[_643646 : soil,_643640 : asase_shesheeshe]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(33,atwima,formal(att_value(process(part(_644200,_644202),sprouting),density,high) causes1way att_value(part(_644200,_644220),density,increase),[_644200 : acheampong,_644202 : stump,_644220 : stump_sprouts]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a),('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(34,atwima,formal(att_value(part(_644790,_644792),presence,in_soil) causes1way att_value(_644790,appearance,first) if action(clearing,_644814),[_644790 : nyanya,_644814 : nfofoa_kwae,_644792 : seed]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a),('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(35,atwima,formal(att_value(_645372,density,increase) causes2way att_value(_645382,yield,decrease),[_645382 : crop,_645372 : weeds]),source(atwima,source([('Group of women Kyereyase','Kyereyase',2000,a),('Serwaa, A','Kyereyase',2000,a),('Moba, A.','Gogoikrom',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(36,atwima,formal(att_value(process(rainfall),quantity,increase) causes2way att_value(_645966,yield,increase),[_645966 : crop]),source(atwima,source([('Group of women Kyereyase','Kyereyase',2000,a)])),causal).
+sentence(37,atwima,formal(att_value(process(rainfall),quantity,low) causes1way att_value(_646518,yield,decrease),[_646518 : crop]),source(atwima,source([('Group of women Kyereyase','Kyereyase',2000,a)])),causal).
+sentence(38,atwima,formal(att_value(process(rainfall),occurance,erratic) causes1way att_value(_647070,yield,decrease),[_647070 : crop]),source(atwima,source([('Group of women Kyereyase','Kyereyase',2000,a)])),causal).
+sentence(39,atwima,formal(att_value(_647608,fertility,decrease) causes2way att_value(_647618,density,increase),[_647608 : soil,_647618 : weeds]),source(atwima,source([('Group of women Kyereyase','Kyereyase',2000,a),('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(40,atwima,formal(att_value(_648172,density,decrease) causes2way att_value(_648182,fertility,decrease),[_648182 : soil,_648172 : trees]),source(atwima,source([('Group of women Kyereyase','Kyereyase',2000,a)])),causal).
+sentence(41,atwima,formal(att_value(_648728,length,decrease) causes2way att_value(_648738,density,decrease),[_648728 : fallow,_648738 : trees]),source(atwima,source([('Group of women Kyereyase','Kyereyase',2000,a)])),causal).
+sentence(42,atwima,formal(att_value(_649284,density,decrease) causes1way att_value(process(rainfall),occurance,erratic),[_649284 : trees]),source(atwima,source([('Group of women Kyereyase','Kyereyase',2000,a)])),causal).
+sentence(43,atwima,formal(att_value(_649840,moisture,waterlogged) causes1way att_value(_649850,cocoa_suitability,negative) if att_value(_649860,season,rainy),[_649840 : ateche,_649850 : soil,_649860 : year]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Kru et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(44,atwima,formal(att_value(_650442,moisture,dry) causes1way att_value(_650452,cocoa_suitability,negative) if att_value(_650462,season,harmattan),[_650442 : ateche,_650452 : soil,_650462 : year]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Kru et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(45,atwima,formal(att_value(_651044,temperature,hot) causes1way att_value(_651054,cocoa_suitability,negative) if att_value(_651064,season,harmattan),[_651044 : afonywie,_651054 : soil,_651064 : year]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(46,atwima,formal(att_value(part(_651646,_651648),presence,positive) causes1way att_value(_651658,cocoa_suitability,positive),[_651648 : abuo,_651646 : asase_kokoo,_651658 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(47,atwima,formal(att_value(part(_652240,_652242),presence,negative) causes1way att_value(_652252,cocoa_suitability,positive),[_652242 : abuo,_652240 : asase_kokoo,_652252 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a)])),causal).
+sentence(48,atwima,formal(att_value(part(_652818,_652820),presence,positive) causes1way att_value(_652830,cocoa_suitability,negative),[_652818 : asase_kokoo,_652820 : etwre,_652830 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(49,atwima,formal(att_value(part(_653420,_653422),presence,positive) causes1way att_value(_653420,cocoa_suitability,positive),[_653422 : boulder,_653420 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(50,atwima,formal(att_value(_653978,fertility,high) causes1way att_value(_653988,lifespan,long),[_653988 : crop,_653978 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(51,atwima,formal(att_value(_654534,fertility,high) causes1way att_value(_654544,maturity,'3 years'),[_654544 : cocoa,_654534 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(52,atwima,formal(att_value(_655090,length,increase) causes2way att_value(process(_655104,growth),rate,increase),[_655090 : fallow,_655104 : rice]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(53,atwima,formal(att_value(_655656,fertility,high) causes1way att_value(_655666,cropping_period,'10 years') if att_value(_655676,presence,positive),[_655676 : asase_kokoo,_655666 : plantain,_655656 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(54,atwima,formal(att_value(_656234,fertility,depleted) causes1way att_value(_656244,cropping_period,'3 years') if att_value(_656254,presence,positive),[_656254 : asase_kokoo,_656244 : plantain,_656234 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(55,atwima,formal(att_value(_656808,length,short) causes1way att_value(_656818,fertility,decrease),[_656808 : fallow,_656818 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(56,atwima,formal(att_value(_657364,length,decrease) causes2way att_value(_657374,density,increase),[_657364 : fallow,_657374 : soil_pest]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(57,atwima,formal(_657916 causes1way att_value(_657922,yield,decrease),[_657922 : crop,_657916 : soil_pest]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(58,atwima,formal(att_value(_658468,length,long) causes1way att_value(_658478,presence,absent),[_658468 : fallow,_658478 : soil_pest]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(59,atwima,formal(att_value(_659024,length,range('5 years','10 years')) causes1way att_value(_659040,presence,positive),[_659024 : fallow,_659040 : nfofoa_kwae]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a)])),causal).
+sentence(60,atwima,formal(att_value(_659596,length,'>1 year') causes1way att_value(part(_659610,_659612),density,decrease),[_659610 : esre,_659596 : fallow,_659612 : seed]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a),('Kru et al','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(61,atwima,formal(att_value(_660186,length,'5 years') causes1way att_value(_660196,density,decrease) if att_value(_660206,presence,positive),[_660196 : acheampong,_660206 : asase_kokoo,_660186 : fallow]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a),('Kru et al','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a)])),causal).
+sentence(62,atwima,formal(att_value(_660780,length,'5 years') causes1way att_value(_660790,cropping_period,'2 years') if att_value(_660800,presence,positive),[_660800 : asase_kokoo,_660790 : crop,_660780 : fallow]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(63,atwima,formal(att_value(_661358,length,range('8 years','10 years')) causes1way att_value(_661374,cropping_period,range('4 years','5 years')) if att_value(_661390,presence,positive),[_661390 : asase_kokoo,_661374 : crop,_661358 : fallow]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(64,atwima,formal(att_value(_661944,fertility,high) causes1way att_value(part(_661958,_661960),size,fat),[_661958 : cassava,_661944 : soil,_661960 : tuber]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(65,atwima,formal(att_value(_662522,fertility,depleted) causes1way att_value(part(_662536,_662538),size,thin),[_662536 : cassava,_662522 : soil,_662538 : tuber]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(66,atwima,formal(att_value(_663094,length,'5 years') causes1way att_value(_663104,density,high),[_663104 : earthworm,_663094 : fallow]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(67,atwima,formal(att_value(_663650,density,increase) causes2way att_value(_663660,fertility,increase),[_663650 : earthworm,_663660 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(68,atwima,formal(att_value(_664214,length,range('8 years','10 years')) causes1way att_value(process(_664234,death),proportion,'100%'),[_664214 : fallow,_664234 : undergrowth]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(69,atwima,formal(att_value(process(_664786,death),proportion,'100%') causes1way process(_664786,decomposition),[_664786 : undergrowth]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(70,atwima,formal(process(_665334,decomposition) causes1way process(_665342,development,_665346),[_665346 : black_layer,_665342 : soil,_665334 : undergrowth]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(71,atwima,formal(att_value(_665904,length,range('8 years','10 years')) causes1way att_value(_665920,depth,'15cm'),[_665920 : black_layer,_665904 : fallow]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(72,atwima,formal(att_value(_666466,presence,negative) causes1way att_value(_666476,presence,positive),[_666476 : black_layer,_666466 : undergrowth]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(73,atwima,formal(att_value(_667026,length,range('15 years','20 years')) causes1way att_value(_667042,fertility,high) if att_value(_667052,presence,positive),[_667052 : afonywie,_667026 : fallow,_667042 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(74,atwima,formal(_667602 causes1way att_value(_667608,density,low),[_667602 : afonywie,_667608 : trees]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(75,atwima,formal(_668150 causes1way att_value(_668156,density,high),[_668150 : afonywie,_668156 : esre]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a),('Kru et al','Kyereyase',2000,a),('Konadu, Y.','Kyereyase',2000,a)])),causal).
+sentence(76,atwima,formal(_668714 causes1way att_value(_668720,density,low),[_668720 : acheampong,_668714 : afonywie]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(77,atwima,formal(att_value(_669266,density,low) causes1way att_value(process(_669266,sprouting,_669284),time,'5 years'),[_669284 : root,_669266 : trees]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(78,atwima,formal(att_value(process(_669834,sprouting,_669838),time,'5 years') causes1way att_value(process(_669834,shading,_669856),time,range('15 years','20 years')),[_669838 : root,_669834 : trees,_669856 : undergrowth]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(79,atwima,formal(process(_670416,shading,_670420) causes1way att_value(_670420,presence,negative),[_670416 : trees,_670420 : undergrowth]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a),('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(80,atwima,formal(_670984 causes1way att_value(_670990,density,high),[_670984 : asase_kokoo,_670990 : trees]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(81,atwima,formal(_671532 causes1way att_value(_671538,density,high),[_671532 : asase_tuntum,_671538 : trees]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(82,atwima,formal(att_value(_672084,density,high) causes1way att_value(process(_672084,sprouting,_672102),time,decrease),[_672102 : root,_672084 : trees]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(83,atwima,formal(att_value(process(_672652,sprouting,_672656),time,short) causes1way att_value(process(_672652,shading,_672674),time,range('5 years','10 years')),[_672656 : root,_672652 : trees,_672674 : undergrowth]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(84,atwima,formal(att_value(_673246,length,range('5 years','10 years')) causes1way att_value(_673262,fertility,high) if att_value(_673276,presence,positive) or att_value(_673286,presence,positive),[_673276 : asase_kokoo,_673286 : asase_tuntum,_673246 : fallow,_673262 : soil]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a),('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(85,atwima,formal(att_value(_673860,length,'6 years') causes1way att_value(_673870,fertility,high) if att_value(_673880,presence,positive),[_673880 : ateche,_673860 : fallow,_673870 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(86,atwima,formal(_674726 causes1way att_value(_674732,presence,positive),[_674726 : ateche,_674732 : sante]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(87,atwima,formal(_675274 causes1way att_value(_675280,presence,positive),[_675274 : ateche,_675280 : gyama]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(88,atwima,formal(_675822 causes1way att_value(_675828,presence,positive),[_675822 : afonywie,_675828 : gyama]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(89,atwima,formal(_676370 causes1way att_value(_676376,presence,positive),[_676370 : afonywie,_676376 : onyina]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(90,atwima,formal(_676918 causes1way att_value(_676924,presence,positive),[_676918 : afonywie,_676924 : watapuo]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(91,atwima,formal(att_value(_677474,cropping_period,'4 years') causes1way att_value(_677484,fertility,depleted) if att_value(_677494,presence,positive),[_677474 : ateche,_677494 : cassava_mix,_677484 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(92,atwima,formal(att_value(_678052,cropping_period,'6 years') causes1way att_value(_678062,fertility,depleted) if att_value(_678072,presence,positive),[_678052 : asase_kokoo,_678072 : cassava_mix,_678062 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(93,atwima,formal(att_value(_678630,cropping_period,'6 years') causes1way att_value(_678640,fertility,depleted) if att_value(_678650,presence,positive),[_678630 : asase_tuntum,_678650 : cassava_mix,_678640 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(94,atwima,formal((not _679204) causes1way att_value(_679210,moisture,low),[_679204 : asase_enyine,_679210 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(95,atwima,formal(att_value(_679760,cropping_period,'3 years') causes1way att_value(_679770,fertility,depleted) if att_value(_679780,presence,positive),[_679760 : afonywie,_679780 : cassava_mix,_679770 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(96,atwima,formal(att_value(_680334,density,low) causes1way att_value(_680344,temperature,hot),[_680344 : afonywie,_680334 : trees]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(97,atwima,formal(att_value(_680906,temperature,increase) causes2way att_value(_680916,density,decrease),[_680916 : earthworm,_680906 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(98,atwima,formal(action(cutting,_681464) causes1way att_value(process(_681474,growth),rate,decrease),[_681464 : sprouting_tree,_681474 : trees]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(99,atwima,formal(att_value(process(_682028,growth),rate,decrease) causes2way att_value(_682040,density,increase),[_682040 : esre,_682028 : trees]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Konadu, Y.','Kyereyase',2000,a)])),causal).
+sentence(100,atwima,formal(att_value(_682594,fertility,high) causes1way att_value(_682604,presence,positive),[_682604 : nyanya,_682594 : soil]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a),('Kru et al','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(101,atwima,formal(action(clearing,_683320) causes1way process(_683326,development) if att_value(_683334,length,long),[_683334 : fallow,_683320 : kwae,_683326 : nfofoa_kwae]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(102,atwima,formal(att_value(_683888,density,increase) causes1way att_value(_683898,density,decrease),[_683888 : acheampong,_683898 : ananse_treumu_huma]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(103,atwima,formal(att_value(_684446,season,harmattan) causes1way att_value(_684456,moisture,low),[_684456 : soil,_684446 : year]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(104,atwima,formal(att_value(_685002,moisture,low) causes1way process(_685012,death),[_685012 : nyanya,_685002 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(105,atwima,formal(att_value(_685556,moisture,low) causes1way (not process(_685570,death)),[_685570 : acheampong,_685556 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(106,atwima,formal(att_value(_686114,moisture,low) causes1way (not process(_686128,death)),[_686128 : ananse_treumu_huma,_686114 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(107,atwima,formal(att_value(process(_686676,development,_686680),time,'3 years') causes1way att_value(_686690,fertility,increase),[_686676 : acheampong,_686680 : fallow,_686690 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(108,atwima,formal(att_value(process(_687272,development,_687276),time,'3 years') causes1way att_value(_687286,fertility_loss,'1.5 years'),[_687272 : acheampong,_687276 : fallow,_687286 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(109,atwima,formal(att_value(_687840,presence,positive) causes1way att_value(process(_687854,shading,_687858),intensity,increase),[_687840 : nfofoa_kwae,_687854 : trees,_687858 : weeds]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(110,atwima,formal(att_value(process(_688416,shading,_688420),intensity,increase) causes2way att_value(_688420,density,decrease),[_688416 : trees,_688420 : weeds]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Kru et al','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(111,atwima,formal(process(_688992,development,_688996) causes1way att_value(_689002,fertility,decrease),[_688992 : esre,_688996 : fallow,_689002 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(112,atwima,formal(att_value(process(part(_689564,_689566),survival),density,low) causes1way att_value(part(_689564,_689584),density,low),[_689564 : acheampong,_689566 : seedling,_689584 : stem]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(113,atwima,formal(att_value(part(_690150,_690152),density,low) causes1way att_value(action(clearing,_690150),ease,high),[_690150 : acheampong,_690152 : stem]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a),('Kru et al','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(114,atwima,formal(att_value(process(part(_690738,_690740),survival),density,high) causes1way att_value(part(_690738,_690758),density,high),[_690738 : esre,_690740 : seedling,_690758 : stem]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(115,atwima,formal(att_value(part(_691316,_691318),density,high) causes1way att_value(action(clearing,_691316),ease,low),[_691316 : esre,_691318 : stem]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(116,atwima,formal(att_value(process(part(_691888,_691890),dispersal),mechanism,air) causes1way att_value(process(_691888,colonisation),rate,increase),[_691888 : esre,_691890 : seed]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(117,atwima,formal(att_value(process(part(_692486,_692488),dispersal),mechanism,bird) causes1way att_value(process(_692486,colonisation),rate,increase),[_692486 : esre,_692488 : seed]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(118,atwima,formal(att_value(process(part(_693076,_693078),dispersal),mechanism,timber_machinery) causes1way att_value(process(_693076,colonisation),rate,increase),[_693076 : esre,_693078 : seed]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(119,atwima,formal(att_value(_693666,stage,beginning) causes1way (not action(clearing,_693682)),[_693666 : adjoguo,_693682 : weeds]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(120,atwima,formal(att_value(_694224,fertility,decrease) causes1way att_value(_694234,stage,beginning),[_694234 : adjoguo,_694224 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(121,atwima,formal(att_value(_694780,stage,beginning) causes1way (not action(cutting,_694796)),[_694780 : adjoguo,_694796 : trees]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(122,atwima,formal(att_value(_695338,stage,beginning) causes1way att_value(action(harvesting,_695354),presence,positive),[_695338 : adjoguo,_695354 : plantain]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(123,atwima,formal(att_value(_695900,stage,beginning) causes1way att_value(action(harvesting,_695916),presence,positive),[_695900 : adjoguo,_695916 : cassava]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(124,atwima,formal((not action(cutting,_696468)) causes1way att_value(process(_696468,shading,_696482),time,decrease),[_696468 : trees,_696482 : undergrowth]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(125,atwima,formal(action(use,_697030) causes1way att_value(process(_697040,death),proportion,'100%'),[_697030 : herbicide,_697040 : weeds]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(126,atwima,formal(att_value(process(part(_697596,_697598),sprouting),rate,high) causes1way att_value(action(clearing,_697596),intensity,increase),[_697596 : esre,_697598 : stump]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(127,atwima,formal(att_value(process(part(_698174,_698176),sprouting),rate,high) causes1way action(burning,_698174) if action(uprooting,_698174),[_698174 : esre,_698176 : root]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Serwaa, A','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(128,atwima,formal(att_value(_698756,age,young) causes1way att_value(part(_698756,_698772),density,low),[_698772 : root,_698756 : weeds]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(129,atwima,formal(att_value(part(_699322,_699324),density,low) causes1way att_value(action(clearing,_699322),ease,high),[_699324 : root,_699322 : weeds]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(130,atwima,formal(att_value(_699886,fertility,decrease) causes2way att_value(_699896,density,increase),[_699896 : esre,_699886 : soil]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(131,atwima,formal(att_value(_700442,fertility,decrease) causes2way att_value(_700452,density,increase),[_700452 : acheampong,_700442 : soil]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(132,atwima,formal(att_value(process(_701006,shading,_701010),tolerance,low) causes1way att_value(process(_701010,growth),rate,decrease) if att_value(_701006,density,increase),[_701010 : esre,_701006 : trees]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(133,atwima,formal(att_value(_701590,density,increase) causes2way att_value(_701600,moisture,increase),[_701600 : soil,_701590 : trees]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(134,atwima,formal(att_value(part(_702154,_702156),presence,in_soil) causes1way att_value(_702154,appearance,first) if action(clearing,_702178),[_702178 : nfofoa_kwae,_702154 : pawpaw,_702156 : seed]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(135,atwima,formal((not att_value(part(_702740,_702742),presence,in_soil)) causes1way att_value(_702740,appearance,second) if action(clearing,_702764),[_702740 : acheampong,_702764 : nfofoa_kwae,_702742 : seed]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a),('Ntoudu, Y.','Kyereyase',2000,a),('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(136,atwima,formal((not att_value(part(_703342,_703344),presence,in_soil)) causes1way att_value(_703342,appearance,last) if action(clearing,_703366),[_703342 : esre,_703366 : nfofoa_kwae,_703344 : seed]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(137,atwima,formal(_703912 causes1way att_value(_703918,density,average),[_703918 : acheampong,_703912 : asase_kokoo]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),causal).
+sentence(138,atwima,formal(att_value(_704468,cropping_period,'1 year') causes1way att_value(_704468,fertility,high) if att_value(_704488,length,long),[_704468 : afonywie,_704488 : fallow]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(139,atwima,formal(att_value(_705034,fertility,high) causes1way att_value(_705044,cocoa_suitability,high),[_705034 : afonywie,_705044 : soil]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(140,atwima,formal(att_value(_705590,cropping_period,'1 year') causes1way att_value(process(_705604,shading,_705608),intensity,high),[_705590 : afonywie,_705608 : cocoa,_705604 : crop]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(141,atwima,formal(att_value(process(_706166,shading,_706170),intensity,high) causes1way att_value(_706180,cocoa_suitability,high),[_706170 : cocoa,_706166 : crop,_706180 : soil]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(142,atwima,formal(att_value(_706738,cropping_period,range('2 years','3 years')) causes1way att_value(_706738,fertility,low) if att_value(_706764,length,long),[_706738 : afonywie,_706764 : fallow]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(143,atwima,formal(att_value(_707310,fertility,low) causes1way att_value(_707320,cocoa_suitability,low),[_707310 : afonywie,_707320 : soil]),source(atwima,source([('Asante, K.','Gogoikrom',2000,a),('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(144,atwima,formal(att_value(_707874,cropping_period,range('2 years','3 years')) causes1way att_value(process(_707894,shading,_707898),intensity,decrease),[_707874 : afonywie,_707898 : cocoa,_707894 : crop]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(145,atwima,formal(att_value(process(_708456,shading,_708460),intensity,low) causes1way att_value(_708470,temperature,hot),[_708470 : afonywie,_708460 : cocoa,_708456 : crop]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(146,atwima,formal(att_value(process(_709028,infiltration),rate,increase) causes1way att_value(process(_709044,decomposition),rate,increase),[_709028 : rain,_709044 : undergrowth]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(147,atwima,formal(att_value(process(_709596,runoff),rate,increase) causes2way att_value(process(_709596,infiltration),rate,decrease),[_709596 : rain]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(148,atwima,formal(att_value(_710152,presence,increase) causes2way att_value(process(_710166,runoff),rate,decrease),[_710166 : rain,_710152 : vegetation_debris]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(149,atwima,formal(att_value(process(_710718,runoff),rate,increase) causes1way att_value(process(_710734,erosion),rate,increase),[_710718 : rain,_710734 : topsoil]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(150,atwima,formal(action(burning,_711284) causes1way att_value(_711284,presence,decrease),[_711284 : vegetation_debris]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Nsiah, A.','Kyereyase',2000,a),('Moba, A.','Gogoikrom',2000,a),('Konadu, Y.','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b),('Asantwaa, Y.','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b),('Asante, K.','Gogoikrom',2000,a),('Antwi, K','Kyereyase',2000,a),('Ampadu, Y. ','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(151,atwima,formal(att_value(_711932,presence,decrease) causes2way att_value(action(work,_711948),ease,increase),[_711948 : crop,_711932 : vegetation_debris]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Nsiah, A.','Kyereyase',2000,a),('Moba, A.','Gogoikrom',2000,a),('Konadu, Y.','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b),('Asantwaa, Y.','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b),('Asante, K.','Gogoikrom',2000,a),('Antwi, K','Kyereyase',2000,a),('Ampadu, Y. ','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(152,atwima,formal(action(burning,_712600) causes1way att_value(_712606,presence,increase),[_712606 : ash,_712600 : vegetation_debris]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Moba, A.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b),('Antwi, K','Kyereyase',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(153,atwima,formal(att_value(_713200,presence,increase) causes1way att_value(_713210,fertility,increase),[_713200 : ash,_713210 : soil]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Moba, A.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b),('Asante, K.','Gogoikrom',2000,b),('Antwi, K','Kyereyase',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(154,atwima,formal(action(burning,_713818) causes1way att_value(action(burning,_713830),intensity,increase) if att_value(process(rainfall),presence,low),[_713818 : nfofoa_kwae,_713830 : vegetation_debris]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(155,atwima,formal(att_value(action(burning,_714396),intensity,increase) causes2way att_value(_714396,density,decrease),[_714396 : vegetation_debris]),source(atwima,source([('Konadu, Y.','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(156,atwima,formal(action(burning,_714970) causes1way att_value(part(_714980,_714982),presence,positive),[_714982 : log,_714970 : nfofoa_kwae,_714980 : trees]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(157,atwima,formal(att_value(part(_715540,_715542),presence,positive) causes1way att_value(process(_715556,runoff),rate,decrease),[_715542 : log,_715556 : rain,_715540 : trees]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(158,atwima,formal(action(burning,_716114) causes1way att_value(_716120,fertility,loss),[_716120 : soil,_716114 : vegetation_debris]),source(atwima,source([('Antwi, K','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(159,atwima,formal(att_value(action(burning,_716680),heat,high) causes1way att_value(_716690,moisture,loss),[_716690 : soil,_716680 : vegetation_debris]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(160,atwima,formal(process(part(_717240,_717242),decomposition) causes1way att_value(_717250,fertility,increase),[_717242 : log,_717250 : soil,_717240 : trees]),source(atwima,source([('Bonsu, O.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b),('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(161,atwima,formal(att_value(process(_717844,germination),time,'1 week') causes1way att_value(action(clearing,_717844),ease,low) if action(burning,_717874),[_717844 : adedenyaa,_717874 : land]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(162,atwima,formal(att_value(process(_718420,growth),rate,high) causes1way att_value(action(clearing,_718420),ease,low),[_718420 : adedenyaa]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(163,atwima,formal(att_value(process(_718980,growth),rate,high) causes1way att_value(process(_718980,shading,_719000),intensity,increase),[_718980 : adedenyaa,_719000 : crop]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(164,atwima,formal(att_value(process(_719550,shading,_719554),intensity,increase) causes2way att_value(process(_719554,growth),rate,decrease),[_719550 : adedenyaa,_719554 : crop]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(165,atwima,formal(att_value(process(_720120,growth),rate,decrease) causes1way att_value(_720120,yield,decrease),[_720120 : crop]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(166,atwima,formal(att_value(process(_720674,flowering),time,'3 weeks') causes1way att_value(process(_720674,seed_set),time,'4 weeks'),[_720674 : adedenyaa]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(167,atwima,formal(att_value(process(_721234,seed_set),time,'4 weeks') causes1way att_value(process(_721234,reproduction),rate,high),[_721234 : adedenyaa]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(168,atwima,formal(att_value(process(_721794,reproduction),time,high) causes1way att_value(action(clearing,_721794),ease,low),[_721794 : adedenyaa]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(169,atwima,formal(att_value(process(_722354,growth),pattern,grouped) causes1way att_value(action(clearing,_722354),ease,high),[_722354 : nkyenkyema]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(170,atwima,formal(att_value(part(_722918,_722920),texture,spiny) causes1way att_value(action(clearing,_722918),ease,low) if att_value(action(clearing,_722918),method,hand),[_722918 : nkyenkyema,_722920 : stem]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(171,atwima,formal(att_value(process(part(_723506,_723508),shading,part(_723506,_723508)),intensity,high) causes1way att_value(process(part(_723506,_723508),survival),density,low),[_723506 : acheampong,_723508 : seedling]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b),('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(172,atwima,formal(att_value(process(part(_724102,_724104),germination),rate,high) causes1way att_value(process(part(_724102,_724126),shading,part(_724102,_724126)),intensity,increase),[_724102 : acheampong,_724104 : seed,_724126 : seedling]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(173,atwima,formal(att_value(process(_724694,growth),rate,high) causes1way att_value(process(part(_724694,_724716),shading,part(_724694,_724716)),intensity,increase),[_724694 : acheampong,_724716 : seedling]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(174,atwima,formal(att_value(part(_725276,_725278),toughness,low) causes1way att_value(action(clearing,_725276),ease,high),[_725276 : acheampong,_725278 : stump_sprouts]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(175,atwima,formal(att_value(part(_725844,_725846),toughness,low) causes1way att_value(action(clearing,_725844),ease,high),[_725844 : acheampong,_725846 : seedling]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(176,atwima,formal((not att_value(process(_726420,growth),pattern,grouped)) causes1way att_value(process(_726436,growth),tolerance,high) if not att_value(_726420,density,high),[_726420 : acheampong,_726436 : crop]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(177,atwima,formal(att_value(_727002,type,nwura_bone) causes1way att_value(process(_727002,germination),time,after_burn) if action(burning,_727030),[_727030 : vegetation_debris,_727002 : weeds]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(178,atwima,formal(att_value(process(_727576,germination),time,after_burn) causes1way att_value(process(_727576,growth),rate,increase),[_727576 : weeds]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(179,atwima,formal(action(clearing,_728138) causes1way att_value(part(_728148,_728150),presence,high) if not att_value(_728138,length,'>5 years'),[_728138 : fallow,_728150 : seed,_728148 : weeds]),source(atwima,source([('Antwi, K','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(180,atwima,formal(att_value(part(_728734,_728736),density,high) causes1way att_value(process(_728734,germination),density,high) if att_value(process(part(_728734,_728736),germination),flush,first),[_728736 : seed,_728734 : weeds]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a),('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(181,atwima,formal(att_value(process(part(_729336,_729338),germination),flush,second) causes1way att_value(process(_729336,germination),density,decrease),[_729338 : seed,_729336 : weeds]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(182,atwima,formal(att_value(process(part(_729916,_729918),germination),flush,second) causes1way att_value(_729930,height,high) if att_value(_729940,fertility,high),[_729930 : crop,_729918 : seed,_729940 : soil,_729916 : weeds]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(183,atwima,formal(att_value(_730502,height,high) causes1way att_value(process(_730502,shading,_730520),intensity,increase),[_730502 : crop,_730520 : weeds]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(184,atwima,formal(att_value(process(_731078,shading,_731082),intensity,increase) causes2way att_value(process(_731082,growth),rate,decrease),[_731078 : crop,_731082 : weeds]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Moba, A.','Gogoikrom',2000,a),('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(185,atwima,formal(att_value(action(clearing,_731666),season,harmattan) causes1way att_value(process(_731680,germination),density,decrease),[_731666 : fallow,_731680 : weeds]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(186,atwima,formal(att_value(action(clearing,_732234),season,harmattan) causes1way att_value(process(part(_732252,_732254),sprouting),density,low),[_732234 : fallow,_732254 : stump,_732252 : weeds]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(187,atwima,formal(att_value(action(clearing,_732816),season,rainy) causes1way att_value(process(_732830,germination),density,increase),[_732816 : fallow,_732830 : weeds]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(188,atwima,formal(att_value(action(clearing,_733384),season,rainy) causes1way att_value(process(part(_733402,_733404),sprouting),density,high),[_733384 : fallow,_733404 : stump,_733402 : weeds]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(189,atwima,formal(att_value(action(planting,_733970),season,harmattan) causes1way att_value(process(_733970,growth),rate,high) if att_value(_733996,season,rainy),[_733970 : cassava,_733996 : year]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(190,atwima,formal(att_value(process(_734546,growth),rate,high) causes1way att_value(_734558,height,high),[_734546 : cassava,_734558 : crop]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(191,atwima,formal(att_value(process(_735108,competition,_735112),resource,nutrient) causes1way att_value(_735112,yield,decrease),[_735112 : crop,_735108 : weeds]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(192,atwima,formal(_735668 causes1way att_value(_735674,density,high) if att_value(_735684,position,near_river),[_735668 : ateche,_735674 : esre,_735684 : farm]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(193,atwima,formal(_736254 causes1way att_value(_736260,density,high) if att_value(_736270,position,near_river),[_736254 : ateche,_736270 : farm,_736260 : rice]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(194,atwima,formal(att_value(_736824,density,high) causes1way att_value(_736834,yield,decrease),[_736824 : esre,_736834 : rice]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(195,atwima,formal(action(use,_737382) causes1way att_value(_737388,density,increase),[_737382 : herbicide,_737388 : vegetation_debris]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(196,atwima,formal(_737930 causes1way att_value(_737936,moisture,increase),[_737930 : odoma,_737936 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(197,atwima,formal(att_value(_738490,moisture,increase) causes1way att_value(_738500,quality,high),[_738500 : shade_tree,_738490 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(198,atwima,formal(_739042 causes1way att_value(_739048,moisture,decrease),[_739042 : okoro,_739048 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(199,atwima,formal(_739590 causes1way att_value(_739596,moisture,increase),[_739590 : domini,_739596 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(200,atwima,formal(_740138 causes1way att_value(_740144,moisture,decrease),[_740138 : esa,_740144 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(201,atwima,formal(_740686 causes1way att_value(_740692,moisture,decrease),[_740686 : fumtum,_740692 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(202,atwima,formal(_741234 causes1way att_value(_741240,moisture,decrease),[_741234 : acheampong,_741240 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(203,atwima,formal(att_value(_741786,moisture,decrease) causes1way process(_741796,death),[_741796 : crop,_741786 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(204,atwima,formal(action(use,_742342) causes1way (not process(_742352,death)),[_742352 : bosomwuajura,_742342 : herbicide]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(205,atwima,formal((not process(_742900,death)) causes1way att_value(action(clearing,_742900),ease,low),[_742900 : bosomwuajura]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(206,atwima,formal(action(use,_743462) causes1way (not process(_743472,death)),[_743472 : bosomwuajura,_743462 : roundup]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(207,atwima,formal(action(uprooting,_744018) causes1way process(_744018,sprouting),[_744018 : bosomwuajura]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(208,atwima,formal(process(_744560,sprouting) causes1way (not process(_744560,death)),[_744560 : bosomwuajura]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(209,atwima,formal(att_value(action(uprooting,_745114),ease,low) causes1way att_value(action(clearing,_745114),ease,low),[_745114 : bosomwuajura]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(210,atwima,formal(att_value(process(part(_745676,_745678),dispersal),mechanism,timber_machinery) causes1way att_value(process(_745676,colonisation),rate,increase),[_745678 : seed,_745676 : weeds]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(211,atwima,formal(att_value(process(part(_746258,_746260),dispersal),mechanism,clothing) causes1way att_value(process(_746258,colonisation),rate,increase),[_746260 : seed,_746258 : weeds]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(212,atwima,formal(att_value(_746840,height,'30cm') causes1way att_value(action(use,_746856,_746840),effectiveness,high),[_746856 : herbicide,_746840 : weeds]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a),('Moba, A.','Gogoikrom',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(213,atwima,formal(att_value(process(_747424,sprouting),stage,young) causes1way att_value(action(use,_747442,_747424),effectiveness,high),[_747424 : esre,_747442 : herbicide]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(214,atwima,formal(att_value(_748006,height,'60cm') causes1way att_value(action(use,_748022,_748006),effectiveness,low),[_748022 : herbicide,_748006 : weeds]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(215,atwima,formal(att_value(action(use,_748584,_748586),season,harmattan) causes1way att_value(action(use,_748584,_748586),effectiveness,low),[_748584 : herbicide,_748586 : weeds]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(216,atwima,formal(att_value(action(use,_749156,_749158),season,rainy) causes1way att_value(action(use,_749156,_749158),effectiveness,high),[_749156 : herbicide,_749158 : weeds]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(217,atwima,formal(att_value(process(part(_749730,_749732),rooting),density,high) causes1way att_value(action(clearing,_749730),ease,low),[_749732 : node,_749730 : sansan]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(218,atwima,formal(process(_750296,coiling,_750300) causes1way att_value(action(clearing,_750296),ease,low),[_750296 : ananse_treumu_huma,_750300 : rice]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(219,atwima,formal(action(use,_750860,_750862) causes1way att_value(action(clearing,_750862),ease,high),[_750862 : ananse_treumu_huma,_750860 : herbicide]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(220,atwima,formal(action(planting,_751422,_751424) causes1way att_value(process(_751422,tillering),density,increase),[_751424 : ateche,_751422 : rice]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(221,atwima,formal(action(burning,_751984) causes1way att_value(part(_751994,_751996),hardness,increase),[_751994 : soil,_751996 : surface,_751984 : vegetation_debris]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(222,atwima,formal(att_value(part(_752554,_752556),hardness,increase) causes2way att_value(process(_752570,growth),rate,decrease),[_752570 : crop,_752554 : soil,_752556 : surface]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(223,atwima,formal(att_value(_753126,shesheeshe,positive) causes1way att_value(_753126,fertility,low),[_753126 : afonywie]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(224,atwima,formal(_753678 causes1way att_value(_753684,height,decrease),[_753678 : afonywie,_753684 : weeds]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(225,atwima,formal(_754226 causes1way att_value(_754232,height,increase),[_754226 : asase_kokoo,_754232 : weeds]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(226,atwima,formal(att_value(_754778,cropping_period,increase) causes1way att_value(_754778,shesheeshe,increase),[_754778 : afonywie]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(227,atwima,formal(att_value(_755326,shesheeshe,increase) causes2way att_value(_755336,yield,decrease),[_755326 : afonywie,_755336 : crop]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(228,atwima,formal(att_value(_755882,density,decrease) causes2way att_value(_755892,speed,increase),[_755882 : trees,_755892 : wind]),source(atwima,source([('Effah, A.','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(229,atwima,formal(att_value(_756446,density,increase) causes2way att_value(_756456,enyunu,increase),[_756456 : soil,_756446 : trees]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Effah, A.','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(230,atwima,formal(att_value(_757042,enyunu,increase) causes1way att_value(_757052,yield,increase),[_757052 : crop,_757042 : soil]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),causal).
+sentence(231,atwima,formal(action(planting,_757600,_757602) causes1way att_value(process(_757600,growth),rate,average),[_757602 : afonywie,_757600 : oil_palm]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(232,atwima,formal(att_value(_758168,water_holding_capacity,low) causes1way att_value(_758168,moisture,low),[_758168 : afonywie]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(233,atwima,formal(att_value(_758716,water_holding_capacity,high) causes1way att_value(_758716,moisture,high),[_758716 : asase_kokoo]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(234,atwima,formal(att_value(_759264,position,near_river) causes1way att_value(_759274,density,high),[_759264 : farm,_759274 : nantwri_sre]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(235,atwima,formal(att_value(_759820,density,low) causes1way att_value(_759830,cocoa_suitability,high),[_759830 : afonywie,_759820 : trees]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(236,atwima,formal(att_value(_760384,moisture,dry) causes1way process(_760394,death),[_760394 : nkyenkyema,_760384 : soil]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(237,atwima,formal(att_value(_760938,fertility,increase) causes1way att_value(process(_760952,growth),rate,increase),[_760938 : soil,_760952 : weeds]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(238,atwima,formal(att_value(part(_761506,_761508),length,deep) causes1way process(_761518,transfer,part(_761526,_761528)),[_761508 : root,_761526 : soil,_761528 : surface,_761506 : trees,_761518 : water]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(239,atwima,formal(process(_762094,decomposition) causes1way att_value(_762102,fertility,increase),[_762102 : soil,_762094 : vegetation_debris]),source(atwima,source([('Bonsu, O.','Gogoikrom',2000,a),('Asantwaa, Y.','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(240,atwima,formal(process(_762672,decomposition) causes1way att_value(process(_762684,growth),rate,increase),[_762684 : crop,_762672 : onyina]),source(atwima,source([('Konadu, Y.','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(241,atwima,formal(_763244 causes1way att_value(process(_763254,dispersal),mechanism,bird),[_763254 : ncranpan,_763244 : trees]),source(atwima,source([('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(242,atwima,formal(att_value(process(_763806,shading,_763810),intensity,increase) causes2way att_value(_763810,yield,decrease),[_763810 : cocoa,_763806 : trees]),source(atwima,source([('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(243,atwima,formal(process(_764370,shading,_764374) causes1way att_value(_764374,yield,decrease) if att_value(_764374,stage,mature),[_764374 : cocoa,_764370 : trees]),source(atwima,source([('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(244,atwima,formal(att_value(_764936,fertility,high) causes1way att_value(_764946,presence,positive),[_764946 : nsasun,_764936 : soil]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(245,atwima,formal(att_value(_765500,fertility,high) causes1way att_value(_765510,presence,positive),[_765510 : atooto,_765500 : soil]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(246,atwima,formal(process(_766064,coiling,_766068) causes1way process(_766068,death),[_766068 : cocoa,_766064 : nsohwea]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(247,atwima,formal(att_value(process(part(_766626,_766628),rooting),density,high) causes1way att_value(action(clearing,_766626),ease,low),[_766628 : node,_766626 : nsohwea]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(248,atwima,formal(action(burning,_767202) causes1way process(part(_767212,_767214),germination),[_767212 : cocoyam,_767214 : corm,_767202 : vegetation_debris]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(249,atwima,formal(action(burning,_767776) causes1way process(part(_767786,_767788),germination),[_767786 : ananse_treumu_huma,_767788 : seed,_767776 : vegetation_debris]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(250,atwima,formal(att_value(part(_768352,_768354),position,central) causes1way att_value(action(clearing,_768352),ease,high),[_768352 : ananse_dukono,_768354 : root]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(251,atwima,formal(att_value(_768916,fertility,high) causes1way att_value(_768926,presence,positive),[_768926 : ananse_dukono,_768916 : soil]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(252,atwima,formal(att_value(_769472,fertility,high) causes1way att_value(_769482,presence,positive),[_769482 : mumuanka,_769472 : soil]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(253,atwima,formal(_770024 causes1way att_value(_770030,moisture,decrease),[_770024 : odoma_kokoo,_770030 : soil]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(254,atwima,formal(_770572 causes1way att_value(_770578,moisture,decrease),[_770572 : nyankyereni,_770578 : soil]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(255,atwima,formal(process(part(_771128,_771130),drop) causes1way process(_771138,death),[_771130 : branch,_771138 : cocoa,_771128 : wawa]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(256,atwima,formal(att_value(_772538,height,high) causes1way att_value(part(_772552,_772554),height,below),[_772554 : canopy,_772552 : cocoa,_772538 : shade_tree]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(257,atwima,formal(att_value(part(_773112,_773114),height,below) causes1way process(_773124,infiltration),[_773114 : canopy,_773112 : cocoa,_773124 : wind]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(258,atwima,formal(att_value(part(_773680,_773682),height,below) causes1way process(_773692,infiltration),[_773682 : canopy,_773680 : cocoa,_773692 : sunlight]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(259,atwima,formal(att_value(part(_774250,_774252),size,narrow) causes1way process(_774262,infiltration),[_774252 : crown,_774250 : shade_tree,_774262 : sunlight]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(260,atwima,formal(att_value(process(_774818,competition,_774822),resource,soil_moisture) causes1way att_value(_774822,yield,decrease),[_774822 : cocoa,_774818 : shade_tree]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(261,atwima,formal(_775374 causes1way att_value(_775380,moisture,increase),[_775374 : kokoanisua,_775380 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b),('Amoako, S','Gogoikrom',2000,a)])),causal).
+sentence(262,atwima,formal(att_value(process(_775938,growth),rate,high) causes1way att_value(process(part(_775938,_775960),shading,_775964),intensity,increase),[_775938 : acheampong,_775964 : crop,_775960 : seedling]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(263,atwima,formal(att_value(process(part(_776534,_776536),shading,_776540),intensity,increase) causes2way att_value(process(_776540,growth),rate,decrease),[_776534 : acheampong,_776540 : crop,_776536 : seedling]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(264,atwima,formal(att_value(process(_777126,shading,_777130),tolerance,low) causes1way att_value(_777130,density,decrease) if att_value(process(_777126,shading),intensity,high),[_777130 : acheampong,_777126 : trees]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Asante, K.','Gogoikrom',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(265,atwima,formal(att_value(part(_777722,_777724),presence,nearby) causes1way att_value(process(_777722,colonisation),rate,increase),[_777722 : acheampong,_777724 : seed]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(266,atwima,formal(att_value(process(rainfall),time,first) causes1way process(part(_778312,_778314),germination),[_778312 : acheampong,_778314 : seed]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(267,atwima,formal(process(_778858,decomposition) causes1way att_value(_778866,fertility,increase),[_778866 : soil,_778858 : weeds]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(268,atwima,formal(att_value(_779412,age,mature) causes1way att_value(process(_779412,shading,_779430),intensity,increase),[_779412 : oil_palm,_779430 : weeds]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(269,atwima,formal(att_value(process(_779980,shading,_779984),intensity,high) causes1way att_value(process(_779984,growth),rate,decrease),[_779980 : oil_palm,_779984 : weeds]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(270,atwima,formal(att_value(_780546,length,'1 year') causes1way att_value(process(_780560,growth),rate,increase),[_780546 : fallow,_780560 : weeds]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(271,atwima,formal(att_value(process(_781120,growth),rate,increase) causes2way att_value(_781132,yield,decrease),[_781132 : crop,_781120 : weeds]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(272,atwima,formal(att_value(_781686,length,increase) causes2way att_value(_781696,strength,decrease),[_781686 : fallow,_781696 : weeds]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(273,atwima,formal(att_value(_782250,stage,mature) causes1way att_value(action(clearing,_782266),frequency,'2'),[_782250 : fallow,_782266 : weeds]),source(atwima,source([('Bonsu, O.','Gogoikrom',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(274,atwima,formal((not att_value(_782824,stage,mature)) causes1way att_value(action(clearing,_782840),frequency,range('3','4')),[_782824 : fallow,_782840 : weeds]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(275,atwima,formal(att_value(action(burning,_783408),intensity,increase) causes1way att_value(process(part(_783426,_783428),sprouting),time,long),[_783428 : stump,_783408 : vegetation_debris,_783426 : weeds]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Nsiah, A.','Kyereyase',2000,a),('Konadu, Y.','Kyereyase',2000,a),('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(276,atwima,formal(att_value(_784012,length,'2 years') causes1way att_value(_784022,yield,average) if att_value(_784032,presence,positive),[_784032 : asase_kokoo,_784022 : crop,_784012 : fallow]),source(atwima,source([('Ampadu, Y. ','Kyereyase',2000,a)])),causal).
+sentence(277,atwima,formal(att_value(_784586,moisture,high) causes1way att_value(_784586,cocoa_suitability,high),[_784586 : soil]),source(atwima,source([('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(278,atwima,formal(action(burning,_785140) causes1way att_value(_785146,yield,decrease) if att_value(process(rainfall),quantity,low),[_785146 : crop,_785140 : vegetation_debris]),source(atwima,source([('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(279,atwima,formal(att_value(_785706,stage,mature) causes1way att_value(_785716,fertility,high),[_785706 : fallow,_785716 : soil]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(280,atwima,formal(att_value(_786278,presence,positive) causes1way att_value(_786288,stage,mature),[_786288 : fallow,_786278 : nfofoa_kwae]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Asante, K.','Gogoikrom',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(281,atwima,formal(process(part(_786854,_786856),decomposition) causes1way att_value(_786864,fertility,increase),[_786856 : log,_786854 : onyina,_786864 : soil]),source(atwima,source([('Konadu, Y.','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(282,atwima,formal(process(part(_787440,_787442),decomposition) causes1way att_value(_787450,fertility,increase),[_787442 : leaves,_787450 : soil,_787440 : trees]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Bonsu, O.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b),('Asante, K.','Gogoikrom',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(283,atwima,formal(att_value(_788052,length,'3 years') causes1way att_value(_788062,yield,average),[_788062 : crop,_788052 : fallow]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(284,atwima,formal(att_value(_788616,density,increase) causes2way att_value(process(_788616,shading,_788634),intensity,increase),[_788634 : cocoa,_788616 : trees]),source(atwima,source([('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(285,atwima,formal(att_value(_789180,stage,mature) causes1way att_value(_789190,density,decrease),[_789180 : fallow,_789190 : weeds]),source(atwima,source([('Bonsu, O.','Gogoikrom',2000,a),('Asante, K.','Gogoikrom',2000,a)])),causal).
+sentence(286,atwima,formal(process(_789746,decomposition) causes1way att_value(process(_789758,growth),rate,increase),[_789746 : acheampong,_789758 : crop]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(287,atwima,formal(att_value(action(clearing,_790316),frequency,'2') causes1way att_value(_790316,density,high) if att_value(_790336,time,subsequent),[_790316 : weeds,_790336 : year]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(288,atwima,formal(att_value(action(clearing,_790892),frequency,'3') causes1way att_value(_790892,density,average) if att_value(_790912,time,subsequent),[_790892 : weeds,_790912 : year]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b)])),causal).
+sentence(289,atwima,formal(process(rainfall) causes1way att_value(_791464,texture,soft),[_791464 : afonywie]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(290,atwima,formal(process(rainfall) causes1way att_value(_792018,texture,sticky),[_792018 : ateche]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(291,atwima,formal(att_value(process(rainfall),quantity,high) causes1way att_value(_792578,texture,soft),[_792578 : asase_kokoo]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(292,atwima,formal(part(_793124,_793126) causes1way att_value(_793132,moisture,increase),[_793124 : oil_palm,_793126 : root,_793132 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(293,atwima,formal(att_value(_793694,moisture,decrease) causes1way (not process(_793708,drying,_793712)),[_793708 : afonywie,_793712 : oil_palm,_793694 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(294,atwima,formal(part(_794270,_794272) causes1way att_value(_794278,moisture,decrease),[_794270 : cocoa,_794272 : root,_794278 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(295,atwima,formal(process(_794840,infiltration,_794844) causes1way process(part(_794854,_794856),infiltration,_794844),[_794854 : ash,_794856 : nutrients,_794840 : rain,_794844 : soil]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(296,atwima,formal(process(part(_795438,_795440),infiltration,_795444) causes1way att_value(_795444,fertility,increase),[_795438 : ash,_795440 : nutrients,_795444 : soil]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(297,atwima,formal((not action(burning,_796026)) causes1way att_value(process(_796036,sprouting),time,short),[_796026 : vegetation_debris,_796036 : weeds]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Ntoudu, Y.','Kyereyase',2000,a),('Konadu, Y.','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(298,atwima,formal(action(burning,_796618) causes1way process(_796624,heating),[_796624 : soil,_796618 : vegetation_debris]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(299,atwima,formal(process(_797176,heating) causes1way process(part(_797176,_797190),loosening),[_797176 : soil,_797190 : surface]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(300,atwima,formal(process(part(_797746,_797748),loosening) causes1way att_value(process(_797760,growth),rate,increase),[_797760 : crop,_797746 : soil,_797748 : surface]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(301,atwima,formal(action(burning,_798326) causes1way att_value(process(_798336,germination),time,before_weed),[_798336 : crop,_798326 : vegetation_debris]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(302,atwima,formal(att_value(_798892,fertility,increase) causes1way att_value(process(_798906,growth),rate,increase),[_798906 : crop,_798892 : soil]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(303,atwima,formal(att_value(process(_799482,growth),rate,increase) causes1way att_value(_799482,yield,increase),[_799482 : crop]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(304,atwima,formal(att_value(process(_800060,drying),rate,high) causes1way att_value(action(burning,_800078),intensity,increase),[_800060 : acheampong,_800078 : vegetation_debris]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(305,atwima,formal(action(burning,_800634) causes1way process(part(_800634,_800646),death),[_800634 : esre,_800646 : stem]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(306,atwima,formal(action(burning,_801200) causes1way (not process(part(_801200,_801216),death)),[_801200 : esre,_801216 : stump]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(307,atwima,formal((not process(part(_801776,_801778),death)) causes1way att_value(process(part(_801776,_801778),sprouting),rate,high),[_801776 : esre,_801778 : stump]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(308,atwima,formal(att_value(process(part(_802360,_802362),sprouting),rate,high) causes1way att_value(process(_802360,colonisation),rate,increase),[_802360 : esre,_802362 : stump]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(309,atwima,formal(att_value(process(_802938,shading,_802942),intensity,increase) causes2way att_value(process(_802942,growth),rate,decrease),[_802938 : acheampong,_802942 : esre]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(310,atwima,formal(_803516 causes1way att_value(_803522,presence,positive),[_803516 : asase_kokoo,_803522 : sansan]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(311,atwima,formal(att_value(process(_804080,shading),intensity,low) causes1way att_value(_804092,density,increase),[_804080 : oil_palm,_804092 : weeds]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(312,atwima,formal(att_value(process(_804650,shading),intensity,high) causes1way att_value(_804662,density,decrease),[_804650 : cocoa,_804662 : weeds]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(313,atwima,formal(att_value(process(_805220,death),age,'1 month') causes1way att_value(action(clearing,_805220),ease,high),[_805220 : bosomwuajura]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(314,atwima,formal(att_value(process(_805788,growth),height,short) causes1way att_value(process(_805788,shading,_805808),intensity,low),[_805788 : bosomwuajura,_805808 : crop]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Nsiah, A.','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(315,atwima,formal(att_value(process(part(_806386,_806388),dispersal),mechanism,air) causes1way att_value(process(_806386,colonisation),rate,increase),[_806388 : seed,_806386 : weeds]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(316,atwima,formal(att_value(process(part(_806968,_806970),dispersal),mechanism,bird) causes1way att_value(process(_806968,colonisation),rate,increase),[_806970 : seed,_806968 : weeds]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(317,atwima,formal(att_value(process(part(_807554,_807556),survival),time,'<1 year') causes1way process(part(_807554,_807556),germination) if att_value(action(clearing,_807588),age,'1 year'),[_807554 : esre,_807588 : fallow,_807556 : seed]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(318,atwima,formal(att_value(process(part(_808158,_808160),sprouting),rate,high) causes1way att_value(process(_808158,colonisation),rate,increase),[_808158 : esre,_808160 : root]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(319,atwima,formal(process(_808732,shading,_808736) causes1way att_value(_808736,enyunu,increase),[_808736 : soil,_808732 : trees]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(320,atwima,formal(process(_809304,colonisation) causes1way (not process(_809316,shading)),[_809304 : esre,_809316 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(321,atwima,formal(process(_809868,colonisation) causes1way (not process(_809880,shading)),[_809868 : acheampong,_809880 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(322,atwima,formal(_810428 causes1way att_value(_810434,fertility,increase),[_810428 : kakapenpen,_810434 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(323,atwima,formal(_810984 causes1way att_value(_810990,fertility,increase),[_810984 : odoma,_810990 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(324,atwima,formal(_811540 causes1way att_value(_811546,fertility,increase),[_811540 : pepediawuo,_811546 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(325,atwima,formal(att_value(part(_812104,_812106),depth,shallow) causes1way att_value(action(work,_812122),ease,low),[_812106 : root,_812122 : soil,_812104 : watapuo]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(326,atwima,formal(att_value(part(_812688,_812690),depth,shallow) causes1way att_value(action(work,_812706),ease,low),[_812688 : okoro,_812690 : root,_812706 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(327,atwima,formal(att_value(part(_813272,_813274),depth,shallow) causes1way att_value(action(work,_813290),ease,low),[_813272 : genegene,_813274 : root,_813290 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(328,atwima,formal(process(part(_813856,_813858),decomposition) causes1way att_value(_813866,fertility,increase),[_813858 : fruit,_813866 : soil,_813856 : trees]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(329,atwima,formal(_814424 causes1way att_value(_814430,fertility,increase),[_814424 : foto,_814430 : soil]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(330,atwima,formal(process(part(_814988,_814990),drop) causes1way process(_814998,death),[_814990 : branch,_814998 : cocoa,_814988 : onyina]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(331,atwima,formal(att_value(_815558,age,increase) causes2way att_value(action(use,_815574,_815558),effectiveness,decrease),[_815558 : esre,_815574 : herbicide]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(332,atwima,formal(att_value(_816130,speed,increase) causes1way att_value(process(_816144,blow_down),probability,increase),[_816144 : plantain,_816130 : wind]),source(atwima,source([('Effah, A.','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(333,atwima,formal(att_value(_816752,density,high) causes1way (not att_value(_816766,temperature,hot)),[_816766 : afonywie,_816752 : trees]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(334,atwima,formal(process(part(_817378,_817380),decomposition) causes1way att_value(_817388,fertility,increase),[_817378 : acheampong,_817380 : leaves,_817388 : soil]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(335,atwima,formal(att_value(_817950,fertility,high) causes1way att_value(_817980,presence,positive),[_817980 : nkonkoahin,_817950 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(336,atwima,formal(att_value(_818602,fertility,high) causes1way att_value(part(_818602,_818618),presence,positive),[_818618 : black_layer,_818602 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(337,atwima,formal(att_value(_44,fertility,high) causes1way att_value(_44,enyunu,increase),[_44 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(338,atwima,formal(att_value(_592,fertility,high) causes1way att_value(_592,texture,foamy),[_592 : soil]),source(atwima,source([('Bonsu, O.','Gogoikrom',2000,a),('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(339,atwima,formal(att_value(_1148,fertility,low) causes1way att_value(_1158,presence,positive),[_1158 : fumtum,_1148 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(340,atwima,formal(att_value(_1704,fertility,low) causes1way att_value(_1714,presence,positive),[_1714 : kakapenpen,_1704 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(341,atwima,formal(att_value(_2260,fertility,low) causes1way att_value(_2270,presence,positive),[_2270 : keyja,_2260 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(342,atwima,formal(att_value(_2816,fertility,low) causes1way att_value(_2826,presence,positive),[_2826 : nnan_furo,_2816 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(343,atwima,formal(_3368 causes1way att_value(_3374,moisture,decrease),[_3368 : kakapenpen,_3374 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(344,atwima,formal(_3916 causes1way att_value(_3922,moisture,decrease),[_3916 : keyja,_3922 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(345,atwima,formal(_4464 causes1way att_value(_4470,moisture,decrease),[_4464 : nnan_furo,_4470 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(346,atwima,formal(process(part(_5020,_5022),decomposition) causes1way att_value(_5030,fertility,increase),[_5020 : kumanini,_5022 : log,_5030 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(347,atwima,formal(att_value(_5584,fertility,high) causes1way att_value(_5594,presence,positive),[_5594 : odoma,_5584 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(348,atwima,formal(att_value(_6140,fertility,high) causes1way att_value(_6150,presence,positive),[_6150 : domini,_6140 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(349,atwima,formal(att_value(_6696,fertility,high) causes1way att_value(_6706,presence,positive),[_6706 : kokoanisua,_6696 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(350,atwima,formal(process(part(_7256,_7258),decomposition) causes1way att_value(_7266,fertility,increase),[_7256 : domini,_7258 : fruit,_7266 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(351,atwima,formal(process(part(_7824,_7826),decomposition) causes1way att_value(_7834,fertility,increase),[_7826 : fruit,_7824 : odoma,_7834 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(352,atwima,formal(att_value(_8388,density,increase) causes2way att_value(_8398,lifespan,increase),[_8398 : cocoa,_8388 : trees]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(353,atwima,formal(att_value(_8944,density,increase) causes1way att_value(_8954,fertility,increase),[_8944 : millipede,_8954 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(354,atwima,formal(action(burning,_9502) causes1way att_value(_9508,density,decrease),[_9508 : millipede,_9502 : vegetation_debris]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(355,atwima,formal(action(burning,_10056) causes1way att_value(_10062,density,decrease),[_10062 : earthworm,_10056 : vegetation_debris]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(356,atwima,formal(action(work,_10610) causes1way att_value(process(_10610,erosion),rate,increase),[_10610 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(357,atwima,formal(att_value(process(_11164,erosion),rate,increase) causes1way att_value(_11176,depth,decrease),[_11176 : etwre,_11164 : soil]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),causal).
+sentence(358,atwima,formal(process(_11722,shining,_11726) causes1way att_value(_11726,fertility,decrease),[_11726 : soil,_11722 : sunlight]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a)])),causal).
+sentence(359,atwima,formal(att_value(_12286,speed,increase) causes1way att_value(process(part(_12304,_12306),dispersal),effectiveness,increase),[_12304 : acheampong,_12306 : seed,_12286 : wind]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),causal).
+sentence(360,atwima,formal(att_value(part(_12866,_12868),presence,positive) causes1way att_value(process(_12882,growth),rate,decrease),[_12868 : abuo,_12866 : asase_kokoo,_12882 : cocoa]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),causal).
+sentence(361,atwima,formal(att_value(part(_13442,_13444),presence,positive) causes1way att_value(_13454,yield,high),[_13444 : abuo,_13442 : asase_kokoo,_13454 : cocoa]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),causal).
+sentence(362,atwima,formal(att_value(process(_14012,growth),rate,decrease) causes1way att_value(_14012,maturity,delayed),[_14012 : cocoa]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),causal).
+sentence(363,atwima,formal(action(burning,_14564) causes1way att_value(_14570,fertility,no_change),[_14570 : soil,_14564 : vegetation_debris]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Bonsu, O.','Gogoikrom',2000,a)])),causal).
+sentence(364,atwima,formal(att_value(_15124,fertility,low) causes1way att_value(_15124,texture,hard),[_15124 : soil]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Kru et al','Kyereyase',2000,a)])),causal).
+sentence(365,atwima,formal(att_value(_15680,fertility,low) causes1way att_value(_15680,texture,sticky),[_15680 : soil]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),causal).
+sentence(366,atwima,formal(att_value(part(_16232,_16234),presence,positive) causes1way att_value(_16244,height,decrease),[_16244 : crop,_16234 : etwre,_16232 : soil]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),causal).
+sentence(367,atwima,formal(att_value(_16802,length,range('7 years','10 years')) causes1way att_value(_16818,cocoa_suitability,high) if att_value(_16828,presence,positive),[_16828 : asase_kokoo,_16802 : fallow,_16818 : soil]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),causal).
+sentence(368,atwima,formal(att_value(_17382,water_holding_capacity,low) causes1way att_value(process(part(_17382,_17402),leaching),rate,increase),[_17382 : afonywie,_17402 : nutrients]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(369,atwima,formal(att_value(_17958,water_holding_capacity,high) causes1way att_value(process(part(_17958,_17978),leaching),rate,decrease),[_17958 : asase_kokoo,_17978 : nutrients]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(370,atwima,formal(att_value(_18538,moisture,dry) causes1way process(_18538,cracking) if att_value(_18556,season,harmattan),[_18538 : ateche,_18556 : year]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),causal).
+sentence(371,atwima,formal(process(_19102,cracking) causes1way att_value(_19110,cocoa_suitability,negative),[_19102 : ateche,_19110 : soil]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),causal).
+sentence(372,atwima,formal(att_value(_19656,height,short) causes1way att_value(process(_19656,shading,_19674),intensity,low),[_19674 : cocoa,_19656 : nsohwea]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),causal).
+sentence(373,atwima,formal(_20216 causes1way process(_20222,irritation),[_20216 : nsasun,_20222 : skin]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(374,atwima,formal((not action(burning,_20772)) causes1way att_value(_20772,density,increase),[_20772 : vegetation_debris]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(375,atwima,formal(att_value(_21316,density,increase) causes1way att_value(_21326,fertility,increase),[_21326 : soil,_21316 : vegetation_debris]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a),('Konadu, Y.','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(376,atwima,formal(att_value(part(_21892,_21894),position,central) causes1way att_value(action(clearing,_21892),ease,high),[_21892 : nyanya,_21894 : root]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(377,atwima,formal(att_value(action(clearing,_22462),ease,high) causes1way att_value(action(clearing,_22478),area,increase),[_22462 : nyanya,_22478 : land]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(378,atwima,formal(action(clearing,_23026) causes1way att_value(process(_23026,colonisation),time,long),[_23026 : pawpaw]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(379,atwima,formal(att_value(part(_23580,_23582),presence,positive) causes1way att_value(part(_23596,_23598),length,decrease),[_23582 : etwre,_23598 : root,_23580 : soil,_23596 : plant]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(380,atwima,formal(att_value(part(_24164,_24166),length,decrease) causes1way process(_24164,blow_down),[_24166 : root,_24164 : plant]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(381,atwima,formal(att_value(part(_24724,_24726),length,decrease) causes1way att_value(process(_24724,growth),rate,decrease),[_24726 : root,_24724 : plant]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(382,atwima,formal(att_value(process(_25292,growth),rate,decrease) causes1way att_value(_25292,yield,decrease),[_25292 : plant]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(383,atwima,formal(att_value(_25842,fertility,high) causes1way att_value(part(_25856,_25858),colour,deep_green),[_25856 : cocoyam,_25858 : leaves,_25842 : soil]),source(atwima,source([('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(384,atwima,formal(action(cutting,_26414) causes1way process(_26420,shaking),[_26420 : soil,_26414 : trees]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(385,atwima,formal(process(_26972,shaking) causes1way att_value(process(_26984,growth),rate,increase),[_26984 : crop,_26972 : soil]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Ntoudu, Y.','Kyereyase',2000,a)])),causal).
+sentence(386,atwima,formal(action(burning,_27542) causes1way att_value(_27548,fertility,increase),[_27548 : soil,_27542 : vegetation_debris]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Asantwaa, Y.','Kyereyase',2000,a)])),causal).
+sentence(387,atwima,formal(att_value(_28102,length,increase) causes1way att_value(_28112,fertility,increase),[_28102 : fallow,_28112 : soil]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Asantwaa, Y.','Kyereyase',2000,a)])),causal).
+sentence(388,atwima,formal(att_value(_28666,density,decrease) causes1way process(_28676,shining,_28680),[_28680 : soil,_28676 : sunlight,_28666 : trees]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Bonsu, O.','Gogoikrom',2000,a)])),causal).
+sentence(389,atwima,formal(process(_29238,shading,_29242) causes1way att_value(_29242,enyunu,decrease),[_29238 : acheampong,_29242 : soil]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a)])),causal).
+sentence(390,atwima,formal(att_value(_29794,density,increase) causes1way att_value(part(_29808,_29810),colour,yellow),[_29810 : leaves,_29808 : maize,_29794 : weeds]),source(atwima,source([('Asantwaa, Y.','Kyereyase',2000,a)])),causal).
+sentence(391,atwima,formal(att_value(_30364,length,'2 years') causes1way att_value(process(_30378,growth),rate,zero),[_30364 : fallow,_30378 : plantain]),source(atwima,source([('Konadu, Y.','Kyereyase',2000,a)])),causal).
+sentence(392,atwima,formal(att_value(action(uprooting,_30932),ease,low) causes1way att_value(action(clearing,_30932),ease,low),[_30932 : esre]),source(atwima,source([('Konadu, Y.','Kyereyase',2000,a)])),causal).
+sentence(393,atwima,formal(att_value(_31486,density,increase) causes1way att_value(process(_31500,colonisation),rate,decrease),[_31486 : esre,_31500 : trees]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Konadu, Y.','Kyereyase',2000,a)])),causal).
+sentence(394,atwima,formal(process(_32056,coiling,_32060) causes1way att_value(action(clearing,_32056),ease,low),[_32056 : ananse_treumu_huma,_32060 : crop]),source(atwima,source([('Konadu, Y.','Kyereyase',2000,a)])),causal).
+sentence(395,atwima,formal(att_value(_32618,presence,negative) causes1way att_value(_32628,intensity,increase),[_32628 : sunlight,_32618 : trees]),source(atwima,source([('Konadu, Y.','Kyereyase',2000,a)])),causal).
+sentence(396,atwima,formal(att_value(_33174,intensity,increase) causes1way process(_33184,death),[_33184 : crop,_33174 : sunlight]),source(atwima,source([('Konadu, Y.','Kyereyase',2000,a)])),causal).
+sentence(397,atwima,formal((not process(_33732,death)) causes1way att_value(action(clearing,_33732),ease,low),[_33732 : monumia]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a)])),causal).
+sentence(398,atwima,formal(att_value(process(_34288,growth),height,short) causes1way att_value(process(_34288,shading,_34308),intensity,low),[_34308 : crop,_34288 : monumia]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a)])),causal).
+sentence(399,atwima,formal(action(uprooting,_34856) causes1way process(_34856,death),[_34856 : acheampong]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a)])),causal).
+sentence(400,atwima,formal(process(_35398,death) causes1way att_value(action(clearing,_35398),ease,high),[_35398 : acheampong]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a)])),causal).
+sentence(401,atwima,formal(att_value(_35950,moisture,increase) causes2way att_value(action(burning,_35950),intensity,decrease),[_35950 : vegetation_debris]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a)])),causal).
+sentence(402,atwima,formal(process(rainfall) causes1way att_value(_36510,moisture,increase),[_36510 : vegetation_debris]),source(atwima,source([('Nsiah, A.','Kyereyase',2000,a)])),causal).
+sentence(403,atwima,formal(att_value(process(part(_37056,_37058),dispersal),mechanism,river) causes1way att_value(process(_37056,colonisation),rate,increase),[_37058 : seed,_37056 : weeds]),source(atwima,source([('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(404,atwima,formal(_37618 causes1way att_value(_37624,density,increase),[_37618 : afonywie,_37624 : weeds]),source(atwima,source([('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(405,atwima,formal(action(burning,_38172) causes1way process(part(_38182,_38184),germination),[_38182 : nkyenkyema,_38184 : seed,_38172 : vegetation_debris]),source(atwima,source([('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(406,atwima,formal(action(burning,_38738) causes1way process(part(_38748,_38750),germination),[_38750 : seed,_38748 : tweta,_38738 : vegetation_debris]),source(atwima,source([('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(407,atwima,formal(action(burning,_39304) causes1way process(part(_39314,_39316),germination),[_39314 : oil_palm,_39316 : seed,_39304 : vegetation_debris]),source(atwima,source([('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(408,atwima,formal(att_value(process(part(_39876,_39878),leaching),rate,increase) causes2way att_value(_39890,fertility,decrease),[_39876 : afonywie,_39878 : nutrients,_39890 : soil]),source(atwima,source([('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(409,atwima,formal(att_value(process(part(_40452,_40454),leaching),rate,decrease) causes2way att_value(_40466,fertility,increase),[_40452 : asase_kokoo,_40454 : nutrients,_40466 : soil]),source(atwima,source([('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(410,atwima,formal(att_value(process(_41024,competition,_41028),resource,light) causes1way att_value(_41028,yield,decrease),[_41028 : crop,_41024 : weeds]),source(atwima,source([('Asmoah  et al','Kyereyase',2000,a)])),causal).
+sentence(411,atwima,formal(att_value(process(_41588,competition,_41592),resource,soil_moisture) causes1way att_value(_41592,yield,decrease),[_41592 : crop,_41588 : weeds]),source(atwima,source([('Asmoah  et al','Kyereyase',2000,a)])),causal).
+sentence(412,atwima,formal(att_value(_42148,density,increase) causes2way att_value(process(_42148,shading,_42166),intensity,increase),[_42148 : crop,_42166 : weeds]),source(atwima,source([('Asmoah  et al','Kyereyase',2000,a)])),causal).
+sentence(413,atwima,formal(att_value(_42712,fertility,increase) causes1way att_value(_42722,height,high),[_42722 : crop,_42712 : soil]),source(atwima,source([('Asmoah  et al','Kyereyase',2000,a)])),causal).
+sentence(414,atwima,formal(att_value(part(_43272,_43274),density,increase) causes2way att_value(process(part(_43272,_43274),shading,_43298),intensity,increase),[_43272 : acheampong,_43298 : crop,_43274 : stump_sprouts]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(415,atwima,formal(att_value(process(part(_43860,_43862),shading,_43866),intensity,increase) causes2way att_value(process(_43866,growth),rate,decrease),[_43860 : acheampong,_43866 : crop,_43862 : stump_sprouts]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(416,atwima,formal(att_value(process(_44440,growth),tolerance,high) causes1way att_value(process(_44440,growth),rate,average),[_44440 : crop]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(417,atwima,formal(att_value(part(_45000,_45002),density,low) causes1way (not att_value(process(_45000,growth),pattern,grouped)),[_45000 : acheampong,_45002 : stem]),source(atwima,source([('Antwi, K','Kyereyase',2000,a)])),causal).
+sentence(418,atwima,formal(att_value(action(clearing,_45574),intensity,increase) causes1way att_value(action(clearing,_45574),ease,low),[_45574 : esre]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Asantwaa, Y.','Kyereyase',2000,a)])),causal).
+sentence(419,atwima,formal(att_value(process(_46140,growth),rate,decrease) causes2way att_value(_46140,density,decrease),[_46140 : esre]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a),('Adam, Y.','Gogoikrom',2000,a)])),causal).
+sentence(420,atwima,formal(att_value(process(part(_46710,_46712),survival),time,'<1 year') causes1way (not att_value(part(_46710,_46712),presence,in_soil)) if att_value(_46744,presence,positive),[_46710 : esre,_46744 : nfofoa_kwae,_46712 : seed]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),causal).
+sentence(421,atwima,formal(att_value(action(use,_47320,_47322),effectiveness,decrease) causes1way att_value(action(clearing,_47322),ease,low),[_47322 : esre,_47320 : herbicide]),source(atwima,source([('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,a)])),causal).
+sentence(422,atwima,formal(att_value(process(_47904,colonisation),rate,increase) causes2way att_value(_47904,density,increase),[_47904 : esre]),source(atwima,source([('Frost, W.','Knowledge base developer',2000,a)])),causal).
+sentence(423,atwima,formal(att_value(part(_48458,_48460),density,decrease) causes2way att_value(_48458,density,decrease),[_48458 : esre,_48460 : seed]),source(atwima,source([('Frost, W.','Knowledge base developer',2000,a)])),causal).
+sentence(424,atwima,formal(att_value(_49016,density,increase) causes2way att_value(process(_49016,shading,_49034),intensity,increase),[_49016 : acheampong,_49034 : esre]),source(atwima,source([('Frost, W.','Knowledge base developer',2000,a)])),causal).
+sentence(425,atwima,formal(att_value(process(part(_49588,_49590),sprouting),time,long) causes1way att_value(part(_49606,_49608),density,decrease),[_49606 : acheampong,_49590 : stump,_49608 : stump_sprouts,_49588 : weeds]),source(atwima,source([('Frost, W.','Knowledge base developer',2000,a)])),causal).
+sentence(426,atwima,formal(comparison(appearance,_50172,same_as,_50176) if att_value(_50182,stage,mature),[_50172 : afonywie,_50176 : asase_kokoo,_50182 : fallow]),source(atwima,source([('Effah, A.','Kyereyase',2000,a)])),comparison).
+sentence(427,atwima,formal(comparison(growth_rate,_50738,greater_than,_50742) if att_value(_50748,fertility,high),[_50738 : crop,_50748 : soil,_50742 : weeds]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a)])),comparison).
+sentence(428,atwima,formal(comparison(fertility,_51300,greater_than,_51304),[_51304 : asase_kokoo,_51300 : asase_tuntum]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),comparison).
+sentence(429,atwima,formal(comparison(fertility,_51844,greater_than,_51848),[_51844 : asase_kokoo,_51848 : ateche]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Kru et al','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b),('Asante, K.','Gogoikrom',2000,b)])),comparison).
+sentence(430,atwima,formal(comparison(fertility,_52428,greater_than,_52432),[_52432 : afonywie,_52428 : ateche]),source(atwima,source([('Kru et al','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),comparison).
+sentence(431,atwima,formal(comparison(soil_under,_52988,same_as,_52992),[_52992 : kwae,_52988 : nfofoa_kwae]),source(atwima,source([('Kru et al','Kyereyase',2000,a)])),comparison).
+sentence(432,atwima,formal(comparison(clearing_ease,_53532,less_than,_53536),[_53532 : esre,_53536 : nkyenkyema]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),comparison).
+sentence(433,atwima,formal(comparison(clearing_ease,_54076,less_than,_54080),[_54080 : acheampong,_54076 : nkyenkyema]),source(atwima,source([('Serwaa, A','Kyereyase',2000,a)])),comparison).
+sentence(434,atwima,formal(comparison(clearing_ease,_54620,less_than,_54624),[_54624 : ananse_treumu_huma,_54620 : nkyenkyema]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),comparison).
+sentence(435,atwima,formal(comparison(clearing_ease,_55164,less_than,_55168),[_55168 : ananse_dua,_55164 : nkyenkyema]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),comparison).
+sentence(436,atwima,formal(comparison(clearing_ease,_55708,same_as,_55712),[_55712 : ananse_dua,_55708 : ananse_treumu_huma]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),comparison).
+sentence(437,atwima,formal(comparison(clearing_ease,_56252,less_than,_56256),[_56256 : acheampong,_56252 : ananse_treumu_huma]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,a)])),comparison).
+sentence(438,atwima,formal(comparison(clearing_ease,part(_56800,_56802),greater_than,part(_56800,_56812)),[_56802 : acheampong,_56812 : esre,_56800 : fallow]),source(atwima,source([('Effah, A.','Kyereyase',2000,a),('Barima, K. ','Kyereyase',2000,a),('Barima et al','Kyereyase',2000,a)])),comparison).
+sentence(439,atwima,formal(comparison(leaf_drop,_57376,greater_than,_57380),[_57380 : acheampong,_57376 : trees]),source(atwima,source([('Asante, K.','Gogoikrom',2000,b),('Adam, Y.','Gogoikrom',2000,a)])),comparison).
+sentence(440,atwima,formal(comparison(fertility,part(_57932,_57934),greater_than,part(_57932,_57944)),[_57934 : acheampong,_57944 : esre,_57932 : fallow]),source(atwima,source([('Asmoah, D.','Kyereyase',2000,b)])),comparison).
+sentence(441,atwima,formal(comparison(fertility,part(_58496,_58498),greater_than,part(_58496,_58508)),[_58508 : acheampong,_58496 : fallow,_58498 : nfofoa_kwae]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Asmoah, D.','Kyereyase',2000,b)])),comparison).
+sentence(442,atwima,formal(comparison(clearing_ease,part(_59068,_59070),greater_than,part(_59068,_59080)),[_59070 : acheampong,_59068 : fallow,_59080 : nfofoa_kwae]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),comparison).
+sentence(443,atwima,formal(comparison(fertility,part(_59632,_59634),same_as,part(_59632,_59644)),[_59644 : acheampong,_59632 : fallow,_59634 : nfofoa_kwae]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),comparison).
+sentence(444,atwima,formal(comparison(weed_density,part(_60196,_60198),greater_than,part(_60196,_60208)),[_60198 : acheampong,_60196 : fallow,_60208 : nfofoa_kwae]),source(atwima,source([('Twumwa, A.','Kyereyase',2000,a),('Moba, A.','Gogoikrom',2000,a)])),comparison).
+sentence(445,atwima,formal(comparison(fertility_loss,_60764,greater_than,_60768),[_60764 : afonywie,_60768 : asase_kokoo]),source(atwima,source([('Moba, A.','Gogoikrom',2000,a)])),comparison).
+formal_term(atwima,fertility,attribute,'literal meaning; power or strength ',[sradie,ahooden]).
+formal_term(atwima,asase_enyine,object,'Used to describe a soil when it has had a long fallow, under nfofoa kwae. Considered fertile. ',['mature soil']).
+formal_term(atwima,soil,object,' ',[netie]).
+formal_term(atwima,land,object,'',[]).
+formal_term(atwima,onyina,object,'A tree',['Ceiba pentandra','silk cotton tree']).
+formal_term(atwima,death,process,'',[]).
+formal_term(atwima,absent,value,'',[]).
+formal_term(atwima,mumuanka,object,'indicator of soil fertility. Originally thought to be Mimosa pudica (sensitive plant) but this is unlikely if it is an indicator of soil fertility - Piper umbellatum is more likely. ',[]).
+formal_term(atwima,sansan,object,'a low creeping grass',['Vetieria nigritana']).
+formal_term(atwima,atooto,object,'a weed',['Griffonia simplicifolia']).
+formal_term(atwima,foto,object,'a tree',['Glyphaea brevis']).
+formal_term(atwima,tweta,object,'a weed literal translation of name is pull and fart twi - pull ta-fart',['Sida acuta']).
+formal_term(atwima,nnan_furo,object,'a shrub',['Bequaertiodendron oblanceolatum','Mallotus oppositifolius']).
+formal_term(atwima,ananse_dua,object,'a weed',['Senna obtusifolia (Fabaceae)']).
+formal_term(atwima,nsohwea,object,'A grass',['Paspalum conjugatum (Poaceae)']).
+formal_term(atwima,nyanya,object,'A creeping weed found after clearing nfofoa kwae.  Momordica balsamina, M. charantia (Cucurbitaceace)',['Momordica spp.']).
+formal_term(atwima,adedenyaa,object,'A weed, Euphorbia spp.',[]).
+formal_term(atwima,ananse_dukono,object,'a climbing weed',[]).
+formal_term(atwima,shining,process,'',[]).
+formal_term(atwima,shaking,process,'',[]).
+formal_term(atwima,loosening,process,'',[]).
+formal_term(atwima,bosomwuajura,object,'a weed',['Talinum triangulare',bokoboko,'water leaf']).
+formal_term(atwima,nkyenkyema,object,'a grass weed',['Rottboellia exaltata']).
+formal_term(atwima,watapuo,object,'A tree',['Cola gigantea','Cola gigantea var. glabrescens']).
+formal_term(atwima,okoro,object,'A timber tree',['Albizia spp.','Albizia zygia']).
+formal_term(atwima,odum,object,'a timber tree',['C. regia','Chlorophora excelsa','Milicia excelsa']).
+formal_term(atwima,odoma,object,'a tree',['Ficus capensis','Ficus spp.']).
+formal_term(atwima,ananse_treumu_huma,object,'A climbing weed - vein on spiders backside',['Centrosema plumieri',ananse_tromohomo]).
+formal_term(atwima,afonywie,object,'',[afonwea,'sandy loam']).
+formal_term(atwima,cassava_mix,object,'The common intercrop mix of maize planted only in the first year, followed by cocoyam, cassava and plantain in the same year. Often planted when establishing Cocoa.',[]).
+formal_term(atwima,asase_tuntum,object,'',['black soil']).
+formal_term(atwima,'20 years',value,'',[]).
+formal_term(atwima,'15 years',value,'',[]).
+formal_term(atwima,'7 years',value,'',[]).
+formal_term(atwima,'4',value,'',[]).
+formal_term(atwima,'8 years',value,'',[]).
+formal_term(atwima,'6 years',value,'',[]).
+formal_term(atwima,'5 years',value,'',[]).
+formal_term(atwima,'4 years',value,'',[]).
+formal_term(atwima,'4 weeks',value,'',[]).
+formal_term(atwima,'2 years',value,'',[]).
+formal_term(atwima,'3 years',value,'',[]).
+formal_term(atwima,'3 weeks',value,'',[]).
+formal_term(atwima,'1 week',value,'',[]).
+formal_term(atwima,'1 month',value,'',[]).
+formal_term(atwima,'>5 years',value,'',[]).
+formal_term(atwima,'>1 year',value,'',[]).
+formal_term(atwima,'<1 year',value,'',[]).
+formal_term(atwima,'1 year',value,'',[]).
+formal_term(atwima,'1.5 years',value,'',[]).
+formal_term(atwima,'10 years',value,'',[]).
+formal_term(atwima,weeds,object,'',[nwura]).
+formal_term(atwima,trees,object,'',[]).
+formal_term(atwima,acheampong,object,'A common weed named after former president who was in power when weed spread in early 1970s',['Chromolaena odorata']).
+formal_term(atwima,'timber tree',object,'',[]).
+formal_term(atwima,'nwura bone',object,'a general name for a bad weed',[]).
+formal_term(atwima,'land types',object,'Hierarchy',[]).
+formal_term(atwima,'fertility indicator',object,'',[]).
+formal_term(atwima,zero,value,'',[]).
+formal_term(atwima,young,value,'',[]).
+formal_term(atwima,yield,attribute,'',[]).
+formal_term(atwima,yellow,value,'',[]).
+formal_term(atwima,year,object,'',[]).
+formal_term(atwima,work,action,'',[]).
+formal_term(atwima,wind,object,'',[]).
+formal_term(atwima,weed_density,attribute,'',[]).
+formal_term(atwima,wawa,object,'a timber tree',['Triplochiton scleroxylon']).
+formal_term(atwima,waterlogged,value,'',[]).
+formal_term(atwima,water_holding_capacity,attribute,'',[]).
+formal_term(atwima,water,object,'',[]).
+formal_term(atwima,wama,object,'a tree',['Euphorbiaceae','Ricinodendron heudelotii']).
+formal_term(atwima,vegetation_debris,object,'',[]).
+formal_term(atwima,use,action,'',[]).
+formal_term(atwima,uprooting,action,'',[]).
+formal_term(atwima,undergrowth,object,'',[]).
+formal_term(atwima,type,attribute,'',[]).
+formal_term(atwima,tuber,object,'',[]).
+formal_term(atwima,transfer,process,'',[]).
+formal_term(atwima,toughness,attribute,'',[]).
+formal_term(atwima,topsoil,object,'',[]).
+formal_term(atwima,tolerance,attribute,'',[]).
+formal_term(atwima,time,attribute,'',[]).
+formal_term(atwima,timber_machinery,value,'',[]).
+formal_term(atwima,tillering,process,'',[]).
+formal_term(atwima,thin,value,'',[]).
+formal_term(atwima,texture,attribute,'',[]).
+formal_term(atwima,temperature,attribute,'',[]).
+formal_term(atwima,survival,process,'',[]).
+formal_term(atwima,surface,object,'',[]).
+formal_term(atwima,sunlight,object,'',[]).
+formal_term(atwima,subsequent,value,'',[]).
+formal_term(atwima,stump_sprouts,object,'',[]).
+formal_term(atwima,stump,object,'',[]).
+formal_term(atwima,strength,attribute,'',[]).
+formal_term(atwima,sticky,value,'',[]).
+formal_term(atwima,stem,object,'',[]).
+formal_term(atwima,stage,attribute,'',[]).
+formal_term(atwima,sprouting_tree,object,'',[]).
+formal_term(atwima,sprouting,process,'',[]).
+formal_term(atwima,spiny,value,'',[]).
+formal_term(atwima,speed,attribute,'',[]).
+formal_term(atwima,soil_under,attribute,'',[]).
+formal_term(atwima,soil_pest,object,'',[]).
+formal_term(atwima,soil_moisture,value,'',[]).
+formal_term(atwima,soft,value,'',[]).
+formal_term(atwima,skin,object,'',[]).
+formal_term(atwima,size,attribute,'',[]).
+formal_term(atwima,short,value,'',[]).
+formal_term(atwima,shesheeshe,attribute,'very hot, (characteristic of infertile soil)',[]).
+formal_term(atwima,shallow,value,'',[]).
+formal_term(atwima,shading,process,'',[]).
+formal_term(atwima,shade_tree,object,'',[]).
+formal_term(atwima,seedling,object,'',[]).
+formal_term(atwima,seed_set,process,'',[]).
+formal_term(atwima,seed,object,'',[]).
+formal_term(atwima,second,value,'',[]).
+formal_term(atwima,season,attribute,'',[]).
+formal_term(atwima,sante,object,'A tree',['Lonchocarpus sericeus']).
+formal_term(atwima,same_as,comparison,'',[]).
+formal_term(atwima,runoff,process,'',[]).
+formal_term(atwima,roundup,object,'herbicide',[]).
+formal_term(atwima,rooting,process,'',[]).
+formal_term(atwima,root,object,'',[]).
+formal_term(atwima,river,value,'',[]).
+formal_term(atwima,rice,object,'',[emo]).
+formal_term(atwima,resource,attribute,'',[]).
+formal_term(atwima,reproduction,process,'',[]).
+formal_term(atwima,rate,attribute,'',[]).
+formal_term(atwima,rainy,value,'',[]).
+formal_term(atwima,rainfall,process,'',[]).
+formal_term(atwima,rain,object,'',[]).
+formal_term(atwima,quantity,attribute,'',[]).
+formal_term(atwima,quality,attribute,'',[]).
+formal_term(atwima,proportion,attribute,'',[]).
+formal_term(atwima,probability,attribute,'',[]).
+formal_term(atwima,presence,attribute,'',[]).
+formal_term(atwima,positive,value,'',[]).
+formal_term(atwima,position,attribute,'',[]).
+formal_term(atwima,planting,action,'',[]).
+formal_term(atwima,plantain,object,'',[bodie]).
+formal_term(atwima,plant,object,'',[]).
+formal_term(atwima,pepediawuo,object,'a shrub',['Solanum erianthum']).
+formal_term(atwima,pawpaw,object,'a weed and a fruit tree',[]).
+formal_term(atwima,pattern,attribute,'',[]).
+formal_term(atwima,opam,object,'a timber tree',['Bridelia micrantha']).
+formal_term(atwima,oil_palm,object,'',[]).
+formal_term(atwima,odoma_kokoo,object,'a tree',['red odoma']).
+formal_term(atwima,odoma_fufu,object,'a tree',['white odoma']).
+formal_term(atwima,occurance,attribute,'',[]).
+formal_term(atwima,nyankyereni,object,'a tree',['Ficus exasperata']).
+formal_term(atwima,nwura_bone,value,'general name for a bad or problem weed',['bad weed']).
+formal_term(atwima,nutrients,object,'',[]).
+formal_term(atwima,nutrient,value,'',[]).
+formal_term(atwima,nsasun,object,'a weed',['Tragia benthamii, Euphorbiaceae']).
+formal_term(atwima,node,object,'',[]).
+formal_term(atwima,no_change,value,'',[]).
+formal_term(atwima,nkonkoahin,object,'A vine, indicates fertile soil',['Skindioses spp.']).
+formal_term(atwima,nfofoa_kwae,object,'A land type that may refer to a mature forest that was cleared in the past, an old cocoa farm, or forest thicket type vegetation. ',['secondary forest']).
+formal_term(atwima,negative,value,'',[]).
+formal_term(atwima,nearby,value,'',[]).
+formal_term(atwima,near_river,value,'',[]).
+formal_term(atwima,ncranpan,object,'a parasitic plant of cocoa',[mistletoe]).
+formal_term(atwima,narrow,value,'',[]).
+formal_term(atwima,nantwri_sre,object,'a grass weed',['Pennisetum purpureum','elephant grass']).
+formal_term(atwima,monumia,object,'a weed',[]).
+formal_term(atwima,moisture,attribute,'',[]).
+formal_term(atwima,millipede,object,'',[]).
+formal_term(atwima,method,attribute,'',[]).
+formal_term(atwima,mechanism,attribute,'',[]).
+formal_term(atwima,maturity,attribute,'',[]).
+formal_term(atwima,mature,value,'',[]).
+formal_term(atwima,maize,object,'',[]).
+formal_term(atwima,low,value,'',[]).
+formal_term(atwima,loss,value,'',[]).
+formal_term(atwima,long,value,'',[]).
+formal_term(atwima,log,object,'',[]).
+formal_term(atwima,light,value,'',[]).
+formal_term(atwima,lifespan,attribute,'',[]).
+formal_term(atwima,less_than,comparison,'',[]).
+formal_term(atwima,length,attribute,'',[]).
+formal_term(atwima,leaves,object,'',[]).
+formal_term(atwima,leaf_drop,attribute,'',[]).
+formal_term(atwima,leaching,process,'',[]).
+formal_term(atwima,last,value,'',[]).
+formal_term(atwima,kwae,object,'A forest that has never been cleared for cropping.',['virgin forest']).
+formal_term(atwima,kumanini,object,'a tree',['Lannea welwitschii']).
+formal_term(atwima,kokoanisua,object,'a tree',['Spathodea campanulata']).
+formal_term(atwima,keyja,object,'a tree',['Pterygota macrocarpa']).
+formal_term(atwima,kakapenpen,object,'a tree',['Rauvolfia vomitoria']).
+formal_term(atwima,irritation,process,'',[]).
+formal_term(atwima,intensity,attribute,'',[]).
+formal_term(atwima,infiltration,process,'',[]).
+formal_term(atwima,increase,value,'',[]).
+formal_term(atwima,in_soil,value,'',[]).
+formal_term(atwima,hot,value,'',[sheshee]).
+formal_term(atwima,high,value,'',[]).
+formal_term(atwima,herbicide,object,'',[]).
+formal_term(atwima,height,attribute,'',[]).
+formal_term(atwima,heating,process,'',[]).
+formal_term(atwima,heat,attribute,'',[]).
+formal_term(atwima,harvesting,action,'',[]).
+formal_term(atwima,harmattan,value,'dry season',[]).
+formal_term(atwima,hardness,attribute,'',[]).
+formal_term(atwima,hard,value,'',[]).
+formal_term(atwima,hand,value,'',[]).
+formal_term(atwima,gyama,object,'A tree',['Alchornea cordifolia']).
+formal_term(atwima,growth_rate,attribute,'',[]).
+formal_term(atwima,growth,process,'',[]).
+formal_term(atwima,grouped,value,'',[]).
+formal_term(atwima,greater_than,comparison,'',[]).
+formal_term(atwima,germination,process,'',[]).
+formal_term(atwima,genegene,object,'a tree',['Cedrela spp. ']).
+formal_term(atwima,fumtum,object,'a tree',['Funtumia elastica']).
+formal_term(atwima,fruit,object,'',[]).
+formal_term(atwima,frequency,attribute,'',[]).
+formal_term(atwima,foamy,value,'',[]).
+formal_term(atwima,flush,attribute,'',[]).
+formal_term(atwima,flowering,process,'',[]).
+formal_term(atwima,first,value,'',[]).
+formal_term(atwima,fertility_loss,attribute,'',[]).
+formal_term(atwima,fat,value,'',[]).
+formal_term(atwima,farm,object,'',[]).
+formal_term(atwima,fallow,object,'',[]).
+formal_term(atwima,etwre,object,'',[ironstone]).
+formal_term(atwima,esre,object,'A common grass weed',['Panicum maximum',grass]).
+formal_term(atwima,esa,object,'a tree',['Celtis mildbraedii']).
+formal_term(atwima,erratic,value,'',[]).
+formal_term(atwima,erosion,process,'',[]).
+formal_term(atwima,enyunu,attribute,'cool (characteristic of a fertile soil)',[]).
+formal_term(atwima,effectiveness,attribute,'',[]).
+formal_term(atwima,ease,attribute,'',[]).
+formal_term(atwima,earthworm,object,'',[]).
+formal_term(atwima,drying,process,'',[]).
+formal_term(atwima,dry,value,'',[]).
+formal_term(atwima,drop,process,'',[]).
+formal_term(atwima,domini,object,'a tree',['Ficus capensis']).
+formal_term(atwima,dispersal,process,'',[]).
+formal_term(atwima,development,process,'',[]).
+formal_term(atwima,depth,attribute,'',[]).
+formal_term(atwima,depleted,value,'the twi terminology for this is: asase ahooden asa, literal translation: soil power is finished',[]).
+formal_term(atwima,density,attribute,'',[]).
+formal_term(atwima,delayed,value,'',[]).
+formal_term(atwima,deep_green,value,'',[]).
+formal_term(atwima,deep,value,'',[]).
+formal_term(atwima,decrease,value,'',[]).
+formal_term(atwima,decomposition,process,'',[]).
+formal_term(atwima,cutting,action,'',[]).
+formal_term(atwima,crown,object,'',[]).
+formal_term(atwima,cropping_period,attribute,'',[]).
+formal_term(atwima,crop,object,'',[]).
+formal_term(atwima,cracking,process,'',[]).
+formal_term(atwima,corm,object,'',[]).
+formal_term(atwima,competition,process,'',[]).
+formal_term(atwima,colour,attribute,'',[]).
+formal_term(atwima,colonisation,process,'',[]).
+formal_term(atwima,coiling,process,'',[]).
+formal_term(atwima,cocoyam,object,'a root crop',[]).
+formal_term(atwima,cocoa_suitability,attribute,'',[]).
+formal_term(atwima,cocoa,object,'',[]).
+formal_term(atwima,clothing,value,'',[]).
+formal_term(atwima,clearing_ease,attribute,'',[]).
+formal_term(atwima,clearing,action,'',[]).
+formal_term(atwima,central,value,'',[]).
+formal_term(atwima,cassava,object,'',[]).
+formal_term(atwima,canopy,object,'',[]).
+formal_term(atwima,burning,action,'',[]).
+formal_term(atwima,branch,object,'',[]).
+formal_term(atwima,boulder,object,'Large rock in soil that is not ironstone',[]).
+formal_term(atwima,blow_down,process,'',[]).
+formal_term(atwima,black_layer,object,'',['asase tumtum']).
+formal_term(atwima,bird,value,'',[]).
+formal_term(atwima,below,value,'',[]).
+formal_term(atwima,beginning,value,'',[]).
+formal_term(atwima,before_weed,value,'',[]).
+formal_term(atwima,aya,object,'a weed in mature cocoa',[fern,'type of fern']).
+formal_term(atwima,average,value,'',[]).
+formal_term(atwima,ateche,object,'',[clay,hyire]).
+formal_term(atwima,ash,object,'',[]).
+formal_term(atwima,asase_shesheeshe,object,'',['very hot land (not fertile)']).
+formal_term(atwima,asase_kokoo,object,'',['red soil']).
+formal_term(atwima,asa,value,'',[]).
+formal_term(atwima,area,attribute,'',[]).
+formal_term(atwima,appearance,attribute,'',[]).
+formal_term(atwima,akata,object,'a tree',['Bombax buonopozense']).
+formal_term(atwima,air,value,'',[]).
+formal_term(atwima,age,attribute,'',[]).
+formal_term(atwima,after_burn,value,'',[]).
+formal_term(atwima,adjoguo,object,'Twi terminology for the end of the cropping period and the sart of the fallow period',['start of fallow']).
+formal_term(atwima,abuo,object,'',[gravel]).
+formal_term(atwima,'60cm',value,'',[]).
+formal_term(atwima,'30cm',value,'',[]).
+formal_term(atwima,'3',value,'',[]).
+formal_term(atwima,'2',value,'',[]).
+formal_term(atwima,'15cm',value,'',[]).
+formal_term(atwima,'100%',value,'',[]).
+subobject(atwima,soil,top,soil).
+subobject(atwima,soil,soil,asase_kokoo).
+subobject(atwima,soil,soil,ateche).
+subobject(atwima,crop,top,crop).
+subobject(atwima,crop,crop,cassava_mix).
+subobject(atwima,crop,crop,cocoa).
+subobject(atwima,crop,crop,plantain).
+subobject(atwima,crop,crop,rice).
+subobject(atwima,soil,soil,afonywie).
+subobject(atwima,crop,crop,cocoyam).
+subobject(atwima,crop,crop,cassava).
+subobject(atwima,crop,crop,oil_palm).
+subobject(atwima,'land types',top,'land types').
+subobject(atwima,'land types','land types',asase_enyine).
+subobject(atwima,'land types','land types',asase_shesheeshe).
+subobject(atwima,'land types','land types',kwae).
+subobject(atwima,'land types','land types',nfofoa_kwae).
+subobject(atwima,crop,crop,maize).
+subobject(atwima,'fertility indicator',top,'fertility indicator').
+subobject(atwima,'fertility indicator','fertility indicator',mumuanka).
+subobject(atwima,'fertility indicator','fertility indicator',nkonkoahin).
+subobject(atwima,'fertility indicator','fertility indicator',ananse_dukono).
+subobject(atwima,'fertility indicator','fertility indicator',atooto).
+subobject(atwima,'fertility indicator','fertility indicator',nsasun).
+subobject(atwima,'fertility indicator','fertility indicator',nyanya).
+subobject(atwima,trees,odoma,odoma_fufu).
+subobject(atwima,trees,odoma,odoma_kokoo).
+subobject(atwima,trees,'timber tree',odum).
+subobject(atwima,trees,'timber tree',okoro).
+subobject(atwima,trees,'timber tree',opam).
+subobject(atwima,trees,'timber tree',wawa).
+subobject(atwima,trees,trees,onyina).
+subobject(atwima,trees,trees,sante).
+subobject(atwima,trees,trees,watapuo).
+subobject(atwima,trees,trees,gyama).
+subobject(atwima,trees,trees,akata).
+subobject(atwima,trees,trees,domini).
+subobject(atwima,trees,trees,esa).
+subobject(atwima,trees,trees,fumtum).
+subobject(atwima,trees,trees,nyankyereni).
+subobject(atwima,trees,trees,odoma).
+subobject(atwima,trees,trees,pepediawuo).
+subobject(atwima,trees,trees,shade_tree).
+subobject(atwima,trees,trees,foto).
+subobject(atwima,trees,trees,genegene).
+subobject(atwima,trees,trees,kakapenpen).
+subobject(atwima,trees,trees,keyja).
+subobject(atwima,trees,trees,kokoanisua).
+subobject(atwima,trees,trees,kumanini).
+subobject(atwima,trees,trees,nnan_furo).
+subobject(atwima,trees,trees,wama).
+subobject(atwima,trees,trees,'timber tree').
+subobject(atwima,trees,top,trees).
+subobject(atwima,weeds,'nwura bone',esre).
+subobject(atwima,weeds,'nwura bone',ananse_treumu_huma).
+subobject(atwima,weeds,'nwura bone',acheampong).
+subobject(atwima,weeds,'nwura bone',adedenyaa).
+subobject(atwima,weeds,'nwura bone',ananse_dua).
+subobject(atwima,weeds,'nwura bone',nantwri_sre).
+subobject(atwima,weeds,'nwura bone',nkyenkyema).
+subobject(atwima,weeds,'nwura bone',sansan).
+subobject(atwima,weeds,'nwura bone',tweta).
+subobject(atwima,weeds,weeds,ananse_dukono).
+subobject(atwima,weeds,weeds,atooto).
+subobject(atwima,weeds,weeds,aya).
+subobject(atwima,weeds,weeds,bosomwuajura).
+subobject(atwima,weeds,weeds,nsasun).
+subobject(atwima,weeds,weeds,nsohwea).
+subobject(atwima,weeds,weeds,nyanya).
+subobject(atwima,weeds,weeds,monumia).
+subobject(atwima,weeds,weeds,ncranpan).
+subobject(atwima,weeds,weeds,pawpaw).
+subobject(atwima,weeds,weeds,'nwura bone').
+subobject(atwima,weeds,top,weeds).
+subobject(atwima,soil,soil,asase_tuntum).
+subtopic(atwima,'Weeds','Bad Weeds','Chromolaena').
+subtopic(atwima,'Management actions',top,'Management actions').
+subtopic(atwima,'Management actions','Management actions','Weed clearing').
+subtopic(atwima,'Fallows',top,'Fallows').
+subtopic(atwima,'Fallows','Fallows','Fallow length').
+subtopic(atwima,'Fallows','Fallows','Fallows and soil types').
+subtopic(atwima,'Weeds',top,'Weeds').
+subtopic(atwima,'Weeds','Weeds','General weeds').
+subtopic(atwima,'Weeds','Bad Weeds','Dicot weeds').
+subtopic(atwima,'Weeds','Bad Weeds','Grass weeds').
+subtopic(atwima,'Weeds','Bad Weeds','Panicum grass').
+subtopic(atwima,'Weeds','Weeds','Weed dispersal').
+subtopic(atwima,'Fallows','Fallows','Fallows on fertility').
+subtopic(atwima,'Trees',top,'Trees').
+subtopic(atwima,'Trees','Trees','General trees').
+subtopic(atwima,'Fallows','Fallows','Fallow management').
+subtopic(atwima,'Fallows','Fallows','Fallows and indicators of fertile soil').
+subtopic(atwima,'Fallows','Fallows','Fallow processes').
+subtopic(atwima,'Weeds','Weeds','Weed crop interactions').
+subtopic(atwima,'Weeds','Weeds','Weed management').
+subtopic(atwima,'Weeds','Weeds','Weed species information').
+subtopic(atwima,'Weeds','Weeds','Weeds and indicators of soil fertility').
+subtopic(atwima,'Weeds','Weed species information','Bad Weeds').
+subtopic(atwima,'Trees','Trees','Tree species information').
+subtopic(atwima,'Trees','Tree species information','Akata').
+subtopic(atwima,'Trees','Tree species information','Domini').
+subtopic(atwima,'Trees','Tree species information','Esa').
+subtopic(atwima,'Trees','Tree species information','Foto').
+subtopic(atwima,'Trees','Tree species information','Fumtum').
+subtopic(atwima,'Trees','Tree species information','Genegene').
+subtopic(atwima,'Trees','Tree species information','Kakapenpen').
+subtopic(atwima,'Trees','Tree species information','Sante').
+subtopic(atwima,'Trees','Tree species information','Pepediawuo').
+subtopic(atwima,'Trees','Tree species information','Onyina').
+subtopic(atwima,'Trees','Tree species information','Nyankyereni').
+subtopic(atwima,'Trees','Tree species information','Kumanini').
+subtopic(atwima,'Trees','Tree species information','Gyama').
+subtopic(atwima,'Trees','Tree species information','Keyja').
+subtopic(atwima,'Trees','Tree species information','Kokoanisua').
+subtopic(atwima,'Trees','Tree species information','Nnan_furo').
+subtopic(atwima,'Trees','Tree species information','Odoma').
+subtopic(atwima,'Trees','Tree species information','Wama').
+subtopic(atwima,'Trees','Tree species information','Watapuo').
+subtopic(atwima,'Trees','Timber trees','Odum').
+subtopic(atwima,'Trees','Timber trees','Okoro').
+subtopic(atwima,'Trees','Timber trees','Opam').
+subtopic(atwima,'Trees','Timber trees','Wawa').
+subtopic(atwima,'Trees','Trees','Trees and soil moisture availability').
+subtopic(atwima,'Trees','Trees','Tree crop interactions').
+subtopic(atwima,'Trees','Trees','Tree management').
+subtopic(atwima,'Trees','Trees','Trees and soil fertility').
+subtopic(atwima,'Trees','Tree species information','Timber trees').
+subtopic(atwima,'Soil properties',top,'Soil properties').
+subtopic(atwima,'Soil properties','Soil properties','Soil organic matter').
+subtopic(atwima,'Soil properties','Soil properties','Soil moisture').
+subtopic(atwima,'Soil properties','Soil properties','Soil fertility').
+subtopic(atwima,'Soil properties','Soil properties','Soil texture').
+subtopic(atwima,'Management actions','Management actions','Burning farm').
+subtopic(atwima,'Soil fertility management',top,'Soil fertility management').
+subtopic(atwima,'Soil fertility management','Soil fertility management','Burning farm').
+subtopic(atwima,'Soil types',top,'Soil types').
+subtopic(atwima,'Soil types','Soil types','Black soil').
+subtopic(atwima,'Soil types','Black soil','Fertility of black soil').
+subtopic(atwima,'Soil types','Black soil','Fallows on black soil').
+subtopic(atwima,'Soil types','Soil types','Clay soil').
+subtopic(atwima,'Soil types','Clay soil','Fallows on clay').
+subtopic(atwima,'Soil types','Clay soil','Fertility of clay').
+subtopic(atwima,'Soil types','Soil types','Red soil').
+subtopic(atwima,'Soil types','Red soil','Fallows on red soil').
+subtopic(atwima,'Soil types','Red soil','Fertility of red soil').
+subtopic(atwima,'Soil types','Soil types','Sandy soil').
+subtopic(atwima,'Soil types','Sandy soil','Fertility of sandy soil').
+subtopic(atwima,'Soil types','Sandy soil','Fallows on sandy soils').
+topic(atwima,'Tree crop interactions','','trees and crop',object + subobjects).
+topic(atwima,'Tree management','','trees and cutting',object + subobjects).
+topic(atwima,'Trees and soil moisture availability','','trees and moisture and soil',object + subobjects).
+topic(atwima,'Weed management','','weeds and (uprooting or use or clearing or clearing_ease)',object + subobjects).
+topic(atwima,'Odoma','','odoma',object + subobjects).
+topic(atwima,'Chromolaena','Contains all statements relating to the common weed, acheampong.','acheampong',object).
+topic(atwima,'Bad Weeds','Contains all statements about weeds that are classed as nwura bone. ','nwura_bone',object + subobjects).
+topic(atwima,'Panicum grass','Contains all statements relating to panicum grass, a common and problematic weed.','esre',object).
+topic(atwima,'Grass weeds','Contains all statements relating to three grass weeds.','nkyenkyema or nantwri_sre or sansan',object).
+topic(atwima,'Dicot weeds','Contains statements about four dicot weeds.','ananse_treumu_huma or ananse_dua or adedenyaa or tweta',object).
+topic(atwima,'Weed dispersal','Contains statements about dispersal mechanisms for weeds.','dispersal',object).
+topic(atwima,'Weed control','Contains statements describing how weeds are controlled, and their ease of control.','ease',object).
+topic(atwima,'Plant fertility indicators','Contains statements about plants used as soil fertility indicators. ','fertility_indicator',object + subobjects).
+topic(atwima,'Management actions','Contains all statements about management actions.','burning or clearing or cutting or harvesting or planting or uprooting or use or work',object).
+topic(atwima,'Weed clearing','','clearing ',object).
+topic(atwima,'Fallows','All statements about fallows. ','fallow',object).
+topic(atwima,'Fallow length','Statements describing the affects of fallow length.','fallow and length',object).
+topic(atwima,'Fallows on fertility','Statements describing the effects of fallows on soil fertility.','fertility and fallow',object).
+topic(atwima,'Red soil','All statements relating to red soil. ','asase_kokoo',object).
+topic(atwima,'Sandy soil','','afonywie',object).
+topic(atwima,'Clay soil','','ateche',object).
+topic(atwima,'Fallows on sandy soils','','afonywie and fallow',object).
+topic(atwima,'Fallows on red soil','','asase_kokoo and fallow',object).
+topic(atwima,'Fallows on clay','','ateche and fallow',object).
+topic(atwima,'Timber trees','','timber_tree',object + subobjects).
+topic(atwima,'Trees','All statements relating to trees. ','trees',object + subobjects).
+topic(atwima,'General trees','Statements relating to trees in general. ','trees',object).
+topic(atwima,'Weeds','All statements about weeds contained in the knowledge base.','weeds',object + subobjects).
+topic(atwima,'General weeds','Statements refering to weeds in general. ','weeds',object).
+topic(atwima,'Akata','','akata',object).
+topic(atwima,'Domini','','domini',object).
+topic(atwima,'Esa','','esa',object).
+topic(atwima,'Foto','','foto',object).
+topic(atwima,'Fumtum','','fumtum',object).
+topic(atwima,'Genegene','','genegene',object).
+topic(atwima,'Gyama','','gyama',object).
+topic(atwima,'Kakapenpen','','kakapenpen',object).
+topic(atwima,'Keyja','','keyja',object).
+topic(atwima,'Kokoanisua','','kokoanisua',object).
+topic(atwima,'Kumanini','','kumanini',object).
+topic(atwima,'Nnan_furo','','nnan_furo',object).
+topic(atwima,'Nyankyereni','','nyankyereni',object).
+topic(atwima,'Odum','','odum',object).
+topic(atwima,'Okoro','','okoro',object).
+topic(atwima,'Onyina','','onyina',object).
+topic(atwima,'Opam','','opam',object).
+topic(atwima,'Pepediawuo','','pepediawuo',object).
+topic(atwima,'Sante','','sante',object).
+topic(atwima,'Wama','','wama',object).
+topic(atwima,'Watapuo','','watapuo',object).
+topic(atwima,'Wawa','','wawa',object).
+topic(atwima,'Black soil','','or(asase_tuntum,black_layer)',object).
+topic(atwima,'Fallows on black soil','','and(or(asase_tuntum,black_layer),fallow)',object).
+topic(atwima,'Fallow management','','fallow and (clearing or cropping_period or clearing_ease)',object).
+topic(atwima,'Fallow processes','','fallow and (trees or soil or soil_pest or esre or acheampong or earthworm or undergrowth or black_layer or weeds)',object).
+topic(atwima,'Fallows and indicators of fertile soil','','fallow and (fertility_indicator or crop or soil or nfofoa_kwae or acheampong or earthworm or undergrowth or black_layer)',object).
+topic(atwima,'Weed crop interactions','','weeds and crop',object + subobjects).
+topic(atwima,'Weed species information','','weeds',subobjects).
+topic(atwima,'Weeds and indicators of soil fertility','','weeds and (appearance or (soil and fertility) or (soil and moisture) or (fertility and fallow))',object + subobjects).
+topic(atwima,'Tree species information','','trees',subobjects).
+topic(atwima,'Trees and soil fertility','','trees and ((soil and fertility) or density or undergrowth or leaf_drop)',object + subobjects).
+topic(atwima,'Soil organic matter','','soil and decomposition',object + subobjects).
+topic(atwima,'Soil moisture','','soil and (moisture or temperature or rain or rainfall or shesheeshe or enyunu or water_holding_capacity or water)',object + subobjects).
+topic(atwima,'Soil texture','','soil and (abuo or etwre or boulder or texture or loosening or shaking)',object + subobjects).
+topic(atwima,'Burning farm','','burning',object).
+topic(atwima,'Soil fertility management','','burning',object).
+topic(atwima,'Soil types','','or(afonywie,or(asase_kokoo,or(asase_tuntum,or(ateche,black_layer))))',object).
+topic(atwima,'Fallows and soil types','Statements describing the interactions between fallow and different soil types. ','and(or(afonywie,or(soil,or(asase_enyine,or(asase_kokoo,or(asase_shesheeshe,or(asase_tuntum,ateche)))))),fallow)',object).
+topic(atwima,'Soils','All statements relating to all soil types.','or(soil,or(asase_kokoo,or(asase_enyine,or(asase_shesheeshe,or(asase_tuntum,or(ateche,or(afonywie,or(soil,black_layer))))))))',object).
+topic(atwima,'Fertility of sandy soil','','and(or(fertility,or(enyunu,or(fertility,or(cocoa_suitability,or(fertility_loss,or(moisture,or(shesheeshe,or(temperature,or(texture,water_holding_capacity))))))))),afonywie)',object).
+topic(atwima,'Fertility of red soil','','and(or(fertility,or(enyunu,or(fertility,or(cocoa_suitability,or(fertility_loss,or(moisture,or(shesheeshe,or(temperature,or(texture,water_holding_capacity))))))))),asase_kokoo)',object).
+topic(atwima,'Fertility of clay','','and(or(fertility,or(enyunu,or(fertility,or(cocoa_suitability,or(fertility_loss,or(moisture,or(shesheeshe,or(temperature,or(texture,water_holding_capacity))))))))),ateche)',object).
+topic(atwima,'Fertility of black soil','','and(or(fertility,or(enyunu,or(fertility,or(cocoa_suitability,or(fertility_loss,or(moisture,or(shesheeshe,or(temperature,or(texture,water_holding_capacity))))))))),or(asase_tuntum,black_layer))',object).
+topic(atwima,'Soil fertility','','and(soil,or(fertility,or(fertility,nutrients)))',object + subobjects).
+topic(atwima,'Soil properties','','and(soil,or(moisture,or(rainfall,or(rain,or(water,or(temperature,or(shesheeshe,or(enyunu,or(water_holding_capacity,or(abuo,or(texture,or(etwre,or(boulder,or(loosening,or(shaking,or(fertility,or(fertility,or(nutrients,decomposition))))))))))))))))))',object + subobjects).
+
+
+memo(atwima,bitmap,'older people atwima',' Livelihoods of indigenous people at Gogoikrom  Cocoa is the most important crop at Gogoikrom. Food crops are intercropped during the establishment of cocoa and include cocoyam, plantain, cassava and maize. Rice is grown on lowland areas as a cash crop. Vegetables are also cultivated for sale but are less extensive. Sharecropping is less common than the use of own land. ').
+memo(atwima,source,'Asmoah  et al Kyereyase 2000a','A small group interview took place with farmers who were chosen due to their level of knowledge. During the interview a causal diagram was constructed. ').
+memo(atwima,bitmap,'indigenous people atwima',' Livelihoods of indigenous people at Gogoikrom  Farming is the major source of income. Cash is obtained mainly from the sale of cocoa, maize, plantain, cocoyam and cassava. Rice received as part of sharecropping arrangements with settlers is also sold.  Cocoa is the most important crop at Gogoikrom. Food crops are intercropped during the establishment of cocoa and include cocoyam, plantain, cassava and maize. Many people are absentee landlords who live in Kumasi. Land is either own land or sharecropped. Sharecropping is considered a lucrative means of obtaining an asset - a cocoa farm, by the indigenous population as well as by settlers.   Key to letters used on the diagrams denoting means of land acquisition:                                            O - land that is owned or land that a family has traditional usufactory rights over  S - sharecropping F - land that is cropped at no charge to the tenant through a friendly relationship with a landlord or relative   R - rented land    ').
+memo(atwima,bitmap,'settler people atwima',' Livelihoods of settler people at Gogoikrom  Cocoa is also the most important crop for settlers. However settlers also farm rice in lowland areas and vegetables as cash crops. The majority of land obtained by settler farmers is under a sharecropping arrangement, particularly for cocoa.  Key to letters used on the diagrams denoting means of land acquisition:                                            O - land that is owned or land that a family has traditional usufactory rights over                          S - sharecropping F - land that is cropped at no charge to the tenant through a friendly relationship with a landlord or relative   R - rented land    ').
+
+memo(atwima,general,_624608,['Farmers knowledge of soil fertility and weed management in Atwima district, Ghana','Soil fertility management,  soil classification,  weed management and  cocoa shade trees. ','This knowledge base was originally created by William Frost','Reginald Agbo for invaluable help talking to the farmers, not just in translation.  Luke Angleere for assistance during the interviews and Catherine Moss for valuable feedback.  This is an output from DFID, Natural Resources System Programme research project R7516 Bridging Knowledge Gaps between Soils Research and Dissemination in Ghana. The views expressed are not necessarily those of DFID. ','To enable identification of requirements for interventions for participatory technology development. To address constraints brought about by declining soil fertility because of shortening bush fallows.','Individual and group interviews, PRA methods were used such as scored causal diagramming and participatory mapping. ','Kyereyase and Gogoikrom, Atwima district, Ashanti region, Ghana. ','May- July 2000','','Land use and livelihoods at Gogoikrom (Atwima, district)   These diagrams are simple illustrations of elements of land use and income generating activities at Gogoikrom.                                                                                                        Further information about livelihoods and farming at Gogoikrom can be found in  Frost, W. 2000.  Farmers knowledge of soil fertility and weed management in Atwima district, Ghana: The implications for participatory technology development. Unpublished MSc. Thesis. University of Wales, Bangor. 91 pp. and   Obiri-Darko, B., Ayisi-Jatango, J., Anglaaere, L., Cobbina, J., Moss, C., McDonald, M., Sinclair, F., and Young, Einir., 2000.  Livelihood systems and farmers ecological knowledge in Ghana: a report on three districts. Shortened Bush-fallow Rotations for Sustainable Livelihoods in Ghana (DFID Project R7446). School of Agricultural and Forest Sciences University of Wales, Bangor, U.K.']).
+
+memo(atwima,bitmap,atwima,' Women farmers discussing different weed species').
+
+
+source_details(atwima,source('Adam, Y.','Gogoikrom',2000,a),interview,'Agbo,'('R.','Frost,','W.','Moss,','C.'),'Yakubu'('Adam,','32,','Gogoikrom'),'M',date(23,jun,2000),['<35','Northern','','']).
+source_details(atwima,source('Amoako, S','Gogoikrom',2000,a),interview,'Angleere,'('L.'),'Sefa'('Amoako,','Gogoikrom'),'M',date(15,jun,2000),[na,na,'','']).
+source_details(atwima,source('Ampadu, Y. ','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost.','W.','Angleere,','L.'),'Yaw'('Ampadu,','Kyereyase'),'M',date(9,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Antwi, K','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.','Angleere,','L.'),'Kwaku'('Antwi,','Kyereyase'),'M',date(7,jun,2000),['<35','Ashanti','','']).
+source_details(atwima,source('Asante, K.','Gogoikrom',2000,a),interview,'Agbo,'('R.','Frost,','W.','Angleere,','L.'),'Kofi'('Asante','Snr.','Gogoikrom'),'M',date(14,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Asante, K.','Gogoikrom',2000,b),interview,'Agbo,'('R.','Frost,','W.','Angleere,','L.'),'Kofi'('Asante','Jnr.','Gogoikrom'),'M',date(14,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Asantwaa, Y.','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.','Agbenyega,','O.'),'Yaa'('Asantwaa,','46,','Kyereyase'),'F',date(20,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Asmoah  et al','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.',''),'Dominic'('Asmoah,','Yaw','Gyamfi,','Yaw','Ampadu'),'M',date(20,jun,2000),['>35','Mixed','','']).
+source_details(atwima,source('Asmoah, D.','Kyereyase',2000,a),interview,'Agbo,R.'('Frost,','W.',&,'Angleere,','L.'),'Dominic'('Asamoah,','58,','Kyereyase'),'M',date(7,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Asmoah, D.','Kyereyase',2000,b),interview,'Agbo,'('R.','Frost,','W.'),'Dominic'('Asmoah,','58,','Kyereyase'),'M',date(15,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Barima et al','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.'),'Kwaku'('Apaw','Barima,','40,','Yaw','Gyamfi,','35,','Yaw','Osei,','35,','Kyereyase'),'M',date(15,jun,2000),['>35','Mixed','','']).
+source_details(atwima,source('Barima, K. ','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.',''),'Kwaku'('Apaw','Barima,','40,','Yaw','Gyamfi,','35,','Yaw','Osei,','35,','Kyereyase'),'M',date(15,jun,2000),['>35','Mixed','','']).
+source_details(atwima,source('Bonsu, O.','Gogoikrom',2000,a),interview,'Agbo,'('R.',&,'Frost,','W.'),'Opine'('Bonsu,','72,','Gogoikrom'),'M',date(16,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Effah, A.','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.','Angleere,','L.'),'Andrew'('Effah,','Kyereyase'),'M',date(9,jun,2000),['<35','Ashanti','','']).
+source_details(atwima,source('Konadu, Y.','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.','Agbenyega,','O.'),'Yaa'('Konadu,','37,','Kyereyase'),'F',date(20,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Kru et al','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.','Angleere,','L'),'E.K.'('Kru,','Kwaku','Antwi,','George','Chadea'),'M',date(6,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Moba, A.','Gogoikrom',2000,a),interview,'Agbo,'('R.','Frost,','W.',''),'Alhassan'('Moba,','43,','Gogoikrom'),'M',date(16,jun,2000),['>35','Northern','','']).
+source_details(atwima,source('Nsiah, A.','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.','Agbenyega,','O.'),'Abena'('Nsiah,','36,','Kyereyase'),'F',date(20,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Ntoudu, Y.','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.','Agbenyega,','O.'),'Yaa'('Ntoudu,','60,','Kyereyase'),'F',date(20,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Serwaa, A','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.','Angleere,','L.'),'Affia'('Serwaa,','Kyereyase'),'F',date(6,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Twumwa, A.','Kyereyase',2000,a),interview,'Agbo,'('R.','Frost,','W.','Agbenyega,','O.'),'Adwoa'('Twumwa,','53,','Kyereyase'),'F',date(20,jun,2000),['>35','Ashanti','','']).
+source_details(atwima,source('Group of women Kyereyase','Kyereyase',2000,a),interview,'Will'('Frost',and,'Reginald','Agbo'),'6'(women),'F',date(30,may,2000),[na,na,'','']).
+source_details(atwima,source('Frost, W.','Knowledge base developer',2000,a),interview,na,na,na,date(11,nov,2000),[na,na,'','']).
+
+sourceUserLabels(atwima,['Age','Ethnic origin']).
+

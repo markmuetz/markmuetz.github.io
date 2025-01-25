@@ -1,0 +1,45 @@
+
+SORTING STATEMENTS IN THE STATEMENT CARD 
+The following section is taken verbatim from the AKT5 Manual.   
+
+The statements in the statement card can be sorted either numerically, or by type (attribute, causal, comparison or link statements). When you open a knowledge base, or create a new one, the statements will be listed numerically.  To list them by statement type press the Sort by Category button at the top of the statement card (see above, Figure 7.6).  If the statements are sorted by category the button changes to Sort Numerically. 
+ 
+Me: 
+I propose to drop entirely the section on sorting statements – the ability to sort statements by their “number” (i.e. numerically, by their ID) or by their type will be built in to the listbox display, so doesn’t need special mention here.
+
+ 
+ INVERSE STATEMENTS AND NUMBERING  
+The following section is taken verbatim from the AKT5 Manual.   
+
+Each two way causal statement (i.e. those using ‘causes2way’) generates an invisible inverse statement, a statement that is used in reasoning but is not displayed on the screen (see above Chapter 4.2.4.a).  Each time a knowledge base is loaded all statements are renumbered from 1 to the total number of statements.  The inverse statements are then generated and added to the knowledge base with numbers following on from the visible statements.  For this reason, when you begin adding new statements to a knowledge base, the statement number will not be the next number available in the list of visible statements but the next number available after the invisible inverse statements.  This is the reason for any gap in the sequence of numbers between the last visible statement on the statement card and the number given to the first new statement.  Figure 7.26a below demonstrates this, the last number in the original knowledge
+
+Me:
+I feel very uncomfortable about the way AKT5 handles the inverse statement implied by the use of the “causes2way” keyword – creating hidden statements for use in reasoning, but which occupy a number n the numbering of statements.   I think this should be replaced by a mechanism that does not generate such hidden statements (which also introduces issues about maintaining the integrity of the KB if the original statement is deleted0, and instead simply does the reverse reasoning as required.
+
+
+OBLIGATION TO PROVIDE ONE SOURCE WHEN CREATING A NEW STATEMENT
+Dropped it
+
+
+STRONG COLLECTION/INSTANCE SEPARATION
+Looser in AKT5.
+One panel for each.
+Collection panel has New/View/Edit/Delete.
+Nothing in Collection panel that can be in instance panel.
+
+
+FILE/KB MENUS SEPARATED
+In keeping with almost universal practice
+
+
+DROPPED MEMOS AS TOP-lEVEL ENTITY
+Instead, memo is simply a property of any tpe of item.
+
+
+METADATA IS NOT A MEMO!
+
+
+
+
+
+

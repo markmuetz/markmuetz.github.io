@@ -1,0 +1,253 @@
+<html>
+<head>
+        <meta charset="utf-8">
+<!--meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'-->
+
+<!--link rel="stylesheet" type="text/css" href="../css/paper1.css" /-->
+
+<link type="text/css" rel="stylesheet" href="css/w3.css">
+<link type="text/css" rel="stylesheet" href="css/webakt.css" title="default">
+
+<!--link type="text/css" rel="alternative1_stylesheet" href="../css/webakt_1.css" title="alternative1"-->
+
+<link type="text/css" rel="stylesheet" href="css/joint.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="css/jstree/style.css" />
+<link rel="stylesheet" href="css/json-viewer.css" />
+<link rel="stylesheet" href="css/treetable.css" />
+<link rel="stylesheet" href="css/treetable.theme.default.css" />
+
+<script src="js/webakt.js"></script>
+
+<style>
+.panel{display:none;}
+div.content {left:0px; top:20px;}
+#welcome {display:block;}
+.dialog_id {display:none;}
+.control_id {display:none;}
+
+table.sortable thead {
+    background-color:red;
+    color:blue;
+    font-weight: bold;
+    cursor: default;
+}
+</style>
+<!--script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script-->
+<script src="libraries/jquery-3.5.0.js"></script>
+<script src="libraries/jquery-ui.js"></script>
+
+<!-- Scripts for  JointJS diagramming -->
+<!--script src="js/jointjs/jquery.js"></script-->
+<!--script src="libraries/cola.min.js"></script-->
+<!--script src="http://marvl.infotech.monash.edu/webcola/cola.js"></script-->
+<script src="libraries/d3v4.js"></script>   <!-- Needed for cola.js -->
+<script src="libraries/jointjs/lodash.js"></script>
+<script src="libraries/jointjs/backbone.js"></script>
+<script src="libraries/jointjs/joint.js"></script>
+<script src="libraries/sorttable.js"></script>
+<script src="libraries/jstree.min.js"></script>
+<!--script src="libraries/springy_akt.js"></script-->
+<script src="libraries/springy.js"></script>
+<script src="libraries/svg-pan-zoom.min.js"></script>
+<script src="libraries/toUnicodeVariant.js"></script><!--script src="js/springyui.js"></script-->  
+<script src="libraries/treetable.js"></script>
+
+
+<!-- webAKT main codebase -->
+<script src="js/akt5.js"></script>
+<script src="js/akttools.js"></script>
+<!--script src="js/graph.js"></script-->
+<script src="js/dialog_handlers.js"></script>
+<script src="js/dialog_openers.js"></script>
+<script src="js/hierarchies.js"></script>
+<script src="js/event_record.js"></script>
+<script src="js/json-viewer.js"></script>
+<script src="js/macros.js"></script>
+<script src="js/menu_manager.js"></script>
+<script src="js/menu_handlers.js"></script>
+<script src="js/menus.js"></script>
+<script src="js/process_statement.js"></script>
+<script src="js/webakt1.js"></script>
+<script src="js/collection_specs.js"></script>
+<script src="js/FileSystemAccessAPI.js"></script>
+
+<!-- The webAKT statement parser -->
+<script src="js/parsers/parser.js"></script>
+
+
+<!-- webAKT API: classes -->
+<script src="js/classes/Action.js"></script>
+<script src="js/classes/ActionList.js"></script>
+<script src="js/classes/Kb.js"></script>
+<script src="js/classes/Diagram.js"></script>
+<script src="js/classes/FormalTerm.js"></script>
+<script src="js/classes/Hierarchy.js"></script>
+<script src="js/classes/Image.js"></script>
+<script src="js/classes/Listbox.js"></script>
+<!--script src="js/classes/ObjectHierarchy.js"></script-->
+<script src="js/classes/Source.js"></script>
+<script src="js/classes/Statement.js"></script>
+<script src="js/classes/Termx.js"></script>
+<script src="js/classes/Topic.js"></script>
+<!--script src="js/classes/TopicHierarchy.js"></script-->
+<script src="js/classes/Panel.js"></script>
+
+
+<!-- Widgets -->
+<script src="widgets/dialog_Generic.js"></script>    <!-- Generic widget for the specific
+    "widgettes" held in widgets/code.  -->
+
+<script src="widgets/dialog_BooleanSearch.js"></script>
+<script src="widgets/dialog_FormalTerms.js"></script>
+<script src="widgets/dialog_FormalTermDetails.js"></script>
+<script src="widgets/dialog_Hierarchies.js"></script>
+<script src="widgets/dialog_Hierarchy.js"></script>
+<script src="widgets/dialog_HierarchyTree.js"></script>
+<script src="widgets/dialog_Images.js"></script>
+<script src="widgets/dialog_Macros.js"></script>
+<script src="widgets/dialog_Memos.js"></script>
+<!--script src="widgets/dialog_Metadata.js"></script-->
+<script src="widgets/dialog_SourceDetails.js"></script>
+<!--script src="widgets/dialog_Sources.js"></script-->
+<script src="widgets/dialog_StatementDetails.js"></script>
+<script src="widgets/dialog_Statements.js"></script>  <!-- Was: dialog_ViewAllStatements -->
+<!--script src="widgets/dialog_Synonyms.js"></script-->
+<script src="widgets/dialog_TopicDetails.js"></script>
+<!--script src="widgets/dialog_TopicHierarchies.js"></script-->
+<!--script src="widgets/dialog_TopicHierarchy.js"></script-->
+<script src="widgets/dialog_Topics.js"></script>
+
+
+<!-- Original Tools -->
+<script src="widgets/boolean_search.js"></script>
+<!--script src="tools/formal_terms.js"></script -->
+<!--script src="widgets/diagram.js"></script-->
+<!--script src="widgets/diagram_only.js"></script-->
+<script src="widgets/glossary.js"></script>
+<script src="widgets/display_hierarchy.js"></script>
+<script src="widgets/hierarchic_objects_usage.js"></script>
+<script src="widgets/knowledge_base_report.js"></script>
+<script src="widgets/species_report.js"></script>
+<!--script src="tools/springy.js"></script-->
+<!--script src="widgets/object_summary.js"></script-->
+<script src="widgets/sources_table.js"></script>
+<script src="widgets/statements_summary.js"></script>
+<script src="widgets/topic_summary.js"></script>
+<script src="widgets/user_text.js"></script>
+
+<!-- 
+https://en.wikipedia.org/wiki/File_URI_scheme
+For Windows, seems to be 
+    <script src="file://localhost/c:/akt/tool1.js"></script>
+but check. 
+-->
+
+<script src="file://localhost/home/robert/akt/tool1.js"></script>
+
+
+<!-- Widgettes - compact widget code for the dialog_Generic widget -->
+
+<!-- Obsolete widgettes for collections:
+     Now collapsed into the single collection.js widgettes.
+     Except for images.js and diagrams.js.
+<script src="widgets/widgettes/formal_terms.js"></script>
+<script src="widgets/widgettes/hierarchies.js"></script>
+<script src="widgets/widgettes/sources.js"></script>
+<script src="widgets/widgettes/statements.js"></script>
+<script src="widgets/widgettes/topics.js"></script>
+-->
+
+<!-- Widgettes for collections and their instances -->
+<script src="widgets/widgettes/collection.js"></script>
+
+<script src="widgets/widgettes/formal_term_details.js"></script>
+<script src="widgets/widgettes/hierarchy_details.js"></script>
+<script src="widgets/widgettes/images.js"></script>
+<script src="widgets/widgettes/image_details.js"></script>
+<script src="widgets/widgettes/source_details.js"></script>
+<script src="widgets/widgettes/statement_details.js"></script>
+<script src="widgets/widgettes/topic_details.js"></script>
+<script src="widgets/widgettes/diagrams.js"></script>
+<script src="widgets/widgettes/diagram_details.js"></script>
+<script src="widgets/widgettes/diagram.js"></script>  <!-- The actual diagram panel itself -->
+<script src="widgets/widgettes/node_details.js"></script> <!-- Placed here, since only used for diagrams -->
+
+<script src="widgets/widgettes/nodes.js"></script>
+<script src="widgets/widgettes/node_details.js"></script>
+
+<script src="widgets/widgettes/arcs.js"></script>
+<script src="widgets/widgettes/arc_details.js"></script>
+
+<!-- Other widgettes -->
+<script src="widgets/widgettes/boolean_search.js"></script>
+<script src="widgets/widgettes/diagram.js"></script>
+<!--script src="widgets/widgettes/diagram_from_topic.js"></script-->
+<script src="widgets/widgettes/json_viewer.js"></script>
+<script src="widgets/widgettes/metadata.js"></script>
+<script src="widgets/widgettes/summary.js"></script>
+<script src="widgets/widgettes/statement_formal_terms.js"></script>
+<script src="widgets/widgettes/statement_template.js"></script>
+<script src="widgets/widgettes/synonyms.js"></script>
+<script src="widgets/widgettes/tools.js"></script>
+
+
+<!-- API -->
+
+<!--script src="js/jointjs/dijkstra_to_systo.js"></script-->
+
+<script src="kbs/atwima_anon_formal.js"></script>
+<!--script src="kbs/atwima_anon.js"></script-->
+<!--script src="kbs/ego_anon.js"></script-->
+
+
+<!--script src="kbs/bulk_import.js"></script-->
+
+<script src="images/urls_for_flickr_images.js"></script>
+
+<script src="diagrams/acheampong.js"></script>
+
+<!-- TUTORIALS -->
+<script src="tutorials/tour.js"></script>
+
+
+<!-- bulk loading from spreadsheet -->
+<!--script src="kbs/atwima_statements.js"></script>
+<script src="kbs/atwima_sources.js"></script-->
+
+<link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
+</head>
+
+
+<body style="overflow:scroll;">
+    <h2>webAKT Demo 1</h2>
+    <p style="font-size:12px;">There are <span id="nstatements"></span> statements in the KB</p>
+
+    <button style="display:none" id="menu_file_openkb"></button>
+    <button style="display:none" id="menu_file_savekb"></button>
+
+<script>
+    var kbId = 'atwima';
+	AKT.changeKb(kbId);
+    var kb = AKT.kbs[kbId];
+    AKT.incrementZindex("menu_handlers.js: AKT.menuHandler.menu_kb_openkb()");
+    $(this).find('a').css({background:'#d0d0d0',color:'black'});         
+    var kbFromFile = AKT.kbs['atwima'];
+    AKT.KBs[kbId] = new Kb({name:kbId,kb_from_file:kbFromFile});
+    $('#menu_file_selectkb').find('ul').append(
+        '<li id="menu_file_selectkb_'+kbId+'" class="menus-dropdown submenu leaf live" style="background:rgb(212,208,200);">'+
+            '<a href="#" style="background: rgb(212, 208, 200); color: rgb(0, 0, 0);">'+kbId+'</a>'+
+        '</li>');
+    AKT.changeKb('atwima');
+    var kb = AKT.KBs['atwima'];
+    kb.extractFormalTerms();
+
+    var nStatements = Object.keys(kb._statements).length;
+    console.log(nStatements);
+    $('#nstatements').text(nStatements);
+</script>
+</body>
+</html>

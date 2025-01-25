@@ -1,0 +1,23 @@
+<html>
+<head>
+<script src="libraries/jquery-3.5.0.js"></script>
+<script src="libraries/jquery-ui.js"></script>
+<script>
+function go() {
+$('body').append('<p>Hello</p>');
+//var img = 'https://live.staticflickr.com/65535/51003448757_73a4ac04f1.jpg';
+//var img = 'http://akt.bangor.ac.uk/images/Lookingatbeans_000.JPG';
+//var img = 'file:///home/robert/Projects/AKT/webakt/dev/test_image_access.gif';
+var img = 'file:///home/robert/Projects/AKT/webakt/dev/images/Panicum_maximum_reduced.jpg';
+
+$('#image1').append('<img src="'+img+'"/>');
+}
+</script>
+</head>
+
+<body>
+<button onclick="go()")>Go</button>
+<div id="image1"></div>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+{
+    "metadata": {},
+    "formalTerms": {},
+    "statements": {
+        "s1": {
+            "id": "s1",
+            "formal": "process(site,burning) causes1way att_value(pests,number,decrease)",
+            "type": "attribute"
+        },
+        "s2": {
+            "id": "s2",
+            "formal": "process(site,burning) causes1way att_value(disease,levels,decrease)",
+            "type": "attribute"
+        },
+        "s3": {
+            "id": "s3",
+            "formal": "process(site,burning) causes1way att_value(soil,temperature,increase)",
+            "type": "attribute"
+        },
+        "s4": {
+            "id": "s4",
+            "formal": "process(site,clearing) causes1way att_value(soil,temperature,increase)",
+            "type": "attribute"
+        },
+        "s5": {
+            "id": "s5",
+            "formal": "att_value(soil,temperature,increase) causes1way att_value(organic_matter,decomposition_rate,increase)",
+            "type": "attribute"
+        }
+    },
+    "sources": {},
+    "source_user_labels": [],
+    "subobjects": [],
+    "subtopics": [],
+    "topics": {}
+}

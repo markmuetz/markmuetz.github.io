@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>WebAKT</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family:sans;}
+a {font-size:15px; text-decoration:none; color:blue;}
+.news {font-size:14px;}
+</style>
+</head>
+<body>
+<h1 style="text-align:center;">Welcome to webAKT</h1>
+<!--img src="images/vulnerabilities-of-forests-and-forest-dependent-people-1-638.jpg" width="100%" height="120px" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7RaA6CFtG9DWlzSCH1PV2QjevHpFw3-5j1A&usqp=CAU"></img-->
+<div class="w3-row">
+  <div class="w3-col w3-left w3-container" style="width:200px; margin-top:30px;">
+    <b>Demos</b><br/>
+    <a href="html/webakt.html" title="Current version of the attempt to replicate AKT5 in a browser.">webAKT5 demo</a><br/>
+    <a href="html/atwima.html" title="A sample of a regular HTML web page with some webAKT widgets incorporated.">Atwima page</a><br/>
+    <br/>
+    <b>Technical</b><br/>
+    <a href="https://sites.google.com/view/webakt2020/home" title="Mainly for technical notes relating to the conversion of the original AKT5 code written in LPA's WinProlog into HTML/JavaScript.">The webAKT wiki</a><br/>
+    <a href="https://docs.google.com/spreadsheets/d/10rpKxpkhH_9zfkwlMP0F7rtdPdrTv1OFPqYAcdyrXYo/edit#gid=527921340" title="Spreadsheets (Google Sheets) containing tabular information relating to the the webAKT project, e.g. a list of Tools in AKT5, where they are used, and progress in conversion into JavScript">webAKT spreadsheets</a><br/>
+    <a href="html/dialog_gallery.html" title="The 60 or so AKT5 dialogs,converted into HTML as 'empty' dialogs.">Dialog gallery</a><br/>
+  </div>
+  <div class="w3-col w3-right w3-container" style="width:200px">
+    <p><b>News</b></p>
+    <ul>
+        <li class="news"><b>4 Feb 2021</b><br/>Creation of the webAKT website</li>
+    </ul>
+  </div>
+  <div class="w3-rest w3-container">
+<h2>What is AKT?</h2>
+<p>AKT stands for the <b>Agroecological Knowledge Toolkit</b>.  It is a methodology for collecting knowledge from local farmers about the agricultural and ecological aspects of their farming practices, in the former of statements.  These statements are represented in a formal notation, using the Prolog logic-programming language, and brought together in a knowledge base.<p>
+
+<p>The methodology is supported by AKT5, a software package which has been developed to allow statements to be entered using the formal notation, checked for syntactic correcness, added to a knowledge base, searched, and analysed using software tools.</p>
+
+<p>The AKT project was started in 1996, and based in Bangor University, North Wales.   More information on the project itself, and the AKT5 software, can be found <a href="http://akt.bangor.ac.uk/">here</a>.  The AKT5 software is available for free download from the AKT website.</p>
+
+<h2>What is webAKT?</h2>
+<p>The primary aim of webAKT is to bring the AKT5 software package online, so that it can be accessed using any web browser.   The existing software is now some 25 years old, maintenance is due to tail off shortly, and the software is written in a specialised language (LPA WinProlog), which few programmers know.</p>   
+
+<p>webAKT will be standards-based, using pervasive web languages (HTML, JavaScript and CSS), and possibly a standard Prolog, thus ensuring that there will always be a large pool of programmers - for example, in the IT departments of international agricultural research institutes - who can maintain and extend it.</p>
+
+<p>A secondary aim, but one that could turn out to be equally important, is to open the door to developing web pages which give particular views of knowledge bases. So, for example, a report on a particular knowledge base from one location can include extracts and analyses of the knowledge base itself, seamlessly included in the web page.  This should make the AKT knowledge bases accessible to a much wider audience.</p>
+
+<h2>Demos</h2>
+<ul>
+<li><b><a href="html/webakt.html">AKT5 walk-through demo</a></b><br/>
+This is intended to give an idea of what the web-based version of AKT5 will be like.    It includes two walk-throughs, highlighted in yellow menu items and buttons: loading a knowledge base and exploring its Topic Hierarchy; and accessing and running one Tool.</li>
+<li><b><a href="html/dialog_gallery.html">The AKT5 dialogue windows</a></b><br/>
+This shows all the AKT5 dialog windows, re-implemented in HTML.   These were generated automatically from the AKT5 WinProlog codebase.   These are all included in the AKT5 walk-through demo, but are hidden until they are actually called into play be a user action.</li>
+<li><b><a href="html/atwima.html">The Atwima knowledge base</a></b><br/>
+This page illustrates how webAKT Tools (separate modules that can undertake some specific analysis of a knowledge base) can be seamlessly integrated into a conventional web page, in the form e.g. of a table, so that a reader of the page need not even be aware how the table got there.</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
+

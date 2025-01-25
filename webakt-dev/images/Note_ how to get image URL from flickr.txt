@@ -1,0 +1,93 @@
+webAKT - linking to images on the web
+Robert Muetzelfeldt
+Nov 2021
+
+AKT5 allows pictures to be incorporated.  However, there are major constraints on where and how this can be done.    Here is the relevant section from the AKT5 Manual, with my comments:
+
+i) All the diagrams and pictures that are to be incorporated into the knowledge base must be in the form of bitmap files.
+Comment: Noody uses bitmap files these days for sharing images on the web.
+
+ii) All these bitmap files must be in the same folder as the knowledge base.
+Comment: This is a major constraint.
+
+iii) The thumbnail picture or diagram to go on the Welcome Page must have exactly the same name as the knowledge base - in the above example atwima.bmp for the knowledge base atwima.kb
+Comment: This is a major constraint.
+
+iv) All the other pictures and diagrams must contain the name of the knowledge base somewhere within the file name e.g. indigenous people atwima.bmp; settler people atwima.bmp. 
+Comment: This is a messy and unwieldy constraint.   For a start, it means copying the image and giving it a different name if it appears in more than one knowledge base.
+
+Working wth web technologies opens up possibilities for working with images which are far simpler, more flexible, and, importatly, do not involve the image beong part pf the knowledge base.   Instead, the knowledge base contans a *reference* to the image (in the form of a URL, i.e. web address) which points to an image which can reside anywhere on the web.  Each image can be one provided by the knowledge base developer, and uploaded to a suitable web site, or it can be one already available on the web, e.g. in Wikipedia or some photo-sharing platforms such as flickr (subject to copyright licensing).
+
+
+
+
+
+FLICKR
+======
+
+How to get the URL and desription from the CIAT section of flickr:
+
+1. Go to https://www.flickr.com/photos/ciat/
+2. Find a photo, and click on it.
+3. When it appears, right-mousedown and select "Page source"
+4. In the page source listing, search for property="og:image" 
+   You should see something like this:
+	<meta property="og:image" content="https://live.staticflickr.com/65535/51002758713_5dc525208d_b.jpg"  data-dynamic="true">
+5. Select and copy the URL between the quotes after content=
+6. Paste it into a text file somewhere.
+7. Now search for property="og:title"
+   You should see something like this:
+	<meta property="og:title" content="Elizabeth Omusiele shows the diverse seeds she is growing on her farm with support 
+    from the Alliance and partners."  data-dynamic="true">
+8. Select and copy the running text between the quotes after content=
+9. Paste it into the same temporary textfile.
+
+
+GITHUB
+======
+
+Here's a page on how to do it in github - at least, in the README.md cover page (which should be good enough)
+https://stackoverflow.com/questions/10189356/how-to-add-screenshot-to-readmes-in-github-repository
+
+The first answer links to this example:
+https://raw.githubusercontent.com/altercation/solarized/master/README.md
+
+And here's a link to the actual image, which works fine - it's on the test gallery initially populated with flickr images, as above.
+https://raw.githubusercontent.com/altercation/solarized/master/img/solarized-yinyang.png
+
+I guess the README.md bit is irrelevant - all you need to do is to upload images into the appropriate directory for some project.
+
+OR.....
+1. Create an account.  E.g. robertmue
+
+2. Create a Project.  E.g. webakt
+
+3. Click Add File
+
+4. Clock Upload files. Add as many image files as you want.  Return to previous screen when finished.
+
+/*  This is unnecessary.  Simply follow the pattern below
+To get the URLs...
+
+5. Click Goto File
+
+6. Click on the file you want.
+
+7. Right click on image,
+
+8. Click on Copy Image Address from the context menu
+
+10. Paste into a temporary text file
+*/
+
+Here is the actual link for a demonstration image I created in the webakt project in my robertmue account:
+    url:"https://raw.githubusercontent.com/robertmue/webakt/main/momordica_charantia.gif"
+So, the pattern is:
+    https://raw.githubusercontent.com/[USER]/[PROJECT]/main/[FILE]
+assuming the images are at the top level (main) of the project.
+
+
+
+
+
+

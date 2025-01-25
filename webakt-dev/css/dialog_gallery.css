@@ -1,0 +1,154 @@
+/* CSS variables */
+
+:root {
+--main_bg_color:#d4d0c8;
+--titlebar_bg_color:#d8d8d8;
+--blb:solid 2px #f0f0f0;  /* button light border */
+--bdb:solid 2px #606060;  /* button dark border */
+}
+
+
+/* --------------------------------------------------------- */
+/* Page-breaks for printing the dialog gallery */
+
+@media print {
+  .dialog_window {page-break-before: always;}    /* Must remove float:left for this to work */
+}
+
+/*-----------------------------------------------------------*/
+/* Body settings */
+
+body {position:relative; background:var(--main_bg_color); font-family: verdana, sans; font-size:10.4px; margin:0px; padding:0px; }
+
+
+/* ----------------------------------------------------------- */
+/* Dialog window settings */
+
+div.dialog_window {z-index:500; border:solid 1px black; margin:15px; background:var(--main_bg_color); box-shadow:0px 1px 12px 6px rgba(50,50,50,0.47); border-radius:8px;}
+
+div.titlebar {width:100%; height:20px; background:var(--titlebar_bg_color); text-align:center; padding-top:6px; margin:0px; font-size:12px;}
+.XXXX {float:left;}
+.YYYY {float:right;}
+
+div.title-bar {width:100%; height:20px; background:var(--titlebar_bg_color); text-align:center; padding-top:6px; margin:0px; font-size:12px;}
+
+.dialog_id {float:left;}
+.dialog_close_button {float:right; background:var(--titlebar_bg_color); border:none;}
+
+div.content {position:absolute; background:var(--main_bg_color); border:solid 1px black; padding:0px; margin:0px;}
+
+div.label {position:absolute; left:0px; top:0px; background:#d0d0c8; border:none;  padding:0px; margin:0px;}
+
+button {position:absolute; background:#d0d0c8; border-top:var(--blb);border-left:var(--blb);border-bottom:var(--bdb);border-right:var(--bdb); padding:0px; margin:0px; font-family:verdana,sans; font-size:10.5px;}
+
+fieldset {position:absolute; background:#d0d0c8; padding-top:0px; padding-bottom:0px; margin-top:5px; margin-bottom:5px;}
+
+input.checkbox {position:absolute; background:#d0d0c8; padding:0px; margin:0px;}
+
+input.radio {position:absolute; background:#d0d0c8; padding:0px; margin:0px;}
+
+select {position:absolute; background:#d0d0c8; border-top:var(--bdb);border-left:var(--bdb);border-bottom:var(--blb);border-right:var(--blb);padding:0px; height:20x; margin:0px;}
+
+textarea {position:absolute; background:white; border-top:var(--blb);border-left:var(--blb);border-bottom:var(--bdb);border-right:var(--bdb); font-family:verdana,sans; font-size:11.5px;}
+
+a,
+a:hover{text-decoration: none;}
+
+
+/* ----------------------------------------------------------- */
+/* Custom settings for the Welcome splash screen */
+
+#welcome {display:block;}
+#welcome10 {font-family:verdana,sans; font-size:13px; font-weight:bold; font-style:italic; text-align:center;}
+#welcome20 {font-family:verdana,sans; font-size:13px; font-style:italic; text-align:center;}
+#welcome30 {font-family:verdana,sans; font-size:13px; font-style:italic; text-align:center;}
+#welcome40 {font-family:verdana,sans; font-size:13px; font-style:italic; text-align:center;}
+#welcome50 {font-family:verdana,sans; font-size:13px; font-style:italic; text-align:center;}
+
+
+/* ----------------------------------------------------------- */
+/* Settings for the menus */
+#menus {display:none;}
+
+.menus-menubar{min-height: 25px;
+    margin:0px 1px;
+    padding:0px;
+    font-family: helvetica;
+    font-size:13px;
+    z-index:200000;
+}
+
+.menus-menubar ul{
+  list-style: none;  
+    -webkit-margin-before:0px;
+    -webkit-margin-after:0px;
+    -webkit-margin-start:0px;
+    -webkit-margin-end:0px;
+    -webkit-padding-start:0px;
+    z-index:200000;
+  background-color: var(--main_bg_color);
+  list-style: none;  
+  margin-left:2px;
+}
+.menus-menubar ul li{
+  background-color: var(--main_bg_color);
+  display: inline-block;
+  z-indexxx:200000;
+}
+
+.menus-menubar ul li a{
+  display: block;
+  color:black;
+  padding: 2px 5px;
+}
+
+.menus-menubar ul li a:hover{
+  background-color: 0000a0;   /*var(--main_bg_color);*/
+  color:white;
+}
+
+/* menus-dropdown */
+li.menus-dropdown{position: relative;}
+
+/* This is the box enclosing the list of menu items */
+ul.menus-dropdown-menu{
+  border:solid 1px #808080;
+  box-shadow: 0px 3px 15px 2px #a0a0a0; 
+  position: absolute;
+  min-width: 120px;
+}
+
+ul.menus-dropdown-menu li {
+  display: block !important;
+  white-space: nowrap;
+}
+
+ul.menus-dropdown-menu li.active a {
+  color:black;
+}
+
+ul.menus-dropdown-menu li.inactive a {
+  color:#707070;
+}
+
+
+
+/* Sub menus-dropdown */
+ul.menus-dropdown-menu ul.menus-dropdown-menu{
+  left: 100%;
+  top: 0;
+  background-color: var(--main_bg_color) !important;
+}
+
+ul.menus-dropdown-menu ul.menus-dropdown-menu li.active a {
+  color:black;
+}
+ul.menus-dropdown-menu ul.menus-dropdown-menu li.inactive a {
+  color:#707070;
+}
+
+/* Display none by Default */
+ul.menus-dropdown-menu{
+  display: none;
+}
+

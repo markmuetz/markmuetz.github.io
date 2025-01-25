@@ -1,0 +1,4 @@
+?- reconsult('operators.pl').
+?- reconsult('atwima_prepared.kb').
+?- listing(last_modified).
+?- reconsult('convert_kb_prolog_to_json.pl').

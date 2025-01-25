@@ -1,0 +1,128 @@
+    "formalTerms": {
+        "0": {
+            "type": "value",
+            "description": "",
+            "synonyms": []
+        },
+
+    "statements": {
+        "s1": {
+            "id": "s1",
+            "formal": "att_value(part(ego,fruit),amount,high) if att_value(dry_season,period,current)",
+            "type": "attribute",
+            "source_ids": [
+                "Luke_Nsuakyir_2002a",
+                "Harper_Krofrom_2002a"
+            ],
+            "memo": "none"
+        },
+
+    "sources": {
+        "Reuben_Susaan_2002a": {
+            "id": "Reuben_Susaan_2002a",
+            "name": "Reuben",
+            "location": "Susaan",
+            "suffix": "a",
+            "interviewer": "Abigail",
+            "interviewee": "Reuben",
+            "sex": "F",
+            "day": 9,
+            "month": "jul",
+            "year": 2002,
+            "memo": null,
+            "extras": {
+                "": "",
+                "Land tenure ": "Own Land",
+                "Activity with Marantaceae ": "Fruit Collector",
+                "Ethnicity ": "Grusie"
+            }
+        },
+
+    "subobjects": [
+        {
+            "id": "animal",
+            "name": "animal",
+            "tree_down": {
+                "animal": [
+                    "abebe",
+                    "esa",
+                    "goat",
+                    "nkoko",
+                    "ntetea_tuntum",
+                    "nwa",
+                    "rodent",
+                    "sheep",
+                    "wansem"
+                ],
+                "rodent": [
+                    "akrantee",
+                    "apese",
+                    "okusie"
+                ]
+            },
+            "tree_up": {
+                "abebe": "animal",
+                "esa": "animal",
+                "goat": "animal",
+                "nkoko": "animal",
+                "ntetea_tuntum": "animal",
+                "nwa": "animal",
+                "rodent": "animal",
+                "sheep": "animal",
+                "wansem": "animal",
+                "akrantee": "rodent",
+                "apese": "rodent",
+                "okusie": "rodent"
+            },
+            "type": "object"
+        },
+
+    "subtopics": [
+        {
+            "id": "Ego_growth",
+            "name": "Ego_growth",
+            "tree_down": {
+                "Ego_growth": [
+                    "Ego_growing_areas",
+                    "Optimum_ego_growth_rate",
+                    "Optimum_ego_soil_conditions"
+                ]
+            },
+            "tree_up": {
+                "Ego_growing_areas": "Ego_growth",
+                "Optimum_ego_growth_rate": "Ego_growth",
+                "Optimum_ego_soil_conditions": "Ego_growth"
+            },
+            "type": "topic"
+        },
+
+    "topics": {
+        "Afonwea": {
+            "id": "Afonwea",
+            "name": "Afonwea",
+            "search_term": "afonwea ",
+            "nested_list": "afonwea",
+            "objects": "object+subobjects"
+        },
+        "Ego_fruit_location": {
+            "id": "Ego_fruit_location",
+            "name": "Ego_fruit_location",
+            "search_term": "(picking and kwae) or (picking and location) ",
+            "nested_list": [
+                "or",
+                [
+                    "and",
+                    "picking",
+                    "kwae"
+                ],
+                [
+                    "and",
+                    "picking",
+                    "location"
+                ]
+            ],
+            "objects": "object"
+        },
+
+
+

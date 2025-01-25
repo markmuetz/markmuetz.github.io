@@ -1,0 +1,274 @@
+/* CSS variables */
+
+:root {
+--main_bg_color:#d4d0c8;
+--alternative_bg_color:#e0e0e0; /* Alternative is for documentation/ */
+--titlebar_bg_color:#d8d8d8;
+--blb:solid 2px #f0f0f0;  /* button light border */
+--bdb:solid 2px #606060;  /* button dark border */
+}
+
+input::file-selector-button {
+  border: 2px solid #6c5ce7;
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color: #a29bfe;
+  transition: 1s;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #81ecec;
+  border: 2px solid #00cec9;
+}
+Copy to Clipboard
+
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block; /* For Firefox */
+}
+
+#toolbar > img {width:20px; height:20px; margin-right:5px;}
+
+/* From https://www.w3schools.com/css/css_tooltip.asp */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------- */
+/* Page-breaks for printing the dialog gallery */
+
+@media print {
+  .panel {page-break-before: always;}    /* Must remove float:left for this to work */
+}
+
+/*-----------------------------------------------------------*/
+/* Body settings */
+
+/*body {position:relative; background:var(--main_bg_color); font-family: verdana, sans; font-size:10.4px; margin:0px; padding:0px; }*/
+body {position:relative; font-family: verdana, sans; font-size:10.4px; margin:0px; padding:0px; }
+
+/* ----------------------------------------------------------- */
+/* Dialog window settings */
+
+/* First one is for normal use, with shadow borders.*/
+/*div.panel {z-index:500; border:solid 1px black; margin:15px; background:var(--main_bg_color); box-shadow:0px 1px 12px 6px rgba(50,50,50,0.47); border-radius:8px;}*/
+
+/* Or... Use this one for screenshots in documentation. */
+div.panel {z-index:500; border:solid 1px black; margin:15px; background:var(--alternative_bg_color);}
+
+div.titlebar {width:100%; height:20px; background:var(--titlebar_bg_color); text-align:center; padding-top:6px; margin:0px; font-size:12px;}
+
+.XXXX {float:left;}
+.YYYY {float:right;}
+
+div.title-bar {width:100%; height:20px; background:var(--titlebar_bg_color); text-align:center; padding-top:6px; margin:0px; font-size:12px;}
+
+.dialog_id {float:left;}
+.dialog_close_button {float:right; background:var(--titlebar_bg_color); border:none;}
+
+div.content {background:var(--main_bg_color); border:solid 1px black; padding:0px; margin-top:0px; font-size:11px;}
+
+fieldset {
+    border-width: 2px;
+    border-style: ridge;
+    border-color: #151513
+    margin:7px;}
+
+legend {
+    color:black;
+}
+
+#addtopic > .content {position:absolute;}
+#boolean_search > .content {position:absolute;}
+#macros > .content {position:absolute;}
+#macros_montage > .content {position:absolute;}
+
+#topic_hierarchyxxxx > .content {position:absolute;}
+#topicHierarchiesxxxx > .content {position:absolute;}
+#welcomexxx > .content {position:absolute;}
+
+h1.montage_title {font-size:18px; font-weight:bold;}
+div.montage_author {font-size:14px; font-weight:bold;}
+div.montage_date {font-size:14px; font-weight:bold;}
+div.montage_contents_heading {font-size:14px; font-weight:bold;}
+h2 {font-size:17px; font-weight:bold;}
+h3.widget_display_heading {font-size:16px; font-weight:bold;}
+li {font-size:12px; font-weight:normal;}
+
+div.tool_results_heading {font-size:12px; margin:10px;}
+
+div.labelxxx {position:absolute; left:0px; top:0px; background:#d0d0c8; border:none;  padding:0px; margin:0px;}
+
+button {background:#d0d0c8; border-top:var(--blb);border-left:var(--blb);border-bottom:var(--bdb);border-right:var(--bdb); padding:0px; margin:0px; font-family:verdana,sans; font-size:10.5px;}
+
+fieldsetxxx {position:absolute;background:#d0d0c8; padding-top:0px; padding-bottom:0px; margin-top:5px; margin-bottom:5px;}
+
+input.checkboxxxx {position:absolute; background:#d0d0c8; padding:0px; margin:0px;}
+
+input.radioxxx {position:absolute; background:#d0d0c8; padding:0px; margin:0px;}
+
+select {background:#d0d0c8; border-top:var(--bdb);border-left:var(--bdb);border-bottom:var(--blb);border-right:var(--blb);padding:0px; height:20x; margin:0px;}
+
+/* This had been disabled, butthat caused massive corruptio of Welcome dialog */
+textareaxxx {position:absolute; background:white; border-top:var(--blb);border-left:var(--blb);border-bottom:var(--bdb);border-right:var(--bdb); font-family:verdana,sans; font-size:11.5px;}
+
+#kb_metadata > textarea {position:static}
+
+table {margin:px; font-size:12px;}
+/* tr {text-align:right;}    Disabled to try to get treetable working */
+
+a,
+a:hover{text-decoration: none;}
+
+
+/* ----------------------------------------------------------- */
+/* Custom settings for the Welcome splash screen */
+
+#welcome {display:block;}
+#welcome10 {font-family:verdana,sans; font-size:13px; font-weight:bold; font-style:italic; text-align:center;}
+#welcome20 {font-family:verdana,sans; font-size:13px; font-style:italic; text-align:center;}
+#welcome30 {font-family:verdana,sans; font-size:13px; font-style:italic; text-align:center;}
+#welcome40 {font-family:verdana,sans; font-size:13px; font-style:italic; text-align:center;}
+#welcome50 {font-family:verdana,sans; font-size:13px; font-style:italic; text-align:center;}
+
+
+/* ----------------------------------------------------------- */
+/* Settings for the menus */
+#menus {display:none;}
+
+.menus-menubar{min-height: 25px;
+    margin:0px 1px;
+    padding:0px;
+    font-family: helvetica;
+    font-size:13px;
+    z-index:200000;
+}
+
+.menus-menubar ul{
+  list-style: none;  
+    -webkit-margin-before:0px;
+    -webkit-margin-after:0px;
+    -webkit-margin-start:0px;
+    -webkit-margin-end:0px;
+    -webkit-padding-start:0px;
+    z-index:200000;
+  background-color: var(--main_bg_color);
+  list-style: none;  
+  margin-left:2px;
+}
+.menus-menubar ul li{
+  background-color: var(--main_bg_color);
+  display: inline-block;
+  z-indexxx:200000;
+}
+
+.menus-menubar ul li a{
+  display: block;
+  color:black;
+  padding: 2px 5px;
+}
+
+.menus-menubar ul li a:hover{
+  background-color: 0000a0;   /*var(--main_bg_color);*/
+  color:white;
+}
+
+/* menus-dropdown */
+li.menus-dropdown{position: relative;}
+
+/* This is the box enclosing the list of menu items */
+ul.menus-dropdown-menu{
+  border:solid 1px #808080;
+  box-shadow: 0px 3px 15px 2px #a0a0a0; 
+  position: absolute;
+  min-width: 120px;
+}
+
+ul.menus-dropdown-menu li {
+  display: block !important;
+  white-space: nowrap;
+}
+
+ul.menus-dropdown-menu li.active a {
+  color:black;
+}
+
+ul.menus-dropdown-menu li.inactive a {
+  color:#707070;
+}
+
+
+
+/* Sub menus-dropdown */
+ul.menus-dropdown-menu ul.menus-dropdown-menu{
+  left: 100%;
+  top: 0;
+  background-color: var(--main_bg_color) !important;
+}
+
+ul.menus-dropdown-menu ul.menus-dropdown-menu li.active a {
+  color:black;
+}
+ul.menus-dropdown-menu ul.menus-dropdown-menu li.inactive a {
+  color:#707070;
+}
+
+/* Display none by Default */
+ul.menus-dropdown-menu{
+  display: none;
+}
+
+
+/* For collapsible-tree in dialog_HierarchyTree - temporary */
+
+
+.caret {
+}
+
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.caret-down::before {
+
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+

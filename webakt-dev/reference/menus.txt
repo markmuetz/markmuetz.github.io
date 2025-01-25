@@ -1,0 +1,38 @@
+The webAKT menubar
+August 2022
+
+This note describes how the webAKT menubar, with its menus and submenus, is designed and implemented.
+
+The menubar has the following menus, each of which (currently) has the items (commands) within it.  Although the menus give access to more-or-less the same commands as in the AKT5 menus, I have re-arranged thing considerably to bring it more in line with conventional practice (especially with respect to the File menu, which did very little in AKT5, but now is the menu for dealing with the files containing knowledge bases).  Also, I have removed the cumbersome hierarchy of sub menus associated with the Tools menu, and replaced it with a single dialogue which gives access to all the Tools.
+
+File
+The File menu is used for working with knowledge bases as files - e.g. opening and closing KBs.   
+
+KB
+The KB menu is used for working with a single KB - primarily for inspecting and changing the various types of information a KB can hold, such as statements and sources.   By default, the information relates to the  "current KB" - i.e. the one that the user has selected as the current one to work with - though it is possible to work with another KB without resettng the "current KB".
+
+Diagram
+As in AKT%, the Diagram menu handles working with diagrams.
+
+Tools
+The Tools menu provides access to the various Tools (some built-in - System Tools - and some provided by the user - User Tools.   
+
+In AKT5, accessing a particular Tool required the user to navigate a series of some 4 submenus.  This was cumbersome, especially since it was a common action.   In webAKT, the user selects one command i=in the Tools menu, which opens up a dialog bx giving access to all the Tools, which can, optionally, be filtered in a number of ways.
+
+Map
+The Map menu is retained from AKT5, though it currently does nothing (as in AKT5 itself?).
+
+Help
+The Help menu gives access to the documentation on webAKT, as well as information in the webAKT application itself, e.g. version number, credits.
+
+==========================================================================================================
+What follows now is technical information on how the webAKT menubar was implemented at a coding level, for the benefit of anyone who wants to work with it.
+
+
+The codebase
+I have not used an off-the-shelf library for implementing the menubar.   Rather, all the code for handling it (e.g. openig and closing menus) is part of the webAKT codebase.  This is to provide maximum fexibility for custoising it to suit teh particuar needs of webAKT.   The code is currently held in three files in the js folder: menus.js, menuHandler.js, and menuManager.js.
+
+menus.js
+Conventionally, the basic information for a menu system in a web-based aplication is held as HTML.  Specifically, as a set of <ul> elements, one for each menu, with each <ul> element enclosing a set of <li> elements, one for each menu item.   If a menu item itself contains a submenu, then it in turn contains a <ul> element, which in its turn contains several <li> elements.   This is actually quite a nice way of doing it, since it naturally handles the nested-tree nature of nested submenus, and holds the text associated with each menu item.   However, it is a pain to work with, because the HTML markup clouds the clarity of the menu tree itself.
+
+

@@ -1,0 +1,73 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="../css/webakt.css">
+<style>
+.dialog_window {display:none; position:absolute;}
+div.content {left:0px; top:20px;}
+#welcome {display:block;}
+.dialog_id {display:none;}
+.control_id {display:none;}
+
+body {padding:15px;}
+h2 {font-size:18; font-weight:bold;}
+h3 {font-size:16; font-weight:bold;}
+h4 {font-size:14; font-weight:bold;}
+p {font-size:14;}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../js/webakt.js"></script>
+<script src="../js/webakt1.js"></script>
+<script src="../js/menu_handlers.js"></script>
+<script src="../js/macros.js"></script>
+<script src="../kbs/atwima.js"></script>
+<script src="../kbs/atwima_short.js"></script>
+<script src="../js/menus.js"></script>
+<script src="../js/akt5.js"></script>
+
+<script src="../tools/statements_summary.js"></script>
+<script src="../tools/number_of_statements.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#statements_summary_1').statements_summary({kb:"atwima",show_titlebar:false});
+        $('#statements_summary_2').statements_summary({kb:"atwima_short",show_titlebar:false});
+        $('#number_of_statements_1').number_of_statements({kb:"atwima"});
+        $('#number_of_statements_2').number_of_statements({kb:"atwima_short"});
+    });
+</script>
+
+</head>
+
+<body style="background:white">
+<div id="workspace">
+<h2>Embedding AKT5 Tools in a regular web page</h2>
+<h3>Robert Muetzelfeldt, Feb 2021</h4>
+
+<h4>Background</h4>
+<p>The AKT Atwima knowledge base was put together by Catharine Moss and colleagues in the early 2000s.    It was originally built in AKT5, and analysed using AKT5's System Tools, plus other custom User Tools created by Catharine, with help from Jim Doores.    I have used this knowledge base as a test data set while developng webAKT, a web-based re-implementation of AKT5.</p>
+
+<p>This re-implementation raised the issue of how best to implement AKT5's Tools (a term which includes Primitives, System Tools and User Tools), andd I am actively considering various options.    One of them is to dispense with AKT5's approach of representing each Tool in AKT5's Task Language (a layer above LPA WinProlog), and implement the Tools directly in JavaScript, the programming language used for webAKT itself.   More specifically, to implement each Tool as a separate self-contained widget (using the jQuery UI Widget Factory, to be technical).</p>
+
+<p>Doing this retains the high degree of modularity that AKT5's Tool mechanism provides, while using a language widely used (probably 10's of millions of programmers), and one which offers a degree of readability pretty similar to the Task Language.</p>
+
+<p>It also allows the separate widgets to be used in <b>any</b> web page (not just in the web re-implementation of AKT5).  This is illustrated by the following example:</p>
+
+<h4>The example</h4>
+<p>Embedded in the totally bog-standard web page that you are reading now are two tables.    Each displays the output from the statements_summary System Tool, which gives the number of sentences of different types from a knowledge base: in this case, the original Atwima KB which has <span id="number_of_statements_1"></span> sentences, and a separate KB (which for the purposes of this exercise is simply the Atwima KB with some statements removed, and has <span id="number_of_statements_2"></span> sentences).<p>
+
+<p>Here is the table showing the number of sentences of each type for the Atwima KB:</p>
+<div id="statements_summary_1" style="display:block;width:400px;height:200px;"></div>
+
+<p>... and here is the table showing the same information for the modified Atwima KB:</p>
+<div id="statements_summary_2" style="display:block;width:400px;height:200px;"></div>
+
+<p>Note that the numbers in these tales were <b>generated from the relevant KB</b>; they were not entered by editing the HTML by hand, as would normally be the case.    So, if you realised that a sentence had been left out from a KB, and you put it in, the table would automatically calculate the correct numbers when someone visits it.</p>
+
+<p>Now look back at the paragraph just before the two tables.   See where I mention the total number of sentences in each KB (in bold, to make it stand out)?   That is also the output of a widget - in this case, a single inline value.    This is the trivial number_of_statements Tool - one created for this exercise, to show how the output from Tools can be seamlessly integrated into an HTML page.   The code for this Tool is only a couple of lines long (apart from the boilerplate code used by every Tool), and is a useful "Hello world" example for anyone wanting to see what the code for a Tool looks like.</p>
+
+<p>AKT5 allows the user to apply option settings when using some Tools - e.g. restricting results for a particular Topic Hierarchy.   This approach allows the user to do that, i.e. dynamically choosing an option setting, which will then be directly reflected in a change in the displayed results.   In the curernt case, the user could change the chosen KB for a particular table, and the numbers in that table would then change.  (This functionality will be shown in future versions of this page.)</p>
+
+</div>    <!-- End of workspace div -->
+</body>
+</html>

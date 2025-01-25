@@ -1,0 +1,520 @@
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+    CHAPTER FOURTEEN – TUTORIAL IN CREATING A
+                            SIMPLE KNOWLEDGE BASE
+This tutorial guides you through the creation of a small knowledge base and then invites you
+to try out different ways of exploring it. The knowledge represented is abstracted from Bandy,
+D.E., Garrity, D.P. and Sanchez, P.A. (1993) The worldwide problem of slash-and-burn
+agriculture. Agroforestry Today Vol. 5 (3), 2-6. The tutorial is only an introduction to AKT;
+please use chapters 7 – 12 to guide you when you require further information on AKT
+facilities.
+14.1 OPENING AKT
+Open the AKT application. An introductory title page will appear. Press OK. A new screen
+will appear with a series of menus in the top left-hand section. Select KB. In the ensuing
+drop-down menu, select New KB, give your new knowledge base an appropriate name (e.g.
+slash_and_burn) and save it.
+Now that you have an empty knowledge base prepared to receive information, we will
+address the text on which your knowledge base is to be based.
+14.2 KNOWLEDGE FROM THE SOURCE
+For the purposes of this tutorial, we will make use of the following text as our source
+knowledge. It may be more usual however, for source knowledge to be a tape-recorded
+interview. The following are extracts from the source text:
+               “...burning helps to control pests and diseases....the higher soil
+               temperatures that follow clearing and burning also accelerate the
+               decomposition of organic matter in the top layers of the soil.
+               About half of the nitrogen and phosphorus in the burnt material and
+               nearly all the remaining nutrients are released to the soil from the ash
+               after burning. These nutrients are flushed from the ash by the rain
+               and have the effect of raising the pH of the upper layers of soil as well
+               as incorporating the nutrients. Nutrients in concentrated form are thus
+               available for one or two years after clearing. The quantity and quality
+               of these nutrients depends on the native fertility of the soil...
+               Crops such as corn, rice, beans, cassava, yams and plantains are
+               then planted....
+               As nutrients are removed by crop harvests or lost through leaching,
+               soil fertility declines. At the same time, the relatively easily removed
+               broad-leaved weeds are replaced by harder to manage grasses and
+               increasing weed density quickly impedes further cropping. The fields
+               are then abandoned for a period of fallow.
+               The secondary forest grows rapidly during the fallow, using nutrients
+               remaining in the soil...Essential minerals (phosphorus, potassium,
+               calcium, etc.) are extracted from lower soil layers during regrowth and
+               brought to the surface by trees....
+               Soil erosion... is seldom a problem in shifting cultivation because the
+               cleared areas are small and are always covered by some sort of
+               vegetation. When unsustainable slash-and-burn is practised by
+               newcomers, however, the soil is sometimes left uncovered. This can
+               lead to major erosion problems, particularly in hilly areas.....
+Tutorials                                        155
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+               When the soil is bare and erosion a problem, the siltation rate of the
+               waterways is increased and this often has a negative effect upon
+               aquatic life forms and fish production.
+               Neither are weeds a difficulty in the traditional method because the
+               land is left to fallow as soon as they become a problem. In the
+               subsequent fallow period, weeds soon die out as the crown of the
+               secondary forest closes. Migrant farmers, however, will remove all
+               vegetation and the roots and stumps of the felled trees from the areas
+               they clear for intensive farming.
+               These practices mean that when the land is finally abandoned there
+               are no rootstocks left from which the trees may grow and grasses are
+               the most common invaders of the open areas. This means that
+               clearing of land by migrant farmers generally results in the permanent
+               destruction of the rain forest.”
+The intention behind creating a knowledge base in AKT is to represent knowledge that
+provides a description of the ecology of a particular agroforestry practice. This is achieved by
+abstracting a set of unitary statements from the source knowledge that, as a set, represent a
+coherent description of the ecology of the practice. This process of breaking down the source
+knowledge into a set of unitary statements may demand considerable interpretation. Relying
+too literally on the exact statements in the source knowledge will tend to result in many
+statements in the knowledge base that become very difficult to interpret.
+Consider, for example:
+               “In the subsequent fallow period, weeds soon die out as the crown of
+               the secondary forest closes.”
+A literal abstraction of information might result in the statements that:
+               “Weeds soon die out in the fallow period”
+               “Weeds die out when the crown of the secondary forest closes”
+Both statements are fairly literal abstractions and superficially reasonable and useful.
+However, as statements in a knowledge base they are problematic as both contain implicit
+information. The term ‘soon’ is relative to the rate of weed mortality on land, which is not
+fallowed. This is clear enough in the source knowledge but not as an explicit statement of
+ecological knowledge. Furthermore, in the second statement there is an implicit causality –
+however the statement only really identifies the coincidence of weed die back and canopy
+closure.
+Interpretation might suggest that we should state instead that:
+               Forest canopy closure causes weeds to die back
+and
+               Forest canopy closure occurs during the fallow period
+Clearly this interpretation may require validation through further reference to the source
+knowledge. However, the knowledge expressed here is more fundamental and more useful
+than the above statements.
+As a result of the interpretation involved, different sets of statements will be abstracted from
+the same source knowledge by different people with different objectives. It is important to
+realise that any abstraction of knowledge for representation in the knowledge base is open to
+debate. There can be no single correct abstraction, although there can certainly be incorrect
+Tutorials                                        156
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+ones. The statements in Table 14.1 are an example of one set of statements abstracted from
+the text. These do not immediately and literally relate to the source knowledge but are
+designed to capture its ecological content. Some statements are speculative and demand
+validation while others can be expressed with more confidence.
+Table 14.1 Example set of statements abstracted from the text
+Burning causes a decrease in numbers of pests
+Burning causes a decrease in crop disease levels
+Clearing causes an increase in soil temperature
+An increase in soil temperature causes an increase in the rate of decomposition of organic
+matter
+Nutrient availability is high for two years after burning
+Harvesting causes a reduction in soil nutrient levels
+Leaching causes a reduction in soil nutrient levels
+A reduction in soil nutrient levels causes a reduction in soil fertility
+An increase in weed density causes a decrease in crop yield
+Soil erosion is not a problem IF the soil is always covered with some type of vegetation
+Soil erosion is severe IF soil is not covered with vegetation
+Soil erosion is very severe on hills
+An increase in soil erosion causes an increase in the siltation of waterways
+An increase in the siltation of waterways reduces fish production
+Weeds are not a problem IF land is regularly fallowed
+Canopy closure causes the death of weeds
+14.3 ENTERING KNOWLEDGE INTO THE KNOWLEDGE
+BASE
+These statements can be entered into the knowledge base in two ways, through the Show
+Kb Diagrams interface in the main Diagram menu or through the Statements dialog box in
+the main KB menu.
+14.3.1 ENTERING KNOWLEDGE THROUGH THE DIAGRAM INTERFACE
+It is possible to enter all the statements in Table 14.1 into the knowledge base using the
+statement card. Alternatively, all the causal and link statements can be entered through the
+diagramming interface. We will start with the diagramming interface as this helps to ensure
+unambiguous connections between the individual statements (which is very important if a
+useful knowledge base is to result) and can be helpful to the beginner because statements
+entered through the diagramming interface are formalised automatically.
+As an example of the use of the diagram interface we will enter the statements abstracted
+from the first paragraph of the text:
+              “....burning helps to control pests and diseases ... the higher soil
+              temperatures that follow clearing and burning also accelerate the
+              decomposition of organic matter in the top layers of the soil.”
+Under the Diagram menu select Show Kb Diagrams. This will give you a blank diagram
+window with all the function buttons displayed on either side.
+Entering a statement through the diagram interface demands some thought about the
+structure of that statement. For full details of the diagramming syntax see Chapter 4, section
+4.4. The section on formal representation (Chapter 4, section 4.2) will also clarify the
+structures of statements supported.
+The following five statements might be abstracted from this paragraph:
+Tutorials                                         157
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+                Table 14.2 Statements abstracted from the first paragraph:
+                1)  Burning causes a decrease in pest numbers
+                2)  Burning causes a decrease in disease levels
+                3)  Clearing causes an increase in soil temperature
+                4)  Burning causes an increase in soil temperature
+                5)  An increase in soil temperature causes an increase in the rate of
+                    decomposition of organic matter
+Each of these statements can be represented in the diagramming interface as a pair of nodes
+and a link between them. In the case of the first statement the two nodes are ‘burning’ –an
+        1
+action – and ‘number of pests’ – an attribute (number) of an object (pests). To represent this
+statement;
+     1. Select the Action button from the ‘Add node’ box on the left-hand side of the diagram
+          screen.
+     2. Move your cursor onto the drawing area and click to create an action node. A dialog
+          box will appear, asking for details of the action.
+     3. Enter the action name ‘burning’ and then look at the object boxes. (There are two
+          options, ‘One Object’ or ‘Two Objects’. In this case it is an action without a specified
+          object but as all actions are accompanied by objects it is necessary to refer to the
+          object being burnt. In this case ‘site’ or ‘field’ could be used).
+     4. Tick the ‘One Object’ box and enter ‘site’.
+     5. Press OK. On the diagram screen a node appears bearing the legend ‘site burning’.
+     6. Select the Attribute button from the ‘Add node’ box to create the second node. An
+          ‘attribute_relation_dialog’ box appears. The attribute can relate to three things,
+          objects, processes or actions. In this case it is related to an object (pests).
+     7. Tick the ‘Object’ box.
+     8. Press OK. An ‘attribute_object_dialog’ box then appears.
+     9. Specify ‘number’ as the attribute and ‘pests’ as the object.
+     10. Press OK.
+     11. Now select the Link button from the ‘Add link’ box.
+     12. Move the cursor to the ‘site burning’ node, left click and hold the mouse button down,
+          drag the cursor to the ‘pests number’ node and release the mouse button.
+     13. A ‘Choose Link’ dialog box now appears. In this case for ‘Link type’ choose
+          ‘causes1way’ and for ‘Effect Value’ in the ‘Parameters’ box choose ‘decrease’.
+     14. Press OK. The ‘Information Source’ dialog box now appears.....
+14.3.1.a Entering the Information Source
+No statement can be accepted by AKT without a source attached, so here goes...
+     1. In the ‘New’ box, select the Reference radio button and then press New. The dialog
+          box ‘Create a new reference source’ appears.
+     2. Fill in the details of the authors, the name of the journal title and the name of the
+                                                              2
+          article as given at the beginning of this chapter .
+     3. When you have completed filling in the details of the dialog box, press Save.
+     4. The statements sources dialog box reappears with the source highlighted. Press OK.
+1
+  ‘Burning’ can be either a process or an action. If it is used as a management tool, it is an
+action, otherwise it is a process. In any knowledge base it can only be used as one or the
+other, it cannot be entered as both action and process. If some statements also refer to
+burning brought about by natural causes then another term must be found, either ‘fire’ as an
+object, or ‘conflagration’ as a process.
+2
+  In the case of an article, the name of the journal should go in the ‘Name’ box.
+Tutorials                                         158
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+      5. The screen now automatically brings up the ‘New Statement’ dialog box, giving both
+         the formal language representation and the natural language representation of the
+         nodes and link created in the diagram interface. Press Save.
+      6. The following message will then appear: “Are you sure you want to save this
+         statement without a condition?” In this case the answer is ‘yes’ so press Yes.
+      7. Dialog boxes will then appear, asking if you wish to create new formal terms for the
+         various terms just entered. Press Yes on each occasion.
+The screen then reverts to the diagram interface and displays the two nodes connected by a
+link.
+Try entering the other four statements via the Diagram interface. Note that ‘clearing’, like
+‘burning’, is an action and therefore needs an object. In this case as well, ‘site’ would be a
+valid object.
+After entering the first 5 statements, and pressing Label Mode on the right hand side of the
+screen twice to get the full statements, you should end up with a diagram something like
+Figure 14.1.
+Figure 14.1 Diagram constructed from the statements in Table 12.2
+This example illustrates one of the most important features of the diagramming approach: the
+way that it helps you to identify ambiguity in the knowledge being represented. While the five
+statements individually appear reasonably intuitive, their combination into a diagram suggests
+that important information is missing. Burning will certainly raise soil temperatures but it is
+likely that the warming of the soil referred to in the text is not actually a direct consequence of
+burning but of the removal of vegetation as a result of burning and the consequent increase in
+insolation. Modification of the above diagram may better capture this interpreted meaning
+(see Figure 14.2 below).
+Tutorials                                       159
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+Figure 14.2 Figure 14.1 modified to better capture the interpreted meaning
+14.3.2 ENTERING KNOWLEDGE THROUGH THE STATEMENT CARD
+Although statements entered through the diagram interface are formalised automatically, any
+statements entered through the statement card must be formalised manually. The process of
+formal representation requires some practice. Read through Chapter 4 (part 4.2), which takes
+you through formal representation step by step, then try to formalise the extracted statements
+given in Table 14.1. Table 14.3 gives a formal version for each of the statements in Table
+14.1. There are no definitive, correct answers in formal representation, although there are
+certainly incorrect ones.
+                                                  2
+               NOTE: Remember to use the underscore (_), not a hyphen (-) when
+               writing formalised statements, e.g. att_value
+Table 14.3 Formal versions for each of the extracted statements in
+Table 14.1
+      Extracted Statements               Formalised Statements
+1     Burning causes a decrease in       action(burning,site) causes1way
+      numbers of pests                   att_value(pests,numbers,decrease)
+2     Burning causes a decrease in       action(burning,site) causes1way
+      crop disease level                 att_value(crops_disease, level, decrease)
+3     Clearing causes an increase        action(clearing, site) causes1way
+      in soil temperature                att_value(soil,temperature,increase)
+4     An increase in soil                att_value(soil,temperature,increase) causes2way
+      temperature causes an              att_value(process(organic_matter,
+      increase in the rate of            decomposition),rate, increase)
+      decomposition of organic
+      matter
+5     Nutrient availability is high for  att_value(site, nutrient_availability, high) IF
+      two years after burning            att_value(site, time_since_burning,range(‘0 years’, ‘2
+                                         years’))
+Tutorials                                       160
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+6      Harvesting causes a               action(harvesting, crops) causes1way
+       reduction in soil nutrient        att_value(part(soil, nutrients),level,decrease)
+       levels
+7      Leaching causes a reduction       process(leaching) causes1way att_value(part(soil,
+       in soil nutrient levels           nutrients),level, decrease)
+8      A reduction in soil nutrient      att_value(part(soil, nutrients),level, decrease)
+       levels causes a reduction in      causes2way att_value(soil, fertility, decrease)
+       soil fertility
+9      An increase in weed density       att_value(weeds, density, increase) causes2way
+       causes a decrease in crop         att_value(crops, yield, decrease)
+       yield
+10     Soil erosion is minimal IF the    att_value(process(soil, erosion), rate,minimal) IF
+       soil is always covered with       link(covers, vegetation, soil)
+       some type of vegetation
+11     Soil erosion is severe IF soil    att_value(process(soil, erosion), rate, high) IF link
+       is not covered with vegetation    (not_covers, vegetation, soil)
+12     Soil erosion is very severe on    att_value(process(soil, erosion),rate, severe) IF
+       hills                             att_value(process(soil, erosion), location, hillside) and
+                                         att_value(site, vegetation_cover, bare)
+13     An increase in soil erosion       att_value(process(soil, erosion), rate, increase)
+       causes an increase in the         causes2way att_value(process(waterways, siltation),
+       siltation of waterways            rate, increase)
+14     An increase in the siltation of   att_value(process(waterways, siltation),rate, increase)
+       waterways reduces fish            causes2way att_value(action(production,fish), rate,
+       production                        decrease)
+15     The weed population does          att_value(action(fallowing,land),frequency,regular)
+       not become a problem when         causes1way att_value(weeds, population,decrease)
+       land is regularly left to fallow.
+16     Canopy closure causes the         process(canopy,closure) causes1way process(weeds,
+       death of weeds                    death)
+Select Statements from the main KB menu. Then press New. Enter the formalised version
+into the ‘Formal Language Statement’ box. Where there are conditions in the statement (as in
+statements 5, 10, 11, 12, and 15) the condition is entered in the second half of the box,
+headed ‘IF’. Press Syntax Check to check whether or not the syntax has been properly
+entered. Then press Translate to get a natural language version. When you are satisfied,
+press Save.
+                                           1     Warning!
+               If you press Close, instead of Save you will lose the statement and it
+               will have to be entered again.
+14.4 PLAYING WITH THE KNOWLEDGE BASE
+Now that you have created a mini knowledge base, the following section gives you
+suggestions on ways in which to enhance its usefulness and to explore it. In each section are
+numbers, underlined and in brackets. These are the chapters and paragraphs to which you
+should refer for instructions on how to carry out the tasks.
+Tutorials                                        161
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+# Defining formal terms (7.4.3.a)
+You should always take care to define your formal terms clearly. Even simple terms should
+be defined as two people may understand something quite different under the same term.
+For example the action ‘clearing’ could mean clearing of undergrowth, clearing of weeds or
+complete clearing of a site. Let us assume that in this case ‘clearing’ means ‘the complete
+removal of vegetation from the site’:
+    1. Go to the main KB menu.
+    2. Select Formal Terms.
+    3. In the ‘Type’ box select ‘action’.
+    4. Highlight clearing and press Details. You can now enter the definition into the
+         definition box.
+    5. Press Save.
+# Creating an object hierarchy (7.5.1)
+You should wherever possible, structure the objects to identify any hierarchical relationships
+between them. The creation of object hierarchies allows you to develop a compact
+knowledge base because they allow knowledge to be recorded at its most general level of
+application, yet be used to consider more specific instances.
+Two of the objects in the knowledge base you are creating here vegetation and crops
+clearly can be hierarchically associated. Furthermore, it is obvious from the source text that
+beans, cassava, corn, plantains, rice and yams are types of crop.
+    1. Select Object Hierarchies in the main KB menu.
+    2. Select New.
+    3. In the ‘New Hierarchy Name’ box, enter a name for the object hierarchy. You can
+         either enter a name of your own choosing, (in this case we have called the hierarchy
+         ‘plants’), or select an object from the ‘KB objects’ list to act as the hierarchy name.
+    4. Press Save. The hierarchy name ‘plants’ now appears in the ‘Object Hierarchies’ list
+         in the ‘Object Hierarchies’ dialog box.
+#     Appending objects to the object hierarchy
+    1. Highlight the name of your new Object Hierarchy.
+    2. In the ‘Selected Object’ box press Append to. A list of all the objects in the
+         knowledge base then appears.
+    3. Select ‘vegetation’.
+    4. Press Append. The formal term ‘vegetation’ then appears in the object hierarchy
+         ‘plants’ as an immediate sub-object of ‘plants’.
+# Building up object hierarchies (7.5.3.)
+Add the following statements to your knowledge base
+              Beans fix nitrogen
+              Corn does not fix nitrogen
+              Rice does not fix nitrogen
+Now practise creating another level in the ‘plants’ object hierarchy:
+    1. Highlight vegetation, so that it appears in the ‘Object’ box of the ‘Hierarchy Structure’
+         section.
+    2. Press Append To.
+    3. In the ‘Append Object’ dialog box, select ‘crops’ from the ‘Objects’ list and press
+         Append.
+    4. You now have an object hierarchy in which the formal term ‘vegetation’ has the
+         parent ‘plants’ and the child ‘crops’.
+Tutorials                                        162
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+     5. Try incorporating ‘beans’, ‘corn’ and ‘rice’ in the object hierarchy ‘plants’ as
+         subobjects of ‘crops’ by highlighting ‘crops’ so that it appears in the ‘Object’ box of the
+         ‘Hierarchy Structure’ section and then pressing Append To.
+     6. Continue as above.
+The principal advantage of the hierarchy you have just created is that it can now be
+recognised during reasoning that because:
+              Soil erosion is not a problem if the soil is always covered with some
+              type of vegetation
+and
+              Rice is a type of vegetation
+(information from the hierarchy) then:
+              soil erosion on a site covered in rice should not be a problem.
+# Conducting an Boolean Search (7.10.1)
+A knowledge base may often contain many hundreds of statements (see for example, the
+knowledge base ‘treefodd’). Consequently, exploring the contents of a large knowledge base
+through Statements in the main KB menu, or even via the Diagram interface becomes very
+demanding and confusing. However, AKT contains a Boolean Search facility that allows you
+to retrieve sets of statements that correspond to particular criteria.
+Practise searching on an object using the Boolean Search:
+     1.  Select Boolean Search from the main KB menu.
+     2.  From the ‘Display Kb terms of type’ drop-down menu select ‘object’.
+     3.  From the list of objects displayed, highlight crops and press Select.
+     4.  The term crops will appear in the ‘Boolean Search String’ at the bottom of the dialog
+         box. Press Search.
+     5. A ‘Search Results’ dialog box then appears, giving all the statements retrieved
+         containing the formal term ‘crops’.
+#     Boolean searches using and and/or or (7.10.1.a)
+Boolean searches can include combinations of formal terms linked with and and/or or. Try it
+out on the formal terms pests and disease
+     6.  Select Boolean Search from the main KB menu.
+     7.  From the ‘Display Kb terms of type’ drop-down menu select ‘object’.
+     8.  From the list of objects displayed, highlight pests and press Select.
+     9.  The term pests will appear in the ‘Boolean Search String’ at the bottom of the dialog
+         box.
+     10. Press the OR button from the ‘Boolean Options’ box.
+     11. Now find the term ‘disease’, highlight it and press Select.
+     12. In the ‘Boolean Search String’ at the bottom of the dialog box should be ‘pests or
+         disease’. Now press Search.
+     13. You will be presented with all the statements in your knowledge base containing
+         either the term ‘disease’ or the term ‘pests’.
+     14. If you repeat this process but select the term AND instead of OR, no statements will
+         be found as there are no statements in the knowledge base which contain both the
+         term ‘disease’ and the term ‘pests’.
+When undertaking searches combining ‘and’ and ‘or’ it is necessary to use brackets as one
+does in algebra to give the order of precedence in the search. Experiment with ‘burning’ and
+‘pests’ or ‘burning’ and ‘disease’. To get all the statements mentioning either ‘burning’ and
+‘pests’ or ‘burning’ and ‘disease’ the Boolean Search String should include brackets, thus:
+Tutorials                                       163
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+               (burning and pests) or (burning and disease)
+The searches which we have practised so far have retrieved only statements that contain the
+specified formal term. However, because we have additional information about object terms
+in the form of the hierarchies, we can use alternative search strategies.
+In the ‘Search Options’ box, it is possible to select:
+               1) ‘object’,
+               2) ‘superobject’
+               3) ‘subobjects’
+in any combination.
+Now try out all the different search options, one at a time. The first option will give you only
+the statements containing the word ‘crops’. The second option will give you all the statements
+containing ‘crops’ or any of the subobjects, ‘rice’, ‘beans’ or ‘corn’. The third option will give
+you all the statements containing any of the objects in the object hierarchy ‘plants’.
+#     Creating Topics (7.11.1)
+You may wish to save a particular Boolean Search String to create a permanent subset of
+statements in your knowledge base. These subsets of knowledge are called Topics and are
+created in the same way as any Boolean Search String, the difference being that they are
+then saved as a topic.
+Try creating a topic entitled ‘management actions’, from a Boolean Search String containing
+the terms ‘burning’ or ‘clearing’ or ‘harvesting’.
+     1. Create the Boolean Search String.
+     2. In the box marked ‘Name of new topic’ type in management actions.
+     3. Now press Save in the ‘Save search selection’ box.
+     4. In the Topic Details box press Save once more.
+Go to Topics via the main KB menu and select management actions. When the Search
+Results appear, try out the different buttons on the ‘Diagram Selection Type’ at the bottom of
+the dialog box (7.10.1.c)
+#      DIAGRAM GENERATION (8)
+Diagramming was used earlier in the tutorial as a means of creating a knowledge base. You
+can also use diagramming as a means of exploring the content of a knowledge base.
+     1. Open the diagram interface (by selecting the Diagram from the main menu).
+     2. Try to build up sub diagrams by using the Show Paths (8.3.1), Navigate (8.3.2.)
+         and the Cause and Effect (8.3.3.) buttons.
+     3. Move between the different diagrams (8.5)
+     4. Give each diagram a different label (8.6.1.).
+                                                  2
+               Simple attribute value statements and comparison statements cannot
+               be represented in a diagram.
+#     Printing diagrams (8.11)
+You may want to print a diagram to illustrate a point – just press Print Window on the right
+hand side of the diagram screen. Or if you want to transfer it to anther package before
+printing it out, press Copy to Clipboard (8.6.3)
+Tutorials                                       164
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+# Printing Statements (7.13)
+Often it may be useful to print out some of the content of the knowledge base in order to help
+you in its exploration. Or you may wish to save your statements to another package and print
+them out from there. Try printing out all the statements in your Topic ‘management actions’;
+     1.   Select the main KB menu.
+     2.   Select Topics.
+     3.   Select ‘management actions’.
+     4.   Press Search.
+     5.   Print the Print Statements button at the bottom of the ‘Search Results’ dialog box.
+     6.   Try printing the statements directly and try saving them as a text file as well.
+#     USING TOOLS (9 and 10)
+As this is a tutorial for beginners and the knowledge base ‘slash and burn’ is only very small,
+you would not normally need the tools at this stage. However, just to give you a little taster of
+what tools can do, here are two for you to try out.
+The following is a little exercise to introduce you to some of the tools and what they do. To
+get started select the main Tools menu and then press Tools, Systems Tools and finally
+Knowledge Evaluation.
+1. The tool kb_report(Kb) gives you a summary of the categories of statements in your
+     knowledge base. Press Run. A dialog box appears, requesting the name of the
+     knowledge base. Enter the name of your knowledge base and press Continue. The tool
+     output will give you the following output;
+               Total number of statements          22 of which 5 are conditional.
+               Number of attribute statements       5 of which 5 are conditional.
+               Number of causal statements          14 of which 0 are conditional.
+               Number of comparison statements 0 of which 0 are conditional.
+               Number of link statements             3 of which 0 are conditional.
+Remaining within the Systems Tools category, go to Knowledge Exploration.
+2. The tool species_report/2 extracts information from the knowledge base about a
+                          3
+     particular species . Press Run. An input parameter dialog box appears requesting the
+     name of the knowledge base and of the species to be extracted. Enter the name of your
+     knowledge base and enter ‘crops’ in the ‘species’ box. Then press Continue. You should
+     get the following output;
+Kb        = slash_and_burn
+Species = crops
+INFORMATION SHEET FOR : crops
+HIERARCHY :          plants
+   vegetation
+   crops
+ATTRIBUTE STATEMENTS :
+   none
+CAUSAL STATEMENTS :
+harvesting of crops causes a decrease in level of soil nutrients
+COMPARISON STATEMENTS :
+   none
+LINK STATEMENTS              :
+3
+  Species in this context can mean any object in the knowledge base.
+Tutorials                                        165
+Chapter Fourteen – Tutorial in creating a simple knowledge base
+   none
+CONDITIONAL STATEMENTS :
+   none
+DERIVED STATEMENTS :
+ the erosion of soil rate is minimal if crops covers soil
+ the rate of erosion of soil is high if crops not_covers soil
+burning of site causes removal of crops
+removal of crops causes an increase in level of insolation of soil
+This tool not only tells you all about the selected ‘species’ (in this case ‘crops’) but it also
+gives you all the statements derived via the object hierarchy as well.
+#     CLOSING YOUR KNOWLEDGE BASE (7.14)
+Now has come the time to close your knowledge base. Before closing it, you must decide if
+you want to save the changes you have made to it or not.
+If you do wish to save the changes, then select Save KB or Save KB As from the main KB
+menu. Once you have saved the knowledge base, select Close KB from the main KB menu.
+                                                  1
+                                   If you decide to change or edit the
+                                name of any knowledge base, it must
+                                only be done from within AKT via the
+                                 Save KB As option. If it is done any
+                                other way then AKT will not be able to
+                                  load the knowledge base correctly.
+If you do not wish to save the changes you have made, then go straight to Close KB. Once
+you have closed the knowledge base go to the main File menu and click on Exit AKT.
+                          YOUR TUTORIAL IS AT AN END
+   THE CHALLENGE IS NOW TO MAKE A KNOWLEDGE BASE
+                                        OF YOUR OWN!
+Tutorials                                          166

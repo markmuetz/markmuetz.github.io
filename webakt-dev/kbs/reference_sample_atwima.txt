@@ -1,0 +1,104 @@
+    "formalTerms": {
+        "2": {
+            "type": "value",
+            "definition": "",
+            "synonyms": []
+        },
+
+    "statements": {
+        "s1": {
+            "id": "s1",
+            "formal": "att_value(part(asase_tuntum,abuo),presence,negative)",
+            "type": "attribute",
+            "source_ids": [
+                "Alfie_Kyereyase_2000a"
+            ],
+            "memo": "none"
+        },
+
+    "sources": {
+        "Oliver_Gogoikrom_2000a": {
+            "id": "Oliver_Gogoikrom_2000a",
+            "name": "Oliver",
+            "location": "Gogoikrom",
+            "suffix": "a",
+            "interviewer": "Amelia",
+            "interviewee": "Oliver",
+            "sex": "M",
+            "day": 23,
+            "month": "jun",
+            "year": 2000,
+            "memo": null,
+            "extras": {
+                "Ethnic origin": "Northern",
+                "Age": "<35"
+            }
+        },
+
+    "subobjects": [
+        {
+            "id": "Crop",
+            "root": "crop",
+            "tree_down": {
+                "crop": [
+                    "cassava",
+                    "cassava_mix",
+                    "cocoa",
+                    "cocoyam",
+                    "maize",
+                    "oil_palm",
+                    "plantain",
+                    "rice"
+                ]
+            },
+            "type": "object"
+        },
+
+    "subtopics": [
+        {
+            "id": "Fallows",
+            "name": "Fallows",
+            "root": "Fallows",
+            "tree_down": {
+                "Fallows": [
+                    "Fallow_length",
+                    "Fallow_management",
+                    "Fallow_processes",
+                    "Fallows_and_indicators_of_fertile_soil",
+                    "Fallows_and_soil_types",
+                    "Fallows_on_fertility"
+                ]
+            },
+            "type": "topic"
+        },
+
+    "topics": {
+        "Akata": {
+            "id": "Akata",
+            "name": "Akata",
+            "search_term": "akata",
+            "nested_list": "akata",
+            "objects": "object"
+        },
+        "Fallow_management": {
+            "id": "Fallow_management",
+            "name": "Fallow_management",
+            "search_term": "fallow and (clearing or cropping_period or clearing_ease)",
+            "nested_list": [
+                "and",
+                "fallow",
+                [
+                    "or",
+                    "clearing",
+                    [
+                        "or",
+                        "cropping_period",
+                        "clearing_ease"
+                    ]
+                ]
+            ],
+            "objects": "object"
+        },
+
+
+

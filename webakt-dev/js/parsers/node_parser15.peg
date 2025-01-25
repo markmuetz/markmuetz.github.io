@@ -1,0 +1,32 @@
+Node = AttributeBit
+    / ProcessBit
+    / ActionBit
+    / ObjectBit
+
+AttributeBit = "attribute(" object:Object "," attribute:Attribute ")" {return ['att_value',object,attribute]}
+	/ "attribute(" process:ProcessBit __ attribute:Attribute ")" {return ['att_value',process,attribute]}
+    / "attribute(" action:ActionBit __ attribute:Attribute")"  {return ['att_value',action,attribute]}
+
+ProcessBit = "process" "(" object1:Object __ process:Process __ object2:Object ")" {return ['process',object1,process,object2]}
+    / "process" "("object:Object __ process:Process ")" { return ['process',object,process]}
+    / "process" "(" process:Process ")" {return ['process',process]}
+
+ActionBit = "action(" action:Action __ object1:Object __ object2:Object ")" { return ['action',action,object1,object2]}
+    /  "action(" action:Action __ object1:Object ")" { return ['action',action,object1] }
+
+ObjectBit = "object(" object:Object ")" {return ['object',object]}
+
+Attribute = attribute:Atom  {return attribute}
+
+Process = Atom
+
+Object = "part(" object1:Atom "," object2:Atom ")" { return ["part",object1,object2]; }
+    / Atom
+
+Action = Atom
+
+Atom = chars:[a-zA-Z_0-9<>%.]* {return chars.join("")}
+
+_  = [ \t\n\r]*  // Zero or more whitespace characters
+__ = "," _ {return null}      // A comma followed by zero or more whitespace characters// Simple Arithmetics Grammar
+

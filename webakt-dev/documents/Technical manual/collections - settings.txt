@@ -1,0 +1,17 @@
+The Settings interface for controlling the appearance of collections
+
+The Settings option appears as a cogwheel in every Panel.   The idea is to allow the appearance of the panel to be customised by the user to suit their preferences.
+
+Currently, the only implementation of this is for the sentences type of the collection.js widget.  But this provides a clear indication of how settings for other panels (in particular, the details panels for components, such as individal statements or sources, to be implemented.
+
+As an aside, we note that, in principle, the user can have different intentions when they change a panel's settings.   They might want the changes to apply only to the current panel instance, without affceting other panels of the same type.   Or, they might want the change to appl to all panels of that type - e.g. to all statement_details panels, or to all stateent-collection panels.   Currently, only the second mode is supported, and it would in fact require a significant re-jigging of webAKT to allow the first.
+
+Settings could control a whole range of aspects of the appearance of panels, such as colour, font size etc.   However, the first application of the Settings mechanism was for the properties of the items in a collection, displayed in tabular for in a listbox.    This was intended to give the user a large amount of control over the particular properties to be displayed (i.e. the columns in the listbox table), avoiding the need to fabricate a range of tools to satisfy various user requirements, and bring everything under one roof.
+
+Focussing now on Settings for displaying the properties of collections:
+The properties that can be displayed for the items in a particular type of colllection can be of two types.   First, intrinsic properties are those that are stored in the knowledge base (e.g. in the external file for the knowledge base, and cannot be inferred from other properties of each item).   Examples include the formal form of a statement, and the name of a human source.    Second, there are various properties that can be inferred from other properties of the item, and these we call the inferred properties.   For example, we can have a property for the type of a statement (att_value, causal or comparison), which can be inferred by inspecting the formal form of the statement.   (As a matter of principle, and subscribing to the principle of DRY - Don't Repeat Youself - we do not store inferred properties in the external knowledge base.)
+
+Having inferred properties requires that we have code for actually doing the inference.  Since this code is specific to the type of item it is required for (statement, source etc), the appropriate place for it is in the Class for that type of item - e.g. Statement.js for statements.    Each such class has a single method, getPropertyValue(), which takes a single argument (propertyId), and an appropriate 
+method for accessing the correct fragment of code: e.g. a switch block, or a if...then... elseif block, depending on the propertyId.    In addition, it needs to recognise if the propertyId is in fact an intrinsic property, and simply access the knowledge base directly if this is the case.
+
+

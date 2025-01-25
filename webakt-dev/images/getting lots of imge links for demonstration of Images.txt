@@ -1,0 +1,30 @@
+Harvesting image links from the web:
+How I did it
+Robert Muetzelfeldt
+Nov 2021
+
+1. I went to CIAT's flickr page: https://www.flickr.com/photos/ciat/
+Check it's the Photostream page: otherwise click on th elink to it.
+
+2. I used Inspect (right-mousedown) on the main page and select Inpect.
+To view the HTML in the debug console.
+
+3. I selected the div 
+<div class="view photo-list-view photostream"
+
+4. I right-mousedowned on this div, and selected Copy.
+
+5. I pasted this into a text file.
+It expands all the HTML.
+
+6.  I selected a fragment of the HTML for each image.
+The following gives an example:
+
+live.staticflickr.com/65535/50996598263_002598b5bf.jpg&quot;);"><div class="interaction-view" id="yui_3_16_0_1_1638051897777_21447"><div class="photo-list-photo-interaction">
+	<a class="overlay" href="/photos/ciat/50996598263/" tabindex="0" role="heading" aria-level="3" aria-label="Researchers measure and weigh forage grasses in field trials to find better forage feed varieties project project together with KALRO, Send a Cow and Advantage Crops. by CIAT International Center for Tropical Agriculture"></a>
+
+Note that it helps to do a multiple-find-and-replace on 'live.static', adding in a couple of blank lines, then doing search on the same string.
+
+7. I copied each fragment manually into  separate file.
+
+8 I then used multiple-find-and-replace to get the file into something that could be processed in JavaScript to go in a webAKT KB file.
