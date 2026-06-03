@@ -17,7 +17,15 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render (using freeze cache, no Python needed)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install minimal Python deps for freeze cache
+        run: pip install nbformat nbclient
+
+      - name: Render (using freeze cache)
         run: quarto render
 
       - name: Publish
