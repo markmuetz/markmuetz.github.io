@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+
+website:
+  title: "Mark Muetz"
+  site-url: https://markmuetz.github.io
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: blog.qmd
+        text: Blog
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/markmuetz
+      - icon: rss
+        href: blog.xml
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+

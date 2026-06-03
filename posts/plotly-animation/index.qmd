@@ -1,0 +1,103 @@
+---
+title: "Animated Plots with Plotly"
+author: "Mark Muetz"
+date: "2026-06-03"
+categories: [code, plotly, animation]
+---
+
+Plotly charts are fully interactive — zoom, pan, hover for values — and
+animations add a time dimension with a built-in scrubber.
+
+## Lissajous figure
+
+A Lissajous curve traces $x = \sin(at + \delta),\ y = \sin(bt)$. Animating
+over the phase offset $\delta$ shows how the shape morphs as the two
+oscillations drift in and out of phase.
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+
+t = np.linspace(0, 2 * np.pi, 500)
+deltas = np.linspace(0, 2 * np.pi, 60)
+
+frames = [
+    go.Frame(
+        data=[go.Scatter(
+            x=np.sin(2 * t + d),
+            y=np.sin(3 * t),
+            mode="lines",
+            line=dict(color="steelblue", width=2),
+        )],
+        name=str(i),
+    )
+    for i, d in enumerate(deltas)
+]
+
+fig = go.Figure(
+    data=frames[0].data,
+    frames=frames,
+    layout=go.Layout(
+        xaxis=dict(range=[-1.1, 1.1], zeroline=False, title="x"),
+        yaxis=dict(range=[-1.1, 1.1], zeroline=False, title="y", scaleanchor="x"),
+        width=500,
+        height=500,
+        updatemenus=[dict(
+            type="buttons",
+            showactive=False,
+            buttons=[
+                dict(label="Play",  method="animate",
+                     args=[None, {"frame": {"duration": 50}, "fromcurrent": True}]),
+                dict(label="Pause", method="animate",
+                     args=[[None], {"frame": {"duration": 0}, "mode": "immediate"}]),
+            ],
+        )],
+        sliders=[dict(
+            steps=[dict(method="animate", args=[[f.name]], label="") for f in frames],
+            transition=dict(duration=0),
+            x=0, y=0, len=1.0,
+        )],
+    ),
+)
+
+fig.show()
+```
+
+## Spiral build-up
+
+A simpler example: a spiral that draws itself point by point.
+
+```{python}
+theta = np.linspace(0, 4 * np.pi, 200)
+r = theta / (4 * np.pi)
+x = r * np.cos(theta)
+y = r * np.sin(theta)
+
+frames = [
+    go.Frame(data=[go.Scatter(x=x[:k], y=y[:k], mode="lines",
+                              line=dict(color="coral", width=2))], name=str(k))
+    for k in range(2, len(x) + 1, 2)
+]
+
+fig2 = go.Figure(
+    data=frames[0].data,
+    frames=frames,
+    layout=go.Layout(
+        xaxis=dict(range=[-1.1, 1.1], zeroline=False, showticklabels=False),
+        yaxis=dict(range=[-1.1, 1.1], zeroline=False, showticklabels=False,
+                   scaleanchor="x"),
+        width=500, height=500,
+        updatemenus=[dict(
+            type="buttons", showactive=False,
+            buttons=[
+                dict(label="Play",  method="animate",
+                     args=[None, {"frame": {"duration": 20}, "fromcurrent": True}]),
+                dict(label="Pause", method="animate",
+                     args=[[None], {"frame": {"duration": 0}, "mode": "immediate"}]),
+            ],
+        )],
+    ),
+)
+
+fig2.show()
+```

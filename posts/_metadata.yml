@@ -1,0 +1,20 @@
+# options specified here will apply to all posts in this folder
+
+# freeze computational output
+# (see https://quarto.org/docs/projects/code-execution.html#freeze)
+freeze: auto
+
+# Enable banner style title blocks
+title-block-banner: true
+
+comments:
+  giscus:
+    repo: markmuetz/markmuetz.github.io
+    repo-id: "R_kgDONvl5Nw"
+    category: "Announcements"
+    category-id: "DIC_kwDONvl5N84C-dFo"
+    mapping: pathname
+    reactions-enabled: true
+    input-position: bottom
+    theme: preferred_color_scheme
+    loading: lazy

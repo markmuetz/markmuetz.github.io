@@ -1,0 +1,14 @@
+---
+title: "Mark Muetz"
+about:
+  template: trestles
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/markmuetz
+---
+
+I'm Mark — short blurb about who you are and what you write about here.
+
+Head to the [Blog](blog.qmd) for posts.

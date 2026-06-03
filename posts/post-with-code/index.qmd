@@ -1,0 +1,71 @@
+---
+title: "Post With Code"
+author: "Mark Muetz"
+date: "2026-06-03"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+This is a post with executable code.
+
+## A noisy sine wave
+
+```{python}
+#| code-fold: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+rng = np.random.default_rng(42)
+t = np.linspace(0, 4 * np.pi, 300)
+signal = np.sin(t)
+noisy = signal + rng.normal(0, 0.3, size=t.size)
+```
+
+```{python}
+#| label: fig-sine
+#| fig-cap: "Noisy signal (grey) vs. true sine (black)."
+fig, ax = plt.subplots(figsize=(7, 3))
+ax.plot(t, noisy, color="0.7", label="noisy")
+ax.plot(t, signal, color="black", label="true")
+ax.legend()
+plt.show()
+```
+
+As shown in @fig-sine, the noise is roughly symmetric around the true signal.
+
+## Summary statistics
+
+```{python}
+#| echo: false
+import pandas as pd
+
+pd.DataFrame({
+    "metric": ["mean", "std", "min", "max"],
+    "value": [noisy.mean(), noisy.std(), noisy.min(), noisy.max()],
+}).round(3)
+```
+
+## Animated wave propagation
+
+```{python}
+#| echo: false
+from matplotlib.animation import FuncAnimation
+from IPython.display import HTML
+
+fig, ax = plt.subplots(figsize=(7, 3))
+ax.set_xlim(0, 4 * np.pi)
+ax.set_ylim(-1.5, 1.5)
+ax.set_xlabel("x")
+ax.set_ylabel("amplitude")
+line, = ax.plot([], [], lw=2, color="steelblue")
+
+x = np.linspace(0, 4 * np.pi, 500)
+
+def update(frame):
+    line.set_data(x, np.sin(x - 0.1 * frame))
+    return (line,)
+
+anim = FuncAnimation(fig, update, frames=120, interval=40, blit=True)
+plt.close(fig)
+HTML(anim.to_jshtml())
+```
