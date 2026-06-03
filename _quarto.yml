@@ -6,7 +6,7 @@ project:
     - "posts/**/*.qmd"
 
 website:
-  title: "Mark Muetz"
+  title: "Mark Muetzelfeldt"
   site-url: https://markmuetz.github.io
   navbar:
     left:

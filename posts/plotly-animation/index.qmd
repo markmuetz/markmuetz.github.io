@@ -1,6 +1,6 @@
 ---
 title: "Animated Plots with Plotly"
-author: "Mark Muetz"
+author: "Mark Muetzelfeldt"
 date: "2026-06-03"
 draft: true
 categories: [code, plotly, animation]
