@@ -19,14 +19,14 @@ jobs:
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
-        with:
-          python-version: '3.11'
 
       - name: Install Python deps for freeze cache
-        run: uv pip install --system jupyter
+        run: |
+          uv venv .venv --python 3.11
+          uv pip install jupyter
 
       - name: Render (using freeze cache)
-        run: quarto render
+        run: source .venv/bin/activate && quarto render
 
       - name: Publish
         uses: quarto-dev/quarto-actions/publish@v2
