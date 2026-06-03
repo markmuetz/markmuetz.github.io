@@ -1,10 +1,6 @@
 [
   {
     "listing": "/blog.html",
-    "items": [
-      "/posts/plotly-animation/index.html",
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
-    ]
+    "items": []
   }
 ]
