@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/plotly-animation/index.html",
+    "href": "posts/plotly-animation/index.html",
+    "title": "Animated Plots with Plotly",
+    "section": "",
+    "text": "Plotly charts are fully interactive — zoom, pan, hover for values — and animations add a time dimension with a built-in scrubber."
+  },
+  {
+    "objectID": "posts/plotly-animation/index.html#lissajous-figure",
+    "href": "posts/plotly-animation/index.html#lissajous-figure",
+    "title": "Animated Plots with Plotly",
+    "section": "Lissajous figure",
+    "text": "Lissajous figure\nA Lissajous curve traces \\(x = \\sin(at + \\delta),\\ y = \\sin(bt)\\). Animating over the phase offset \\(\\delta\\) shows how the shape morphs as the two oscillations drift in and out of phase.\n\nimport numpy as np\nimport plotly.graph_objects as go\n\nt = np.linspace(0, 2 * np.pi, 500)\ndeltas = np.linspace(0, 2 * np.pi, 60)\n\nframes = [\n    go.Frame(\n        data=[go.Scatter(\n            x=np.sin(2 * t + d),\n            y=np.sin(3 * t),\n            mode=\"lines\",\n            line=dict(color=\"steelblue\", width=2),\n        )],\n        name=str(i),\n    )\n    for i, d in enumerate(deltas)\n]\n\nfig = go.Figure(\n    data=frames[0].data,\n    frames=frames,\n    layout=go.Layout(\n        xaxis=dict(range=[-1.1, 1.1], zeroline=False, title=\"x\"),\n        yaxis=dict(range=[-1.1, 1.1], zeroline=False, title=\"y\", scaleanchor=\"x\"),\n        width=500,\n        height=500,\n        updatemenus=[dict(\n            type=\"buttons\",\n            showactive=False,\n            buttons=[\n                dict(label=\"Play\",  method=\"animate\",\n                     args=[None, {\"frame\": {\"duration\": 50}, \"fromcurrent\": True}]),\n                dict(label=\"Pause\", method=\"animate\",\n                     args=[[None], {\"frame\": {\"duration\": 0}, \"mode\": \"immediate\"}]),\n            ],\n        )],\n        sliders=[dict(\n            steps=[dict(method=\"animate\", args=[[f.name]], label=\"\") for f in frames],\n            transition=dict(duration=0),\n            x=0, y=0, len=1.0,\n        )],\n    ),\n)\n\nfig.show()"
+  },
+  {
+    "objectID": "posts/plotly-animation/index.html#spiral-build-up",
+    "href": "posts/plotly-animation/index.html#spiral-build-up",
+    "title": "Animated Plots with Plotly",
+    "section": "Spiral build-up",
+    "text": "Spiral build-up\nA simpler example: a spiral that draws itself point by point.\n\ntheta = np.linspace(0, 4 * np.pi, 200)\nr = theta / (4 * np.pi)\nx = r * np.cos(theta)\ny = r * np.sin(theta)\n\nframes = [\n    go.Frame(data=[go.Scatter(x=x[:k], y=y[:k], mode=\"lines\",\n                              line=dict(color=\"coral\", width=2))], name=str(k))\n    for k in range(2, len(x) + 1, 2)\n]\n\nfig2 = go.Figure(\n    data=frames[0].data,\n    frames=frames,\n    layout=go.Layout(\n        xaxis=dict(range=[-1.1, 1.1], zeroline=False, showticklabels=False),\n        yaxis=dict(range=[-1.1, 1.1], zeroline=False, showticklabels=False,\n                   scaleanchor=\"x\"),\n        width=500, height=500,\n        updatemenus=[dict(\n            type=\"buttons\", showactive=False,\n            buttons=[\n                dict(label=\"Play\",  method=\"animate\",\n                     args=[None, {\"frame\": {\"duration\": 20}, \"fromcurrent\": True}]),\n                dict(label=\"Pause\", method=\"animate\",\n                     args=[[None], {\"frame\": {\"duration\": 0}, \"mode\": \"immediate\"}]),\n            ],\n        )],\n    ),\n)\n\nfig2.show()"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Animated Plots with Plotly\n\n\n\ncode\n\nplotly\n\nanimation\n\n\n\n\n\n\n\n\n\nJun 3, 2026\n\n\nMark Muetz\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nJun 3, 2026\n\n\nMark Muetz\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMay 31, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mark Muetz",
+    "section": "",
+    "text": "I’m Mark — short blurb about who you are and what you write about here.\nHead to the Blog for posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#a-noisy-sine-wave",
+    "href": "posts/post-with-code/index.html#a-noisy-sine-wave",
+    "title": "Post With Code",
+    "section": "A noisy sine wave",
+    "text": "A noisy sine wave\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nrng = np.random.default_rng(42)\nt = np.linspace(0, 4 * np.pi, 300)\nsignal = np.sin(t)\nnoisy = signal + rng.normal(0, 0.3, size=t.size)\n\n\n\nfig, ax = plt.subplots(figsize=(7, 3))\nax.plot(t, noisy, color=\"0.7\", label=\"noisy\")\nax.plot(t, signal, color=\"black\", label=\"true\")\nax.legend()\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Noisy signal (grey) vs. true sine (black).\n\n\n\n\n\nAs shown in Figure 1, the noise is roughly symmetric around the true signal."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#summary-statistics",
+    "href": "posts/post-with-code/index.html#summary-statistics",
+    "title": "Post With Code",
+    "section": "Summary statistics",
+    "text": "Summary statistics\n\n\n\n\n\n\n\n\n\nmetric\nvalue\n\n\n\n\n0\nmean\n-0.012\n\n\n1\nstd\n0.776\n\n\n2\nmin\n-1.510\n\n\n3\nmax\n1.595"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#animated-wave-propagation",
+    "href": "posts/post-with-code/index.html#animated-wave-propagation",
+    "title": "Post With Code",
+    "section": "Animated wave propagation",
+    "text": "Animated wave propagation\n\n\n\n\n\n\n\n\n\n  \n  \n    \n    \n      \n          \n      \n        \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n    \n    \n      \n      Once\n      \n      Loop\n      \n      Reflect"
+  }
+]
