@@ -2,6 +2,7 @@
 title: "Animated Plots with Plotly"
 author: "Mark Muetz"
 date: "2026-06-03"
+draft: true
 categories: [code, plotly, animation]
 ---
 
