@@ -1,0 +1,24 @@
+---
+title: "Setting up Quarto using Claude Code"
+author: "Mark Muetzelfeldt"
+date: "2026-06-04"
+categories: [quarto, LLM]
+---
+
+How quickly can I set up a simple site using Quarto? Can an LLM speed this up? I have some experience of doing the same thing with Hugo, and found the process slightly opaque due to not really wanting to invest lots of time into learning a new technology. This time, I wanted to use Claude Code for most of the work, because I have zero experience of Quarto, and I just want the site to work with minimal fuss. Here are my requirements:
+
+* static site
+* markdown
+* hosted on github.io
+* blog with tags
+* comments on posts
+* embeddable Python/notebooks
+
+My starting point was to use Claude to figure out which would be best -- Hugo or Quarto. Quarto won out in the end, because of embeddable Python, and coupled with my previous experience of struggling with Hugo, I decided to give it a go. From there, I asked Claude to make me a markdown file which detailed how to configure Quarto to my specifications, and a short guide on how to use it. It estimated that it would take 30-60 minutes to get things setup -- doing the Hugo site had probably taken me half a day in total, so this seemed promising.
+
+I set Claude Code loose on the setup, telling it to read the markdown guide then giving it free rein to edit, commit, and push the code. The basics were up and running in about 20 minutes, and I was hopeful I'd come in under 30 minutes in total, but things got a little messy when I started setting up the automated github actions to build the site on pushing to main. Here, Claude Code came into its own. I set up `gh` so that it could monitor github actions, and let it figure out what was wrong each time there was an error. In one sense, this was great -- this was mostly hands off apart from OKing commands after each push. Having it figure out the problems and fix things by monitoring the actions felt... close to magic. But in another, it did take Claude Code a while, and about 10 commits, to get to a stable site being seamlessly updated on pushing. B+ territory, but still a lot quicker than it would have been if I'd been figuring things out myself, and the site was configured exactly how I wanted from the start. It took just under an hour, so the initial prediction was good. Updating the site is now a breeze: edit some docs then push to main.
+
+This was a good use-case for an LLM/Claude Code -- it's easy to verify that everything is working as intended, which is my first concern when using LLMs. If the site looks OK, and works the way you want, then it works! It saved me the effort of learning a new static-site generator from scratch. The drawback is the other side of the same coin -- I only have a cursory knowledge of how the whole site works. But if I need to make changes, I will know who to turn to.
+
+If you want to play along at home, [here's the markdown guide](https://github.com/markmuetz/markmuetz.github.io/blob/main/docs/SETUP.md). It works particularly well with Claude Code, because of its ability to edit files, use git, and interact with github, but other LLMs are available if you're happy with a lot more copy and pasting. Did I use an LLM to write this? What do you think?
+[hint: no. But it did proofread it for me, which is why I now know to write "free rein" instead of "free reign"]
