@@ -9,6 +9,4 @@ about:
       href: https://github.com/markmuetz
 ---
 
-I'm Mark — short blurb about who you are and what you write about here.
-
-Head to the [Blog](blog.qmd) for posts.
+I'm Mark Muetzelfeldt, a [researcher at the University of Reading](https://research.reading.ac.uk/meteorology/people/mark-muetzelfeldt/). This is my personal site with some thoughts on km-scale climate modelling, coding, LLMs, organized deep convection, and anything else that crosses my mind. Head over to my [Blog](blog.qmd) for posts.
