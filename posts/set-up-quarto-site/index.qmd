@@ -2,7 +2,7 @@
 title: "Setting up Quarto using Claude Code"
 author: "Mark Muetzelfeldt"
 date: "2026-06-04"
-categories: [quarto, LLM]
+categories: [quarto, LLM, claude code]
 ---
 
 How quickly can I set up a simple site using [Quarto](https://quarto.org/)? Can an LLM speed this up? I have some experience of doing the same thing with [Hugo](https://gohugo.io/), and found the process slightly opaque due to not really wanting to invest lots of time into learning a new technology. This time, I wanted to use Claude Code for most of the work, because I have zero experience of Quarto, and I just want the site to work with minimal fuss. Here are my requirements:
