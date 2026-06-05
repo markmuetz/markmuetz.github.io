@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/claude-code-science-infrastructure/index.html",
       "/posts/set-up-quarto-site/index.html"
     ]
   }

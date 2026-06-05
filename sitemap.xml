@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://markmuetz.github.io/index.html</loc>
-    <lastmod>2026-06-04T22:06:44.267Z</lastmod>
-  </url>
-  <url>
-    <loc>https://markmuetz.github.io/about.html</loc>
-    <lastmod>2026-06-04T22:06:44.266Z</lastmod>
+    <loc>https://markmuetz.github.io/posts/claude-code-science-infrastructure/index.html</loc>
+    <lastmod>2026-06-05T13:38:00.626Z</lastmod>
   </url>
   <url>
     <loc>https://markmuetz.github.io/blog.html</loc>
-    <lastmod>2026-06-04T22:06:44.266Z</lastmod>
+    <lastmod>2026-06-05T13:38:00.626Z</lastmod>
+  </url>
+  <url>
+    <loc>https://markmuetz.github.io/about.html</loc>
+    <lastmod>2026-06-05T13:38:00.626Z</lastmod>
+  </url>
+  <url>
+    <loc>https://markmuetz.github.io/index.html</loc>
+    <lastmod>2026-06-05T13:38:00.626Z</lastmod>
   </url>
   <url>
     <loc>https://markmuetz.github.io/posts/set-up-quarto-site/index.html</loc>
-    <lastmod>2026-06-04T22:06:44.267Z</lastmod>
+    <lastmod>2026-06-05T13:38:00.627Z</lastmod>
   </url>
 </urlset>

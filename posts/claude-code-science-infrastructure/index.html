@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Mark Muetzelfeldt">
-<meta name="dcterms.date" content="2026-06-04">
+<meta name="dcterms.date" content="2026-06-05">
 
-<title>Setting up Quarto using Claude Code – Mark Muetzelfeldt</title>
+<title>Using Claude Code for science infrastructure – Mark Muetzelfeldt</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -129,9 +129,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Setting up Quarto using Claude Code</h1>
+      <h1 class="title">Using Claude Code for science infrastructure</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">quarto</div>
                 <div class="quarto-category">LLM</div>
                 <div class="quarto-category">claude code</div>
               </div>
@@ -151,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 4, 2026</p>
+        <p class="date">June 5, 2026</p>
       </div>
     </div>
     
@@ -172,19 +171,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>How quickly can I set up a simple site using <a href="https://quarto.org/">Quarto</a>? Can an LLM speed this up? I have some experience of doing the same thing with <a href="https://gohugo.io/">Hugo</a>, and found the process slightly opaque due to not really wanting to invest lots of time into learning a new technology. This time, I wanted to use Claude Code for most of the work, because I have zero experience of Quarto, and I just want the site to work with minimal fuss. Here are my requirements:</p>
+<p>I’ve been using Claude Code quite a bit this week. It is <em>amazing</em> at a lot of the basic infrastructure that is part of science research. Examples:</p>
 <ul>
-<li>static site</li>
-<li>markdown</li>
-<li>hosted on github.io</li>
-<li>blog with tags</li>
-<li>comments on posts</li>
-<li>embeddable Python/notebooks</li>
+<li>producing quality rsync scripts for repeatable downloads</li>
+<li>setting up a testing harness for some code I am writing</li>
+<li>debugging moderately complex issues and suggesting a fix</li>
+<li><a href="../../posts/set-up-quarto-site/index.html">setting up a website using Quarto (no previous experience)</a></li>
 </ul>
-<p>My starting point was to use Claude to figure out which would be best – Hugo or Quarto. Quarto won out in the end, because of embeddable Python, and coupled with my previous experience of struggling with Hugo, I decided to give it a go. From there, I asked Claude to make me a markdown file which detailed how to configure Quarto to my specifications, and a short guide on how to use it. It estimated that it would take 30-60 minutes to get things setup – doing the Hugo site had probably taken me half a day in total, so this seemed promising.</p>
-<p>I set Claude Code loose on the setup, telling it to read the markdown guide then giving it free rein to edit, commit, and push the code. The basics were up and running in about 20 minutes, and I was hopeful I’d come in under 30 minutes in total, but things got a little messy when I started setting up the automated github actions to build the site on pushing to main. Here, Claude Code came into its own. I set up <code>gh</code> so that it could monitor github actions, and let it figure out what was wrong each time there was an error. In one sense, this was great – this was mostly hands off apart from OKing commands after each push. Having it figure out the problems and fix things by monitoring the actions felt… close to magic. But in another, it did take Claude Code a while, and about 10 commits, to get to a stable site being seamlessly updated on pushing. B+ territory, but still a lot quicker than it would have been if I’d been figuring things out myself, and the site was configured exactly how I wanted from the start. It took just under an hour, so the initial prediction was good. Updating the site is now a breeze: edit some docs then push to main.</p>
-<p>This was a good use-case for an LLM/Claude Code – it’s easy to verify that everything is working as intended, which is my first concern when using LLMs. If the site looks OK, and works the way you want, then it works! It saved me the effort of learning a new static-site generator from scratch. The drawback is the other side of the same coin – I only have a cursory knowledge of how the whole site works. But if I need to make changes, I will know who to turn to.</p>
-<p>If you want to play along at home, <a href="https://github.com/markmuetz/markmuetz.github.io/blob/main/docs/SETUP.md">here’s the markdown guide</a>. It works particularly well with Claude Code, because of its ability to edit files, use git, and interact with github, but other LLMs are available if you’re happy with a lot more copy and pasting. Did I use an LLM to write this? What do you think? [hint: no. But it did proofread it for me, which is why I now know to write “free rein” instead of “free reign”]</p>
+<p>None of these are things that I could not do. However, Claude Code gets it done much faster. Also, the code quality is higher for the time taken. Take the rsync scripts - I would have made something that worked in about the same time that Claude used to make something that worked, was extensible, had command line arguments and a guide on how to use it. AND it showed me a new rsync switch: <code>--info=progress2</code>, which shows you what percentage has been transferred and is awesome. The downsides to using it are a) you need to pay for it, and b) how can you build understanding?</p>
+<p>The last point is an interesting one – I have spent many hours writing bash scripts poorly. I find it impossible to memorize the slightly arcane syntax, and generally have to look up how to do simple comparisons every time. Clearly, I have had ample opportunity to learn how to do it, yet have never devoted the time – every time I wrote a bash script and it grows beyond a certain size, I rewrote it in Python. So am I losing out by not building this understanding? Probably not in this case. But if I was starting out now, would I be able to develop a feel for what was possible, and how to approach certain problems? I’m not sure.</p>
 
 
 
